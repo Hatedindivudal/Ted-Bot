@@ -37,7 +37,7 @@ client.on('message', message => {
     switch (args[0]) {
         case 'kick':
             if (!args[1]) message.channel.send('Please Mention the user you are trying to kick')
-            if (!message.member.roles.cache.find(r => r.name === "𝒱𝒾βᵉ мσᗪѕ")) return message.channel.send('You do not have the required roles to do so.')
+        
             const user = message.mentions.users.first();
 
             if (user) {
@@ -71,7 +71,8 @@ client.on('message', message => {
                 switch (args[0]) {
                     case 'ban':
                         if (!args[1]) message.channel.send('Please Mention the user you are trying to ban')
-                        if (!message.member.roles.cache.find(r => r.name === "𝒱𝒾βᵉ мσᗪѕ")) return message.channel.send('You do not have the required roles to do so.') || (!message.member.roles.cache.find(r => r.name === "@𝒱𝒾βᵉ 𝐀𝒹𝓂𝒾η"))
+                       if(!message.member.hasPermission('BAN_MEMBERS'))
+                       message.channel.send("You do not have Kick perms")
                         const user = message.mentions.users.first();
 
                         if (user) {
