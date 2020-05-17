@@ -102,27 +102,7 @@ client.on('message', message => {
                    
 
                         
-                            
-   //Whois Command
-   if (msg.startsWith(prefix + 'WHOIS')) { //Checks if messages starts with "!whois"
-   let memberToFind = message.mentions.members.first(); //Checks for a mentioned user (@eSkuzi#0001)
-
-   if (!memberToFind) { //If no member is mentioned, throw this error
-       return message.channel.send('You must mention a member for this command'); //Send message and stop executing code
-   }
-
-   let embed = new Discord.RichEmbed()
-       .setAuthor(memberToFind.user.tag, memberToFind.user.avatarURL) //This will show the users tag and avatar - there was no need to stringify that text :P
-       .addField('Account Created', memberToFind.user.createdAt, true) //Shows when the user was registered
-       .addField('Joined this Server', message.guild.members.find('id', memberToFind.id).joinedAt, true) //Shows when the user joined the guild
-       .addField('User ID', memberToFind.id, true) //Shows the user ID
-       .setColor(0xffffff) //Make the embed white
-       .setFooter('Searched User') //Add a footer
-       .setTimestamp() //Timestamp the footer
-
-   message.channel.send(embed); //Send the embed we just created
-}
-
+  
 
 
 
