@@ -117,6 +117,8 @@ client.on('message', message => {
                                 case 'ping':
                                     client.commands.get('ping').execute(message, args);
                                     break;
+
+                            
                                 case 'website':
                                     message.channel.send('Sorry i do not currently own one please check back later!');
                                     break;
