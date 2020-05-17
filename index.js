@@ -100,8 +100,14 @@ client.on('message', message => {
 
 
                    
+                        switch (args[0]) {
 
                         
+                        case 'test':
+                            message.channel.send('123')
+
+
+                        }
   
 
 
