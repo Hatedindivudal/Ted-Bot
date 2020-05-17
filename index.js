@@ -37,7 +37,7 @@ client.on('message', message => {
     switch (args[0]) {
         case 'kick':
             if (!args[1]) message.channel.send('Please Mention the user you are trying to kick')
-        
+            if(!message.member.hasPermission('KICK_MEMBERS'))
             const user = message.mentions.users.first();
 
             if (user) {
@@ -104,8 +104,8 @@ client.on('message', message => {
                             var person  = message.guild.member(message.mentions.users.first() || message.guild.roles.cache.find(args[1]));
                             if(!person) return  message.reply("I CANT FIND THE USER " + person)
                  
-                            let mainrole = message.guild.roles.find(role => role.name === "Newbie");
-                            let role = message.guild.roles.find(role => role.name === "mute");
+                            let mainrole = message.guild.roles.cache.find(role => role.name === "Newbie");
+                            let role =message.guild.roles.cache.find(role => role.name === "mute");
                            
                  
                             if(!role) return message.reply("Couldn't find the mute role.")
@@ -181,18 +181,15 @@ client.on('message', message => {
                                         .addField('Member count', message.guild.memberCount)
                                     message.channel.send(embed);
                                     break;
+                                    
 
-                        
-
-
-
-                            
+                                    case 'whois': 
 
 
                             }
 
 
-
+                                
 
 });
 
