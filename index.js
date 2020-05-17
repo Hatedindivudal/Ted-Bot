@@ -99,50 +99,29 @@ client.on('message', message => {
                     }
 
 
-                    switch (args[0]) {
-                        case 'mute':
-                            var person  = message.guild.member(message.mentions.users.first() || message.guild.roles.cache.find(args[1]));
-                            if(!person) return  message.reply("I CANT FIND THE USER " + person)
-                 
-                            let mainrole = message.guild.roles.cache.find(role => role.name === "Newbie");
-                            let role =message.guild.roles.cache.find(role => role.name === "mute");
-                           
-                 
-                            if(!role) return message.reply("Couldn't find the mute role.")
-                 
-                 
-                            let time = args[2];
-                            if(!time){
-                                return message.reply("You didnt specify a time!");
-                            }
-                 
-                            person.removeRole(mainrole.id)
-                            person.addRole(role.id);
-                 
-                 
-                            message.channel.send(`@${person.user.tag} has now been muted for ${ms(ms(time))}`)
-                 
-                            setTimeout(function(){
-                               
-                                person.addRole(mainrole.id)
-                                person.removeRole(role.id);
-                                console.log(role.id)
-                                message.channel.send(`@${person.user.tag} has been unmuted.`)
-                            }, ms(time));
-
-                        
-
-                    
-
-
-
-
-
-                    }
-
+                   
 
                         
                             
+   //Whois Command
+   if (msg.startsWith(prefix + 'WHOIS')) { //Checks if messages starts with "!whois"
+   let memberToFind = message.mentions.members.first(); //Checks for a mentioned user (@eSkuzi#0001)
+
+   if (!memberToFind) { //If no member is mentioned, throw this error
+       return message.channel.send('You must mention a member for this command'); //Send message and stop executing code
+   }
+
+   let embed = new Discord.RichEmbed()
+       .setAuthor(memberToFind.user.tag, memberToFind.user.avatarURL) //This will show the users tag and avatar - there was no need to stringify that text :P
+       .addField('Account Created', memberToFind.user.createdAt, true) //Shows when the user was registered
+       .addField('Joined this Server', message.guild.members.find('id', memberToFind.id).joinedAt, true) //Shows when the user joined the guild
+       .addField('User ID', memberToFind.id, true) //Shows the user ID
+       .setColor(0xffffff) //Make the embed white
+       .setFooter('Searched User') //Add a footer
+       .setTimestamp() //Timestamp the footer
+
+   message.channel.send(embed); //Send the embed we just created
+}
 
 
 
@@ -189,7 +168,7 @@ client.on('message', message => {
                             }
 
 
-                                
+                                    
 
 });
 
