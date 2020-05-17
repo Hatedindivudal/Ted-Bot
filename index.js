@@ -72,7 +72,7 @@ client.on('message', message => {
                     case 'ban':
                         if (!args[1]) message.channel.send('Please Mention the user you are trying to ban')
                        if(!message.member.hasPermission('BAN_MEMBERS'))
-                       message.channel.send("You do not have Kick perms")
+                       message.channel.send("You do not have Ban perms")
                         const user = message.mentions.users.first();
 
                         if (user) {
