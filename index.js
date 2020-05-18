@@ -112,7 +112,7 @@ client.on('message', message => {
                         switch (args[0]) {
                                 
                               case 'asd':
-                                Discord.MessageEmbed
+                                Discord.MessageEmbed()
                                 .setColor('0x#ff0000')
                                 .setTitle('Server Information')
                                 .addField('Current Server', message.guild.name)
