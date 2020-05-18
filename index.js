@@ -26,6 +26,11 @@ client.on('ready', () => {
 
 client.on('message', message => {
 
+
+    const usersMap = new Map();
+
+    
+
     if (!message.content.startsWith(PREFIX)) return;
     let args = message.content.substring(PREFIX.length).split(" ");
 
@@ -143,6 +148,7 @@ client.on('message', message => {
                                         .addField('Created Date', message.guild.createdAt)
                                         .addField('Member count', message.guild.memberCount)
                                         .setThumbnail(message.guild.iconURL)
+                                        
                                     message.channel.send(embed);
                                     break;
                                     
