@@ -99,17 +99,12 @@ client.on('message', message => {
                         }
                     }
 
+ 
 
-                   
-                        switch (args[0]) {
-
-                        
-                        case 'test':
-                            message.channel.send('123')
-
-
-                        }
-  
+                    let embed = new Discord.MessageEmbed()
+                    .setColor('RANDOM')
+                    .setTitle('Wasd')
+                    .addField('Testing', 'testing 123456')
 
 
 
@@ -162,7 +157,8 @@ client.on('message', message => {
                         
 
                     
-                    
+                        
+
 
                 
 
