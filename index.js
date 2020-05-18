@@ -5,7 +5,7 @@ const client = new Discord.Client();
 
 const PREFIX = '.';
 
-const embed = new Discord.MessageEmbed
+const embed = new Discord.MessageEmbed()
 
 const fs = require('fs');
 client.commands = new Discord.Collection();
@@ -105,7 +105,7 @@ client.on('message', message => {
                     let embed = new Discord.MessageEmbed()
                     .setColor('RANDOM')
                     .setTitle('Wasd')
-                    .addField('Testing', 'testing 123456')
+                    .addField('Testing', )
                     message.channel.send(embed)
 
 
