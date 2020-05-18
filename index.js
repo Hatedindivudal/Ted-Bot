@@ -142,7 +142,7 @@ client.on('message', message => {
                                         .addField('Owner', message.guild.owner)
                                         .addField('Created Date', message.guild.createdAt)
                                         .addField('Member count', message.guild.memberCount)
-                                        .addField("Roles", message.guild.roles.size, true)
+                                        .setThumbnail(message.guild.iconURL)
                                     message.channel.send(embed);
                                     break;
                                     
