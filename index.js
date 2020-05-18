@@ -80,7 +80,7 @@ client.on('message', message => {
 
                             if (member) {
                                 member.ban({
-                                    ression: 'You have been removed from Vibe Squad'
+                                    ression: 'You have been removed from the server'
                                 }).then(() => {
                                     message.reply(`${user.tag} Has been removed from the server!`)
 
