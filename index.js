@@ -38,8 +38,7 @@ client.on('message', message => {
         case 'kick':
             if (!args[1]) message.channel.send('Please Mention the user you are trying to kick')
             if(!message.member.hasPermission('KICK_MEMBERS'))
-            const user = message.mentions.users.first();
-
+            var user = message.mentions.users.first();
             if (user) {
                 const member = message.guild.member(user);
 
