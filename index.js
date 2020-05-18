@@ -8,19 +8,16 @@ const PREFIX = '~';
 const embed = new Discord.MessageEmbed
 
 const fs = require('fs');
-
-const ms =require('ms');
-
-client.commands = new Discord.Collection();
-
-
-const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('js'))
-for (const file of commandFiles) {
-    const command = require(`./commands/${file}`)
-
-    client.commands.set(command.name, command);
-
+bot.commands = new Discord.Collection();
+ 
+const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
+for(const file of commandFiles){
+    const command = require(`./commands/${file}`);
+ 
+    bot.commands.set(command.name, command);
 }
+
+const ms = require('ms');
 
 client.on('ready', () => {
     console.log('attepmt #2');
@@ -36,7 +33,6 @@ client.on('message', message => {
 
     switch (args[0]) {
         case 'kick':
-            if (!args[1]) message.channel.send('Please Mention the user you are trying to kick')
             if(!message.member.hasPermission('KICK_MEMBERS'))
             message.channel.send('You do not have the Kick user perms')
             const  user = message.mentions.users.first();
@@ -108,15 +104,8 @@ client.on('message', message => {
 
 
                         }
-                                    
-                        switch (args[0]) {
-                                
-                              case 'asd':
-                                Discord.MessageEmbed()
-                                .setColor('0x#ff0000')
-                                .setTitle('Server Information')
-                                .addField('Current Server', message.guild.name)
-                                  message.channel.send(embed);
+  
+
 
 
 
@@ -155,9 +144,6 @@ client.on('message', message => {
                                         .addField('Member count', message.guild.memberCount)
                                     message.channel.send(embed);
                                     break;
-
-                                    
-
                                     
                                     
 
@@ -174,7 +160,7 @@ client.on('message', message => {
                 
 
 
-                        }
+            
                                     
 
 });
