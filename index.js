@@ -96,15 +96,17 @@ client.on('message', message => {
 
                         } else {
                             message.reply('I Could not find that user inside this server.')
+                            break;
                         }
                     }
 
- 
-
+                    
+                    if(message.content === 'sdada')
                     let embed = new Discord.MessageEmbed()
                     .setColor('RANDOM')
                     .setTitle('Wasd')
                     .addField('Testing', 'testing 123456')
+                    message.channel.send(embed)
 
 
 
