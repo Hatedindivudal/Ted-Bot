@@ -142,6 +142,7 @@ client.on('message', message => {
                                         .addField('Owner', message.guild.owner)
                                         .addField('Created Date', message.guild.createdAt)
                                         .addField('Member count', message.guild.memberCount)
+                                        .addField("Roles", message.guild.roles.size, true)
                                     message.channel.send(embed);
                                     break;
                                     
