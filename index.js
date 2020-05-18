@@ -108,8 +108,15 @@ client.on('message', message => {
 
 
                         }
-  
-
+                                    
+                        switch (args[0]) {
+                                
+                              case 'asd':
+                                Discord.MessageEmbed
+                                .setColor('0x#ff0000')
+                                .setTitle('Server Information')
+                                .addField('Current Server', message.guild.name)
+                                  message.channel.send(embed);
 
 
 
@@ -148,6 +155,10 @@ client.on('message', message => {
                                         .addField('Member count', message.guild.memberCount)
                                     message.channel.send(embed);
                                     break;
+
+                                    
+
+                                    
                                     
 
                                     
@@ -163,7 +174,7 @@ client.on('message', message => {
                 
 
 
-            
+                        }
                                     
 
 });
