@@ -102,7 +102,7 @@ client.on('message', message => {
 
                     
                     if(message.content === 'sdada')
-                    let embed = new Discord.MessageEmbed()
+                    let embed = new Discord.MessageEmbed
                     .setColor('RANDOM')
                     .setTitle('Wasd')
                     .addField('Testing', )
