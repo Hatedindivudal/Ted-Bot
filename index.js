@@ -101,14 +101,15 @@ client.on('message', message => {
                     }
 
                     
-                    if(message.content === 'sdada')
+                    if(message.content === 'sdada'){
                     let newembed = new Discord.MessageEmbed
                     .setColor('RANDOM')
                     .setTitle('Wasd')
                     .addField('Testing', )
                     message.channel.send(newembed)
+                    break;
 
-
+                    }
 
 
                             switch (args[0]) {
