@@ -107,7 +107,7 @@ client.on('message', message => {
                     .setTitle('Wasd')
                     .addField('Testing', )
                     message.channel.send(newembed)
-                    break;
+                    
 
                     }
 
