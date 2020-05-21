@@ -101,7 +101,7 @@ client.on('message', message => {
                     }
 
                     
-                    if(message.content === 'sdada'){
+                    if(message.content === 'test'){
                     let newembed = new Discord.MessageEmbed
                    
                     .setColor('0x#ff0000')
