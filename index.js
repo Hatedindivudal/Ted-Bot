@@ -37,7 +37,7 @@ client.on('message', message => {
 
     switch (args[0]) {
         case '.hi':
-            message.channel.send('..hi')
+            message.channel.send('..Si')
 
 
     }
