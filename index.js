@@ -37,6 +37,8 @@ client.on('message', message => {
 
     switch (args[0]) {
         case '.hi':
+            if(!message.member.hasPermission('VIEW_GUILD_INSIGHTS'))
+            message.channel.send('You do not have the odd perrmision command')
             message.channel.send('..Si')
 
 
