@@ -131,7 +131,7 @@ client.on('message', message => {
                                         message.channel.send('Invalid args')
                                     }
                                     break;
-                                case 'purge':
+                                    if(message.content === 'purge')
                                     if (!args[1]) return message.reply('Error Please define second arg')
                                     if (!message.member.roles.cache.find(r => r.name === "𝒱𝒾βᵉ мσᗪѕ"))
                                         then(message => message.delete({
