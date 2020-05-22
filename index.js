@@ -5,7 +5,7 @@ const client = new Discord.Client();
 
 const PREFIX = '.';
 
-const embed = new Discord.MessageEmbed()
+const embed = new Discord.MessageEmbed();
 
 const fs = require('fs');
 client.commands = new Discord.Collection();
