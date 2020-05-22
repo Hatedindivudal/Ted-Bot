@@ -131,11 +131,11 @@ client.on('message', message => {
                                         message.channel.send('Invalid args')
                                     }
                                     break;
-                                {
+                                
 
                                     
                                   
-                                }
+                                
                                     
                                 case 'Serverinfo':
                                     let embed = new Discord.MessageEmbed()
