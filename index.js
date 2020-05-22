@@ -112,7 +112,7 @@ client.on('message', message => {
 
                     
                     if(message.content === 'test'){
-                    let newembed = new Discord.MessageEmbed()
+                    let newembed =  Discord.MessageEmbed()
                    
                     .setColor('0x#ff0000')
                     .setTitle('Server Information')
