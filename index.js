@@ -164,9 +164,7 @@ client.on('message', message => {
                             if(message.content === 'purge')
                             if (!args[1]) return message.reply('Error Please define second arg')
                             if (!message.member.roles.cache.find(r => r.name === "𝒱𝒾βᵉ мσᗪѕ"))
-                                then(message => message.delete({
-                                    timeout: 4000
-                                }));
+                                
                             message.channel.bulkDelete(args[1]);
                             
                     
