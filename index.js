@@ -35,6 +35,14 @@ client.on('message', message => {
     let args = message.content.substring(PREFIX.length).split(" ");
 
 
+    switch (args[0]) {
+        case '.hi':
+            message.channel.send('..Hi')
+
+
+    }
+
+
 
     switch (args[0]) {
         case 'kick':
@@ -161,10 +169,6 @@ client.on('message', message => {
                                     
 
                         
-
-                    case '.Hi':
-                        message.channel.send('.hi')
-
                             }
 
                         
