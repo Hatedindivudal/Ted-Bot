@@ -168,7 +168,7 @@ client.on('message', message => {
                                     timeout: 4000
                                 }));
                             message.channel.bulkDelete(args[1]);
-                            break;
+                            
                     
                         
 
