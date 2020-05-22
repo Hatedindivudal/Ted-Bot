@@ -33,7 +33,9 @@ client.on('message', message => {
 
     if (!message.content.startsWith(PREFIX)) return;
     let args = message.content.substring(PREFIX.length).split(" ");
-
+    async function myfunction() {
+        console.log('Inside of myfunction');
+      }
     switch (args[0]) {
         case 'meme':
     const { body } = await snekfetch
@@ -50,7 +52,7 @@ client.on('message', message => {
         .addField("Other info:", "Up votes: " + allowed[randomnumber].data.ups + " / Comments: " + allowed[randomnumber].data.num_comments)
         .setFooter("Memes provided by r/dankmemes")
         message.channel.send(Meme)
-   
+       
     }
     
 
