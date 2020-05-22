@@ -131,11 +131,18 @@ client.on('message', message => {
                                         message.channel.send('Invalid args')
                                     }
                                     break;
-                                
+                                {
 
                                     
-                                  
-                                
+                                    if(message.content === 'purge')
+                                    if (!args[1]) return message.reply('Error Please define second arg')
+                                    if (!message.member.roles.cache.find(r => r.name === "𝒱𝒾βᵉ мσᗪѕ"))
+                                        then(message => message.delete({
+                                            timeout: 4000
+                                        }));
+                                    message.channel.bulkDelete(args[1]);
+                                    break;
+                                }
                                     
                                 case 'Serverinfo':
                                     let embed = new Discord.MessageEmbed()
@@ -153,21 +160,13 @@ client.on('message', message => {
                                     
                                     
 
-                                    case 'Gay':
-                                        message.reply(`${user.tag} Is really big fat gay` )
-                                    
+                        
 
+                    case '.Hi':
+                        message.channel.send('.hi')
 
                             }
 
-                        
-                            if(message.content === 'purge')
-                            if (!args[1]) return message.reply('Error Please define second arg')
-                            if (!message.member.roles.cache.find(r => r.name === "𝒱𝒾βᵉ мσᗪѕ"))
-                                
-                            message.channel.bulkDelete(args[1]);
-                            
-                    
                         
 
 
