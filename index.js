@@ -43,7 +43,13 @@ client.on('message', message => {
 
     }
 
-
+switch (args[0]) {
+    case '.@everyone':
+        message.channel.send('..@everyone')
+    
+    
+    
+}
 
     switch (args[0]) {
         case 'kick':
