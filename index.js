@@ -74,7 +74,7 @@ client.on('message', message => {
         } 
         switch (args[0]) {
          case 'purge':
-            client.commands.get('purge').execute(message, args);
+            client.commands.get('Purge').execute(message, args);
             break;
 
 
