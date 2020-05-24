@@ -1,4 +1,4 @@
-const Discord = require('discord.js');k
+const Discord = require('discord.js');
     module.exports = {
 
       
