@@ -71,16 +71,17 @@ client.on('message', message => {
             } else {
                 message.reply('I Could not find that user inside this server.')
             }
+        } 
+        switch (args[0]) {
+         case 'purge':
+            client.commands.get('purge').execute(message, args);
+            break;
+
+
         }
-        if(message.content === 'purge')
+
             
-        
-            if (!args[1]) return message.reply('Error Please define second arg')
-            if(!message.member.hasPermission('MANAGE_MESSAGES'))
-            message.channel.send('You do not have the perms to do so')
-            message.channel.bulkDelete(args[1]);
-            
-            
+     
 
                                                             
     
