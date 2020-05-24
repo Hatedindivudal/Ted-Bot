@@ -1,28 +1,17 @@
 const Discord = require('discord.js');
-const client = new Discord.Client();
-    module.exports = {
+const amount = parseInt(args[0]);
+  module.exports = {
 
-      
-
-        
-        execute(message, args) {
-            switch (args[0]) {
-        case 'Purge':
-            
-        
-            if (!args[1]) return message.reply('Error Please define second arg')
-            if(!message.member.hasPermission('MANAGE_MESSAGES'))
-            message.channel.send('You do not have the perms to do so')
-            message.channel.bulkDelete(args[1]);
-
-            
-            
-            
-        
-
-
-        }
-    },
-    
-
-    };
+    name: 'purge',
+    description: 'deletes messages!',
+   execute(message, args) {
+    if (isNaN(amount)) {
+        return message.reply('that doesn\'t seem to be a valid number.');
+    }
+if (isNaN(amount)) {
+    return message.reply('that doesn\'t seem to be a valid number.');
+} else if (amount < 2 || amount > 100) {
+    return message.reply('you need to input a number between 2 and 100.');
+}
+message.channel.bulkDelete(amount);    
+   }}
