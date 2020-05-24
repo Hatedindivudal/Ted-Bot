@@ -13,13 +13,13 @@ const Discord = require('discord.js');
             message.channel.send('You do not have the perms to do so')
             message.channel.bulkDelete(args[1]);
             
-            break; 
+            
             
 
 
 
 
-            },
+            }
 
 
 
