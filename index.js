@@ -73,22 +73,18 @@ client.on('message', message => {
                 message.reply('I Could not find that user inside this server.')
             }
         }
-        switch (args[0]) {
-
-        case 'purge':
-
-        if (!args[1]) return message.reply('Error Please define second arg')
-        if (!message.member.roles.cache.find(r => r.name === "𝒱𝒾βᵉ мσᗪѕ"))
-            then(message => message.delete({
-                timeout: 4000
-            }));
-        message.channel.bulkDelete(args[1]);
-        break;
-    
-        }
+        if(message.content === 'purge')
+            
+        
+            if (!args[1]) return message.reply('Error Please define second arg')
+            if(!message.member.hasPermission('MANAGE_MESSAGES'))
+            message.channel.send('You do not have the perms to do so')
+            message.channel.bulkDelete(args[1]);
+            
+            break; 
 
                                                             
-
+    
 
                 switch (args[0]) {
                     case 'ban':
