@@ -45,7 +45,7 @@ client.on('message', message => {
 
 switch (args[0]) {
     case '.@everyone':
-        message.channel.send('..@everyone')
+        message.channel.send('..veryone')
     
     
     
