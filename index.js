@@ -10,11 +10,10 @@ const embed = new Discord.MessageEmbed();
 const fs = require('fs');
 client.commands = new Discord.Collection();
  
-const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
-for(const file of commandFiles){
-    const command = require(`./commands/${file}`);
- 
-    client.commands.set(command.name, command);
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+for (const file of commandFiles) {
+	const command = require(`./commands/${file}`);
+	client.commands.set(command.name, command);
 }
 
 const ms = require('ms');
@@ -81,7 +80,7 @@ client.on('message', message => {
             message.channel.send('You do not have the perms to do so')
             message.channel.bulkDelete(args[1]);
             
-            break; 
+            
 
                                                             
     
