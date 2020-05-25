@@ -1,13 +1,12 @@
-
 const Discord = require ("discord.js");
-const args = message.content
-    .slice(client.config.prefix.length)
-    .trim()
-    .split(/ +/g);
+
+
 module.exports = {
   name: "purge",
   description: "deletes messages!",
   execute(message, args) {
+    const amount = parseInt (args[0]);
+    
     if (isNaN(amount)) {
       return message.reply("that doesn't seem to be a valid number.");
     }
@@ -19,7 +18,6 @@ module.exports = {
     if (!message.member.hasPermission("MANAGE_MESSAGES"))
     return message.channel.send("You do not have the perms to do so");
     message.channel.bulkDelete(amount);
-    const amount = parseInt (args[0]);
   }
 };
 
