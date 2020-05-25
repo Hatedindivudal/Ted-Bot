@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-
+const amount = parseInt(args[0]);
 
 
 const PREFIX = '.';
