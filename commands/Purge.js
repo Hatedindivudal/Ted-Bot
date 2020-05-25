@@ -1,7 +1,8 @@
 
 const Discord = require ("discord.js");
 
-const amount = parseInt (args[0]);
+const newLocal = parseInt(args[0]);
+const amount = newLocal;
 module.exports = {
   name: "purge",
   description: "deletes messages!",
