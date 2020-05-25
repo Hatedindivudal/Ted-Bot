@@ -1,6 +1,9 @@
-const Discord = require("discord.js");
-const amount = parseInt(args[0]);
-const args = message.content.trim().split(/ +/g);
+const Discord = require ("discord.js");
+const args = message.content
+    .slice(client.config.prefix.length)
+    .trim()
+    .split(/ +/g);
+const amount = parseInt (args[0]);
 module.exports = {
   name: "purge",
   description: "deletes messages!",
