@@ -6,6 +6,10 @@ module.exports = {
   description: "deletes messages!",
   execute(message, args) {
     const amount = parseInt (args[0]);
+    const args = message.content
+    .slice(client.config.prefix.length)
+    .trim()
+    .split(/ +/g);
     
     if (isNaN(amount)) {
       return message.reply("that doesn't seem to be a valid number.");
