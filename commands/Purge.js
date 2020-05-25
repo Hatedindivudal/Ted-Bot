@@ -1,4 +1,7 @@
-
+const args = message.content
+    .slice(client.config.prefix.length)
+    .trim()
+    .split(/ +/g);
 const Discord = require ("discord.js");
 
 const amount = parseInt (args[0]);
