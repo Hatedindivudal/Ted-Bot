@@ -1,25 +1,45 @@
-exports.run = function (bot, msg, args) {
-  let messagecount = parseInt(args[0]) || 1;
+const { Command } = require("discord.js-commando");
 
-  var deletedMessages = -1;
+module.exports = class PurgeCommand extends Command {
+  constructor(client) {
+    super(client, {
+      name: "purge",
+      group: "moderation",
+      memberName: "purge",
+      description: "Purges the Chat",
+      clientPermissions: ["MANAGE_MESSAGES"],
+      userPermissions: ["MANAGE_MESSAGES"],
+      args: [
+        {
+          key: "purgecount",
+          prompt: "How many messages should I purge??",
+          type: "integer"
+        }
+      ],
+      guildOnly: true
+    });
+  }
 
-  msg.channel.fetchMessages({limit: Math.min(messagecount + 1, 100)}).then(messages => {
-      messages.forEach(m => {
-          if (m.author.id == bot.user.id) {
-              m.delete().catch(console.error);
-              deletedMessages++;
-          }
+  async run(message, args) {
+    // Purge Command!
+    if (message.author.bot) return;
+    if (args.purgecount > 100)
+      return message.reply(
+        "You can currently only purge up to 100 messages at a time."
+      );
+
+    await message.channel.messages
+      .fetch({ limit: args.purgecount })
+      .then(async messages => {
+        // Fetches the messages
+        await message.channel.bulkDelete(messages);
+      })
+      .then(() => {
+        message
+          .reply(`🗑️ Sucessfully Deleted ${args.purgecount} messages.`)
+          .then(async e => {
+            await e.delete(2000);
+          });
       });
-  }).then(() => {
-      if (deletedMessages === -1) deletedMessages = 0;
-      msg.channel.sendMessage(`:white_check_mark: Purged \`${deletedMessages}\` messages.`)
-          .then(m => m.delete(2000));
-  }).catch(console.error);
-
-};
-
-exports.info = {
-  name: 'purge',
-  usage: 'purge [amount]',
-  description: 'Deletes a certain number of messages'
+  }
 };
