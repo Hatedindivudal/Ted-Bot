@@ -1,24 +1,25 @@
-const Discord = require ("discord.js");
-const args = message.content
-.slice(client.config.prefix.length)
-.trim()
-.split(/ +/g);
+exports.run = function (bot, msg, args) {
+  let messagecount = parseInt(args[0]) || 1;
 
-module.exports = {
-  name: "purge",
-  description: "deletes messages!",
-  execute(message, args) {
-  const amount = parseInt (args[0]);
-    if (isNaN(amount)) {
-      return message.reply("that doesn't seem to be a valid number.");
-    }
-    if (isNaN(amount)) {
-      return message.reply("that doesn't seem to be a valid number.");
-    } else if (amount < 2 || amount > 100) {
-      return message.reply("you need to input a number between 2 and 100.");
-    }
-    if (!message.member.hasPermission("MANAGE_MESSAGES"))
-    return message.channel.send("You do not have the perms to do so");
-    message.channel.bulkDelete(amount);
-  }
-};S
+  var deletedMessages = -1;
+
+  msg.channel.fetchMessages({limit: Math.min(messagecount + 1, 100)}).then(messages => {
+      messages.forEach(m => {
+          if (m.author.id == bot.user.id) {
+              m.delete().catch(console.error);
+              deletedMessages++;
+          }
+      });
+  }).then(() => {
+      if (deletedMessages === -1) deletedMessages = 0;
+      msg.channel.sendMessage(`:white_check_mark: Purged \`${deletedMessages}\` messages.`)
+          .then(m => m.delete(2000));
+  }).catch(console.error);
+
+};
+
+exports.info = {
+  name: 'purge',
+  usage: 'purge [amount]',
+  description: 'Deletes a certain number of messages'
+};
