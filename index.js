@@ -20,10 +20,6 @@ const ms = require('ms');
 
 client.on('ready', () => {
     console.log('attepmt #2');
-    bot.user.setActivity("Watching a test"), {
-        type: "Watching"
-
-}
 
 })
 
@@ -42,7 +38,7 @@ client.on('message', message => {
 
 
     switch (args[0]) {
-        case '.si':
+        case '.hi':
             if(!message.member.hasPermission('VIEW_GUILD_INSIGHTS'))
             message.channel.send('You do not have the odd perrmisions')
             message.channel.send('..Si')
@@ -87,7 +83,7 @@ switch (args[0]) {
         } 
         switch (args[0]) {
          case 'purge':
-            client.commands.get('Purge').execute(message, args);
+            client.commands.get('Purge').execute(message, args)
             break;
 
 
