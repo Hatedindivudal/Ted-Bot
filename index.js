@@ -85,13 +85,13 @@ switch (args[0]) {
 
 
         }
-
-            
-     
-
-                                                            
     
+        switch (args[0]) {
+            case 'Mute':
+               client.commands.get('Mute').execute(message, args);
+               break
 
+        }
                 switch (args[0]) {
                     case 'ban':
                      
