@@ -86,12 +86,9 @@ switch (args[0]) {
 
         }
     
-        switch (args[0]) {
-            case 'Mute':
-               client.commands.get('Mute').execute(message, args);
-               break
+      
 
-        }
+        
                 switch (args[0]) {
                     case 'ban':
                      
@@ -143,7 +140,13 @@ switch (args[0]) {
                                     client.commands.get('ping').execute(message, args)
                                     break;
                                  
-                            
+                            }
+
+
+                                    switch (args[0]) {
+                                        case 'Mute':
+                                           client.commands.get('Mute').execute(message, args);
+                                           break
                             
                                 case 'website':
                                     message.channel.send('Sorry i do not currently own one please check back later!');
