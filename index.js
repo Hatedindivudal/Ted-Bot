@@ -34,6 +34,12 @@ client.on('message', message => {
     let args = message.content.substring(PREFIX.length).split(" ");
 
 
+    bot.user.setActivity("Watching a test"), {
+            type: "Watching"
+
+    }
+
+
     switch (args[0]) {
         case '.hi':
             if(!message.member.hasPermission('VIEW_GUILD_INSIGHTS'))
