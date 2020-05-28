@@ -25,7 +25,12 @@ module.exports = class PurgeCommand extends Command {
   
   
   
-    execute(message, args) {
+
+
+
+  
+  async run(message, args) {
+    execute(message, args) ;{
     
     
     // Purge Command!
@@ -52,3 +57,4 @@ module.exports = class PurgeCommand extends Command {
   }
 };
 
+}
