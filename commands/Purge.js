@@ -2,7 +2,9 @@ const { Command } = require("discord.js-commando");
 
 module.exports = class PurgeCommand extends Command {
   constructor(client) {
+    
     super(client, {
+      
       name: "purge",
       group: "moderation",
       memberName: "purge",
@@ -18,10 +20,16 @@ module.exports = class PurgeCommand extends Command {
       ],
       guildOnly: true
     });
+    
   }
-
-  async run(message, args) {
+  
+  
+  
+    execute(message, args) {
+    
+    
     // Purge Command!
+    
     if (message.author.bot) return;
     if (args.purgecount > 100)
       return message.reply(
@@ -43,3 +51,4 @@ module.exports = class PurgeCommand extends Command {
       });
   }
 };
+
