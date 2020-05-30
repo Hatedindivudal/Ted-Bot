@@ -183,6 +183,12 @@ switch (args[0]) {
                         
 
 
+                            switch (args[0]) {
+                                case 'purge':
+                                   client.commands.get('purge').execute(message, args);
+                                   break;
+
+                            }
                 
 
 

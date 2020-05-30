@@ -1,59 +1,39 @@
-const { Command } = require("discord.js-commando");
+const Discord = require('discord.js');
 
-module.exports = class PurgeCommand extends Command {
-  constructor(client) {
+
+
+module.exports = {
+    name: 'purge',
+    description: "Deletes messages",
     
-    super(client, {
-      
-      name: "purge",
-      group: "moderation",
-      memberName: "purge",
-      description: "Purges the Chat",
-      clientPermissions: ["MANAGE_MESSAGES"],
-      userPermissions: ["MANAGE_MESSAGES"],
-      args: [
-        {
-          key: "purgecount",
-          prompt: "How many messages should I purge??",
-          type: "integer"
-        }
-      ],
-      guildOnly: true
-    });
     
+
+  execute(message, args) {
+
+
+
+  if (message.deletable) {
+      message.delete();
   }
-  
-  
-  
 
-
-
-  
-  async run(message, args) {
-    
-    
-    
-    // Purge Command!
-    
-    if (message.author.bot) return;
-    if (args.purgecount > 100)
-      return message.reply(
-        "You can currently only purge up to 100 messages at a time."
-      );
-
-    await message.channel.messages
-      .fetch({ limit: args.purgecount })
-      .then(async messages => {
-        // Fetches the messages
-        await message.channel.bulkDelete(messages);
-      })
-      .then(() => {
-        message
-          .reply(`🗑️ Sucessfully Deleted ${args.purgecount} messages.`)
-          .then(async e => {
-            await e.delete(2000);
-          });
-      });
+  if (!message.member.hasPermission("MANAGE_MESSAGES")) {
+      return message.reply("Missing Permissions!").then(m => m.delete(5000));
   }
-};
 
+  if (isNaN(args[0]) || parseInt(args[0]) <= 0) {
+      return message.reply("This is not a number").then(m => m.delete(5000));
+  }
+
+  let deleteAmount;
+  if (parseInt(args[0]) > 100) {
+      deleteAmount = 100;
+  } else {
+      deleteAmount = parseInt(args[0]);
+  }
+
+  message.channel.bulkDelete(deleteAmount, true)
+  .catch(err => message.reply(`Something went wrong... ${err}`));
+
+  }
+
+  }
