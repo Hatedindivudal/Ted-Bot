@@ -30,7 +30,7 @@ module.exports = class PurgeCommand extends Command {
 
   
   async run(message, args) {
-    execute(message, args) ;{
+    
     
     
     // Purge Command!
@@ -57,4 +57,3 @@ module.exports = class PurgeCommand extends Command {
   }
 };
 
-}

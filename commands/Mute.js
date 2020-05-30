@@ -1,5 +1,5 @@
 module.exports = {
-    run: async(client, message, args) => {
+    execute(message, args) {
         if(!message.member.hasPermission(['KICK_MEMBERS', 'BAN_MEMBERS']))
             message.channel.send("You don't have permissions to use that command.");
         else {
@@ -25,3 +25,4 @@ module.exports = {
     aliases: [],
     description: 'Mutes a user'
 }
+
