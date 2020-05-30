@@ -143,8 +143,8 @@ switch (args[0]) {
 
 
                                     switch (args[0]) {
-                                        case 'Mute':
-                                           client.commands.get('Mute').execute(message, args);
+                                        case 'mute':
+                                           client.commands.get('mute').execute(message, args);
                                            break
                             
                                 case 'website':

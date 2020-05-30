@@ -1,4 +1,7 @@
 module.exports = {
+
+    name: 'mute',
+    description: "Mutes a user for a time",
     execute(message, args) {
         if(!message.member.hasPermission(['KICK_MEMBERS', 'BAN_MEMBERS']))
             message.channel.send("You don't have permissions to use that command.");
