@@ -20,7 +20,7 @@ execute(message, args) {
         .setThumbnail(message.guild.iconURL)
         
     message.channel.send(test);
-    break;
+    
 
 }
 
