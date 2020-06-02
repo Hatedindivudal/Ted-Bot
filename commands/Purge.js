@@ -1,7 +1,5 @@
 module.exports = {
-    name: "clear",
-    aliases: ["purge", "nuke"],
-    category: "moderation",
+    name: 'purge',
     description: "Clears the chat",
     execute(message, args) {
         if (message.deletable) {
