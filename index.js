@@ -108,6 +108,12 @@ client.on('message', message => {
                                         case 'mute':
                                            client.commands.get('mute').execute(message, args);
                                            break;
+
+                                    
+
+                                    case 'test':
+                                        client.commands.get('test').execute(message, args);
+                            
                             
                                     
                                     
