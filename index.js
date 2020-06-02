@@ -37,22 +37,11 @@ client.on('message', message => {
 
 
 
-    switch (args[0]) {
-        case '.hi':
-            if(!message.member.hasPermission('VIEW_GUILD_INSIGHTS'))
-            message.channel.send('You do not have the odd perrmisions')
-            message.channel.send('..Si')
+    
 
-
-    }
-
-switch (args[0]) {
-    case '.@everyone':
-        message.channel.send('..veryone')
     
     
-    
-}
+
 
     switch (args[0]) {
         case 'kick':
@@ -90,35 +79,8 @@ switch (args[0]) {
         
                 switch (args[0]) {
                     case 'ban':
-                     
-                       if(!message.member.hasPermission('BAN_MEMBERS'))
-                       message.channel.send("You do not have Ban perms")
-                       const user = message.mentions.users.first();
-
-                        if (user) {
-                            const member = message.guild.member(user);
-
-                            if (member) {
-                                member.ban({
-                                    ression: 'You have been removed from the server'
-                                }).then(() => {
-                                    message.reply(`${user.tag} Has been removed from the server!`)
-
-
-                                })
-                            } else {
-                                message.reply('I Could not find that user inside this server.')
-
-
-                            }
-
-
-                        } else {
-                            message.reply('I Could not find that user inside this server.')
-                            break;
-                        }
-                    }
-
+                        client.commands.get('ban').execute(message, args)
+                }
                     
                     if(message.content === 'test'){
                     let newembed = new Discord.MessageEmbed()
@@ -145,22 +107,12 @@ switch (args[0]) {
                                     switch (args[0]) {
                                         case 'mute':
                                            client.commands.get('mute').execute(message, args);
-                                           break
+                                           break;
                             
-                                case 'website':
-                                    message.channel.send('Sorry i do not currently own one please check back later!');
-                                    break;
-                                case 'info':
-                                    if (args[1] === 'version') {
-                                        message.channel.send('We are Currently using version 1.0.1');
-                                    } else {
-                                        message.channel.send('Invalid args')
-                                    }
-                                    break;
-                                {
-
                                     
-                                }
+                                    
+                                    
+                                
                                 case 'Serverinfo':
                                     let embed = new Discord.MessageEmbed()
 
