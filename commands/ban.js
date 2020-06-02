@@ -27,7 +27,7 @@ module.exports = {
 
                         } else {
                             message.reply('I Could not find that user inside this server.')
-                            break;
+                            
                         }
                     }
 
