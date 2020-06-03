@@ -20,7 +20,7 @@ module.exports = {
          member.kick('You Have Been Removed from the server').then(() => {
              message.reply(`Sucessfully Kicked ${user.tag}`);
          }).catch(Err => {
-             message.reply('i was unable to complete that command.')
+             message.reply('That user has a role higher then yours! get better skrub')
              console.log(err);
          });
      } else {
