@@ -105,6 +105,17 @@ client.on('message', message => {
                                         client.commands.get('pepe').execute(message, args);
                                         break;
 
+                                    }
+
+
+                                    switch (args[0]) {
+                                        case 'roles':
+                                            client.commands.get('roles').execute(message, args)
+                                            
+
+
+                                    
+
                                     
                                     
                                     
