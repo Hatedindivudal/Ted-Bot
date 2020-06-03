@@ -123,6 +123,9 @@ client.on('message', message => {
                                     
                                 case 'pepe':
                                         client.commands.get('pepe').execute(message, args);
+                                        break;
+
+                                    
                                     
                                     
                                 
