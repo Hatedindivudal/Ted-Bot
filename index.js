@@ -108,9 +108,9 @@ client.on('message', message => {
                                     }
 
 
-                                    switch (args[0]) {
-                                        case 'roles':
-                                            client.commands.get('roles').execute(message, args)
+                            
+
+                                    
                                             
 
 
@@ -119,7 +119,7 @@ client.on('message', message => {
                                     
                                     
                                     
-                                
+                                            switch (args[0]) {
                                 case 'Serverinfo':
                                     let embed = new Discord.MessageEmbed()
 
@@ -135,9 +135,9 @@ client.on('message', message => {
                                     break;
                                     
                                     
-
+                                            }
                         
-                            }
+                            
 
                         
 
@@ -150,6 +150,13 @@ client.on('message', message => {
                             }
                 
 
+                            switch (args[0]) {
+                                case 'roles':
+                                    client.commands.get('roles').execute(message, args)
+                                    
+
+
+                            }
 
             
                                     
