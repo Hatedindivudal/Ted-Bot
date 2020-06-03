@@ -8,7 +8,7 @@ execute(message, args) {
    
 
 
-exports.run = (bot, message, args) => {
+
     if (args.length < 1) return message.channel.send("Please provide some text to Mock")
 
     let mockEmbed = new Discord.MessageEmbed
@@ -26,4 +26,3 @@ exports.run = (bot, message, args) => {
 
 
 
-}

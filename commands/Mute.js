@@ -1,32 +1,46 @@
-const Discord = require('discord.js');
-module.exports = {
+const Discord = require("discord.js");
+const ms = require("ms");
 
-    name: 'mute',
-    description: "Mutes a user for a time",
-    execute(message, args) {
-        if(!message.member.hasPermission(['KICK_MEMBERS', 'BAN_MEMBERS']))
-            message.channel.send("You don't have permissions to use that command.");
-        else {
-            let memberId = message.content.substring(message.content.indexOf(' ')+1);
-            let member = message.guild.members.cache.get(args);
-            if(member) {
-                if(member.hasPermission(['KICK_MEMBERS', 'BAN_MEMBERS']) && !message.member.hasPermission('ADMINISTRATOR'))
-                    message.channel.send("You cannot mute that person!");
-                else {
-                    let mutedRole = message.guild.roles.cache.get('713185362519916656');
-                    if(mutedRole) {
-                        member.roles.add(mutedRole);
-                        message.channel.send("User was muted.");
-                    }
-                    else
-                        message.channel.send("Muted role not found.");
-                }
-            }
-            else
-                message.channel.send("Member not found.");
-        }
-    },
-    aliases: [],
-    description: 'Mutes a user'
+module.exports.run = async (bot, message, args) => {
+
+  //!mute @user 1s/m/h/d
+
+  let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+  if(!tomute) return message.channel.send("Please tag user to mute!");
+  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry, you don't have permissions to use this!");
+  if(tomute.hasPermission("MANAGE_MESSAGES")) return message.channel.send("I cant mute this user");
+  if (tomute.id === message.author.id) return message.channel.send("You cannot mute yourself!");
+  let muterole = message.guild.roles.find(`name`, "Odar Mute");
+
+  if(!muterole){
+    try{
+      muterole = await message.guild.createRole({
+        name: "Odar Mute",
+        color: "#000000",
+        permissions:[]
+      })
+      message.guild.channels.forEach(async (channel, id) => {
+        await channel.overwritePermissions(muterole, {
+          SEND_MESSAGES: false,
+          ADD_REACTIONS: false
+        });
+      });
+    }catch(e){
+      console.log(e.stack);
+    }
+  }
+
+  let mutetime = args[1];
+  if(!mutetime) return message.channel.send("You didn't specify a time!");
+
+  await(tomute.addRole(muterole.id));
+  message.reply(`<@${tomute.id}> has been muted for ${ms(ms(mutetime))}`);
+
+  setTimeout(function(){
+    tomute.removeRole(muterole.id);
+    message.channel.send(`<@${tomute.id}> has been unmuted!`);
+  }, ms(mutetime));
+
+  message.delete();
+
 }
-
