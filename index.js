@@ -107,6 +107,7 @@ client.on('message', message => {
                                 let help = new Discord.MessageEmbed()
                                 .setColor('RANDOM')
                                 .setTitle('Help')
+                                .addField('Kick', 'Kicks a mentioned' )
                                     
                                     
                                     
