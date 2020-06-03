@@ -1,37 +1,29 @@
-const Discord = require('discord.js');
+const Discord = require("discord.js");
+
 module.exports = {
     name: 'purge',
-    description: "Clears the chat",
+    description: "Deletes a specified amount of numbers",
     execute(message, args) {
-        if (message.deletable) {
-            message.delete();
-        }
-    
-        // Member doesn't have permissions
-        if (!message.member.hasPermission("MANAGE_MESSAGES")) {
-            return message.reply("You can't delete messages....").then(m => m.delete(5000));
-        }
+  if(args[0] == "help"){
+    let helpembxd = new Discord.RichEmbed()
+    .setColor("#00ff00")
+    .addField("clear Command", "Usage: !Clear <amount>")
 
-        // Check if args[0] is a number
-        if (isNaN(args[0]) || parseInt(args[0]) <= 0) {
-            return message.reply("Yeah.... That's not a number? I also can't delete 0 messages by the way.").then(m => m.delete(5000));
-        }
+    message.channel.send(helpembxd);
+    return;
+  } 
 
-        // Maybe the bot can't delete messages
-        if (!message.guild.me.hasPermission("MANAGE_MESSAGES")) {
-            return message.reply("Sorryy... I can't delete messages.").then(m => m.delete(5000));
-        }
+  message.delete()
 
-        let deleteAmount;
+  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("You don't have premssions to do that!");
+  if(!args[0]) return message.channel.send("Please enter a number of messages to clear! `Usage: !clear <amount>`");
+  message.channel.bulkDelete(args[0]).then(() => {
+  message.channel.send(`**__Cleared ${args[0]} messages.__**`).then(msg => msg.delete(2000));
+});
 
-        if (parseInt(args[0]) > 100) {
-            deleteAmount = 100;
-        } else {
-            deleteAmount = parseInt(args[0]);
-        }
 
-        message.channel.bulkDelete(deleteAmount, true)
-            .then(deleted => message.channel.send(`I deleted \`${deleted.size}\` messages.`))
-            .catch(err => message.reply(`Something went wrong... ${err}`));
-    }
+}
+
+
+  
 }
