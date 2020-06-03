@@ -118,6 +118,11 @@ client.on('message', message => {
                                 .setTitle('Help')
                                 .addField('Kick', 'Kicks a mentioned' )
                                     
+
+                                    
+                                    
+                                case 'pepe':
+                                        client.commands.get('pepe').execute(message, args);
                                     
                                     
                                 
