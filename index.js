@@ -83,8 +83,10 @@ client.on('message', message => {
                 }
                     
                    
-
-
+                switch (args[0]) {
+                    case 'warn':
+                        client.commands.get('warn').execute(message, args)
+                }
                             switch (args[0]) {
                                 case 'ping':
                                     client.commands.get('ping').execute(message, args)
