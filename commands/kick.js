@@ -1,5 +1,7 @@
 const Discord = require("discord.js");
 module.exports = {
+    name: 'kick',
+    description: "Kicks Mentioned user.",
 	execute(message, args) {
 
 
