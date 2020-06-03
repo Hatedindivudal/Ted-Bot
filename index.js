@@ -87,6 +87,13 @@ client.on('message', message => {
                     case 'warn':
                         client.commands.get('warn').execute(message, args)
                 }
+
+
+                switch (args[0]) {
+                    case 'mock':
+                        client.commands.get('mock').execute(message, args)
+
+                }
                             switch (args[0]) {
                                 case 'ping':
                                     client.commands.get('ping').execute(message, args)
