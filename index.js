@@ -91,13 +91,11 @@ client.on('message', message => {
 
                                     case 'test':
                                         client.commands.get('test').execute(message, args);
+                            break;
                             
-                            case 'help':
-                                let help = new Discord.MessageEmbed()
-                                .setColor('RANDOM')
-                                .setTitle('Help')
-                                .addField('Kick', 'Kicks a mentioned' )
+
                                     
+                           
 
                                     
                                     

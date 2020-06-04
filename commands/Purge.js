@@ -5,7 +5,7 @@ module.exports = {
     description: "Deletes a specified amount of numbers",
     execute(message, args) {
   if(args[0] == "help"){
-    let helpembxd = new Discord.RichEmbed()
+    let helpembxd = new Discord.MessageEmbed()
     .setColor("#00ff00")
     .addField("clear Command", "Usage: !Clear <amount>")
 
