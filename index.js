@@ -158,58 +158,57 @@ client.on('message', message => {
 
 
 
-                            switch (args[0]) {
-                                case 'Cursed':
-                                image(message);
-                         
-                                break;
-                            }
-                         
-                        });
-                         
-                        function image(message){
-                         
-                            var options = {
-                                url: "http://results.dogpile.com/serp?qc=images&q=" + "Cursed Images",
-                                method: "GET",
-                                headers: {
-                                    "Accept": "text/html",
-                                    "User-Agent": "Chrome"
-                                }
-                            };
-                         
-                         
-                         
-                        }
-                         
-                            request(options, function(error, response, responseBody) {
-                                if (error) {
-                                    return;
-                                }
-                         
-                         
-                                $ = cheerio.load(responseBody);
-                         
-                         
-                                var links = $(".image a.link");
-                         
-                                var urls = new Array(links.length).fill(0).map((v, i) => links.eq(i).attr("href"));
-                               
-                                console.log(urls);
-                         
-                                if (!urls.length) {
-                                   
-                                    return;
-                                }
-                         
-                                // Send result
-                                message.channel.send( urls[Math.floor(Math.random() * urls.length)]);
-                            
+   switch (args[0]) {
+        case 'image':
+        image(message);
+ 
+        break;
+    }
+ 
+});
+ 
+function image(message){
+    let args = message.content.slice(PREFIX.length).split(" ");
+    var search  = args.toString();
+    
+    var options = {
+        url: "http://results.dogpile.com/serp?qc=images&q=" + search,
+        method: "GET",
+        headers: {
+            "Accept": "text/html",
+            "User-Agent": "Chrome"
+        }
+    };
+
+
+}
+ 
+    request(options, function(error, response, responseBody) {
+        if (error) {
+            return;
+        }
+ 
+ 
+        $ = cheerio.load(responseBody);
+ 
+ 
+        var links = $(".image a.link");
+ 
+        var urls = new Array(links.length).fill(0).map((v, i) => links.eq(i).attr("href"));
+       
+        console.log(urls);
+ 
+        if (!urls.length) {
+           
+            return;
+        }
+ 
+        // Send result
+        message.channel.send( urls[Math.floor(Math.random() * urls.length)]);
+    
 
 
 
-                        
-                                    
 
 });
 
