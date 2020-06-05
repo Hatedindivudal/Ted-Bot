@@ -181,7 +181,7 @@ function image(message){
     };
 
 
-}
+
  
     request(options, function(error, response, responseBody) {
         if (error) {
@@ -205,12 +205,17 @@ function image(message){
  
         // Send result
         message.channel.send( urls[Math.floor(Math.random() * urls.length)]);
+    });
+
     
+}
 
 
 
 
-});
+
+
+
 
 
 
