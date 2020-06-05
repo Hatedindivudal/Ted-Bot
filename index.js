@@ -172,7 +172,7 @@ function image(message){
     var search  = args.toString();
     
     var options = {
-        url: "http://results.dogpile.com/serp?qc=images&q=" + search,
+        url: "https://images.google.com/=" + search,
         method: "GET",
         headers: {
             "Accept": "text/html",
