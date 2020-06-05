@@ -1,8 +1,8 @@
 const Discord = require("discord.js");
 
 module.exports = {
-    name: 'purge',
-    description: "Deletes a specified amount of numbers",
+    name: 'help',
+    description: "displays help",
     execute(message, args) {
 
 
