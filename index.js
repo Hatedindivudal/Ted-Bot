@@ -145,8 +145,8 @@ client.on('message', message => {
 
 
                             switch (args[0]) {
-                                case 'purge':
-                                   client.commands.get('purge').execute(message, args);
+                                case 'help':
+                                   client.commands.get('help').execute(message, args);
                                    break;
 
                             }
