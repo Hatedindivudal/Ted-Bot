@@ -159,7 +159,7 @@ client.on('message', message => {
 
 
                             switch (args[0]) {
-                                case 'image':
+                                case 'Cursed':
                                 image(message);
                          
                                 break;
