@@ -45,7 +45,11 @@ execute(message, args) {
     .setColor("#00ff00")
     .setImage("https://cdn.discordapp.com/emojis/428556266366042112.png?v=1");
 
-    let pepes = [pepe1, pepe2, pepe3, pepe4, pepe5, pepe6, pepe7, pepe8, pepe9, pepe10]
+    let pepe11 = new Discord.MessageEmbed()
+    .setColor("#00ff00")
+    .setImage("https://cdn.discordapp.com/attachments/546327550645895189/718292749131972608/pepe1.jpg")
+
+    let pepes = [pepe1, pepe2, pepe3, pepe4, pepe5, pepe6, pepe7, pepe8, pepe9, pepe10, pepe11]
 
     let dapepe = Math.floor((Math.random() * pepes.length));
 
