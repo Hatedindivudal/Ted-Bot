@@ -7,6 +7,11 @@ const PREFIX = '.';
 
 const embed = new Discord.MessageEmbed();
 
+
+const cheerio = require('cheerio')
+
+const request = require('request')
+
 const fs = require('fs');
 client.commands = new Discord.Collection();
  
@@ -52,8 +57,7 @@ client.on('message', message => {
     }
        
 
-        
-
+    
       
 
         
@@ -148,15 +152,63 @@ client.on('message', message => {
                             }
                 
 
+                           
+
+                            
+
+
+
                             switch (args[0]) {
-                                case 'roles':
-                                    client.commands.get('roles').execute(message, args)
-                                    
-
-
+                                case 'image':
+                                image(message);
+                         
+                                break;
                             }
+                         
+                        });
+                         
+                        function image(message){
+                         
+                            var options = {
+                                url: "http://results.dogpile.com/serp?qc=images&q=" + "Cursed Images",
+                                method: "GET",
+                                headers: {
+                                    "Accept": "text/html",
+                                    "User-Agent": "Chrome"
+                                }
+                            };
+                         
+                         
+                         
+                        }
+                         
+                            request(options, function(error, response, responseBody) {
+                                if (error) {
+                                    return;
+                                }
+                         
+                         
+                                $ = cheerio.load(responseBody);
+                         
+                         
+                                var links = $(".image a.link");
+                         
+                                var urls = new Array(links.length).fill(0).map((v, i) => links.eq(i).attr("href"));
+                               
+                                console.log(urls);
+                         
+                                if (!urls.length) {
+                                   
+                                    return;
+                                }
+                         
+                                // Send result
+                                message.channel.send( urls[Math.floor(Math.random() * urls.length)]);
+                            
 
-            
+
+
+                        
                                     
 
 });
