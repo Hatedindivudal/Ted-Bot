@@ -151,11 +151,14 @@ client.on('message', message => {
 
                             }
                 
-
+                            switch (args[0]) {
+                                case 'lockdown':
+                                   client.commands.get('lockdown').execute(message, args);
+                                   break;
                            
 
                             
-
+                        }
 
 
    switch (args[0]) {
