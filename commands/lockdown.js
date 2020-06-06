@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 const validateFlag = f => f === 'true' || f === 'false' || f === 'null';
 
 const prefix = "." //put any prefix here
-let args = message.content.substring(prefix.length).split(" ");
+let args = msg.content.substring(prefix.length).split(" ");
 
 const IGNORED = new Set([
   // PLACE YOUR CHANNEL IDS HERE
