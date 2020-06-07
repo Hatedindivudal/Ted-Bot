@@ -1,5 +1,8 @@
 const ms = require('ms');
 const Discord = require('discord.js')
+const client = new Discord.Client();
+
+
 module.exports = {
 name: 'lockdown',
 description: "Lockdowns all channels",
