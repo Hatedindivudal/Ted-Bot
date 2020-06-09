@@ -31,6 +31,7 @@ const ms = require('ms');
 
 client.on('ready', () => {
     console.log('attepmt #2');
+    client.user.setActivity('Testing 123', { type: 'WATCHING'})
 
 })
 
