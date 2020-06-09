@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const randomizeCase = word => word.split('').map(c => Math.random() > 0.5 ? c.toUpperCase() : c.toLowerCase()).join('');
+   
 module.exports = {
     name: 'mock',
     description: 'Mocks what a user says',
