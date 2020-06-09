@@ -3,8 +3,8 @@ const Discord = require("discord.js");
 const ms = require('ms');
 module.exports = {
 
-name: 'mock',
-description: 'Mocks what a user says',
+name: 'lockdown',
+description: 'lockdown all channels',
 
 execute(message, args) {
 
