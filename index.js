@@ -175,6 +175,8 @@ client.on('message', message => {
  
 function image(message){
     let args = message.content.slice(PREFIX.length).split(" ");
+    if(!args[0]) return message.channel.send("Please enter a number of messages to clear! `Usage: !clear <amount>`");
+
     var search  = args.toString();
     
     var options = {
