@@ -56,7 +56,7 @@ client.on('message', message => {
 
 
     switch (args[0]) {
-        case 'kick':
+        case 'kick'.toLocaleLowerCase():
             client.commands.get('kick').execute(message, args)
 
 
