@@ -44,6 +44,8 @@ client.on('message', message => {
 
     if (!message.content.startsWith(PREFIX)) return;
     let args = message.content.substring(PREFIX.length).split(" ");
+    if (!message.content.startsWith(prefix).toLowerCase());
+
 
 
 
@@ -56,7 +58,7 @@ client.on('message', message => {
 
 
     switch (args[0]) {
-        case 'kick'.toLowerCase():
+        case 'kick':
             client.commands.get('kick').execute(message, args)
 
 
