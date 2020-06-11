@@ -44,7 +44,7 @@ client.on('message', message => {
 
     if (!message.content.startsWith(PREFIX)) return;
     let args = message.content.substring(PREFIX.length).split(" ");
-    if (!message.content.startsWith(PREFIX).toLowerCase());
+    
 
 
 
