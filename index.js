@@ -130,6 +130,7 @@ client.on('message', message => {
                                                      .setTitle('Mhmhmmhmh')
                                                      .addField('meme', message.author.createdAt)
                                                      .setImage('meme2', message.author.avatarURL)
+                                                     message.channel.send(mhm)
 
 
 
