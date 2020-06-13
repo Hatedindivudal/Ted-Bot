@@ -122,7 +122,18 @@ client.on('message', message => {
                             
 
                                     
-                                            
+                                            switch (args[0]) {
+                                         
+                                                 case 'mhm':
+                                                     let mhm = new Discord.MessageEmbed()
+                                                     .setColor('ff0000')
+                                                     .setTitle('Mhmhmmhmh')
+                                                     .addField('meme', message.author.createdAt)
+                                                     .setImage('meme2', message.author.avatarURL)
+
+
+
+                                            }
 
 
                                     
