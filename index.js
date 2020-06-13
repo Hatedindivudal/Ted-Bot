@@ -129,7 +129,7 @@ client.on('message', message => {
                                                      .setColor('ff0000')
                                                      .setTitle('Mhmhmmhmh')
                                                      .addField('meme', message.author.createdAt)
-                                                     .setThumbnail('meme2', message.author.avatarURL)
+                                                     .setURL('meme2', message.author.avatarURL)
                                                      message.channel.send(mhm)
 
 
