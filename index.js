@@ -8,6 +8,10 @@ const PREFIX = '.';
 const embed = new Discord.MessageEmbed();
 
 
+const categories = readdirSync("./commands/")
+
+
+
 const cheerio = require('cheerio')
 
 const request = require('request')
