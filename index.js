@@ -8,7 +8,6 @@ const PREFIX = '.';
 const embed = new Discord.MessageEmbed();
 
 
-const categories = readdirSync("./commands/")
 
 
 
