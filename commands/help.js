@@ -1,8 +1,7 @@
 const Discord = require("discord.js");
 
 const PREFIX = '.';
-if (!message.content.startsWith(PREFIX)) return;
-    let args = message.content.substring(PREFIX.length).split(" ");
+
 
 module.exports = {
 	name: 'help',
