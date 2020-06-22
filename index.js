@@ -35,17 +35,17 @@ fs.readdir("./commands/", (err, files) => {
 
     jsfile.forEach((f, i) => {
         let pull = require(`./commands/${f}`);
-        bot.commands.set(pull.config.name, pull);  
+        client.commands.set(pull.config.name, pull);  
         pull.config.aliases.forEach(alias => {
-            bot.aliases.set(alias, pull.config.name)
+             client.aliases.set(alias, pull.config.name)
         });
     });
 });
 
 const ms = require('ms');
 
-bot.on("message", async message => {
-    if(message.author.bot || message.channel.type === "dm") return;
+client.on("message", async message => {
+    if(message.author.client || message.channel.type === "dm") return;
 
 
 
