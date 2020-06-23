@@ -21,13 +21,14 @@ const IGNORED = new Set([
     // PLACE YOUR CHANNEL IDS HERE
   ]);
 
-const fs = require('fs');
-const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
-for(const file of commandFiles){
-    const command = require(`./commands/${file}`);
- 
-    client.commands.set(command.name, command);
-}
+  const fs = require('fs');
+  client.commands = new Discord.Collection();
+   
+  const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+  for (const file of commandFiles) {
+      const command = require(`./commands/${file}`);
+      client.commands.set(command.name, command);
+  }
  
 
 const ms = require('ms');
