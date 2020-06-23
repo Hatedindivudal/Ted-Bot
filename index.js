@@ -127,15 +127,9 @@ client.on('message', message => {
                             
 
                                     
-                                            switch (args[0]) {
-                                         
-                                                 case 'mhm':
-                                                     let mhm = new Discord.MessageEmbed()
-                                                     .setColor('ff0000')
-                                                     .setTitle('Mhmhmmhmh')
-                                                     .addField('meme', message.author.createdAt)
-                                                     .setURL('meme2', message.author.avatarURL)
-                                                     message.channel.send(mhm)
+                                    switch (args[0]) {
+                                        case 'whois':
+                                            client.commands.get('whois').execute(message, args)
 
 
 
