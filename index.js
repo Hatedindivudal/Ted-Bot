@@ -113,7 +113,7 @@ client.on('message', message => {
 
                                     
                                     case 'bye':
-                                        message.channel.delete
+                                        message.channel.lockPermissions
                                         break;
                                     
 
