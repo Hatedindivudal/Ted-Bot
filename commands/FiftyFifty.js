@@ -1,10 +1,8 @@
 const Discord = require('discord.js');
 const randomPuppy = require('random-puppy');
 
-module.exports = {
-    name: 'FiftyFifty',
-    description: 'Displays Cursed Images',
-    execute(message, args) {
+module.exports.run = async (bot, message, args) => {
+    
 
     const subReddits = ["FiftyFifty"]
     const random = subReddits[Math.floor(Math.random() * subReddits.length)];
@@ -19,4 +17,7 @@ module.exports = {
 
 }
 
+module.exports = {
+    name: 'FiftyFifty',
+    description: "Has a chance to show gorey images",
 }
