@@ -112,8 +112,8 @@ client.on('message', message => {
                             
 
                                     
-                                    case '@Battering#5410':
-                                    message.channel.send('.@Battering#5410')
+                                    case '_workplz_@Battering#5410':
+                                    message.channel.send('._workplz_@Battering#5410')
 
                                     
                                     
