@@ -7,7 +7,7 @@ const PREFIX = '.';
 
 const embed = new Discord.MessageEmbed();
 
-client.aliases = new Discord.Collection();
+
 
 
 
@@ -22,32 +22,19 @@ const IGNORED = new Set([
   ]);
 
 const fs = require('fs');
-client.commands = new Discord.Collection();
+const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
+for(const file of commandFiles){
+    const command = require(`./commands/${file}`);
  
-fs.readdir("./commands/", (err, files) => {
-
-    if(err) console.log(err)
-
-    let jsfile = files.filter(f => f.split(".").pop() === "js") 
-    if(jsfile.length <= 0) {
-         return console.log("[LOGS] Couldn't Find Commands!");
-    }
-
-    jsfile.forEach((f, i) => {
-        let pull = require(`./commands/${f}`);
-        client.commands.set(pull.config.name, pull);  
-        pull.config.aliases.forEach(alias => {
-             client.aliases.set(alias, pull.config.name)
-        });
-    });
-});
+    client.commands.set(command.name, command);
+}
+ 
 
 const ms = require('ms');
 
-client.on("message", async message => {
-    if(message.author.client || message.channel.type === "dm") return;
-
-
+client.on('ready', () => {
+    console.log('attepmt #2');
+    client.user.setActivity('Testing 123', { type: 'WATCHING'})
 
 })
 

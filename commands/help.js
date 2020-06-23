@@ -1,49 +1,51 @@
 const Discord = require("discord.js");
 
-const PREFIX = '.';
+module.exports.run = async (bot, message, args) => {
+    //We have to set a argument for the help command beacuse its going to have a seperate argument.
+    let helpArray = message.content.split(" ");
+    let helpArgs = helpArray.slice(1);
 
+    //Custom Help command by using the second argument.
+    if(helpArgs[0] === 'gaming') {
+        return message.reply("This is a Gaming information Command.")
+    }
 
-module.exports = {
-	name: 'help',
-	description: 'List all of my commands or info about a specific command.',
-	aliases: ['commands'],
-	usage: '[command name]',
-	cooldown: 5,
-	execute(message, args) {
-		const data = [];
-		const { commands } = message.client;
+    //Normal usage of (prefix)help without any args. (Shows all of the commands and you should set the commands yourself)
+    if(!helpArgs[0]) {
+        var embed = new Discord.MessageEmbed()
+            .setAuthor(`Here is the Avaible Commands to use:`)
+            .setDescription('```hi | hello | mute | unmute | addrole | removerole | embed | kick | ban```')
+            .addFields({ name: 'Prefix', value: '```?```', inline: true})
+            .setColor('#00FFF3')
+            
+        message.channel.send(embed);
+    }
 
-		if (!args.length) {
-			data.push('Here\'s a list of all my commands:');
-			data.push(commands.map(command => command.name).join(', '));
-			data.push(`\nYou can send \`${PREFIX}help [command name]\` to get info on a specific command!`);
+    //Reads the moudle.exports.config (This line of code is on commands folder, each command will read automaticly) by the second argument (the command name) and shows the information of it.
+    if(helpArgs[0]) {
+        let command = helpArgs[0];
 
-			return message.author.send(data, { split: true })
-				.then(() => {
-					if (message.channel.type === 'dm') return;
-					message.reply('I\'ve sent you a DM with all my commands!');
-				})
-				.catch(error => {
-					console.error(`Could not send help DM to ${message.author.tag}.\n`, error);
-					message.reply('it seems like I can\'t DM you!');
-				});
-		}
+        if(bot.commands.has(command)) {
+            
+            command = bot.commands.get(command);
+            var embed = new Discord.MessageEmbed()
+            .setAuthor(`${command.config.name} Command`)
+            .setDescription(`
+            - **Command's Description** __${command.config.description || "There is no Description for this command."}__
+            - **Command's Usage:** __${command.config.usage || "No Usage"}__
+            - **Command's Permissions:** __${command.config.accessableby || "Members"}__
+            - **Command's Aliases:** __${command.config.aliases || "No Aliases"}__
+            `)
+            .setColor('#2EFF00')
 
-		const name = args[0].toLowerCase();
-		const command = commands.get(name) || commands.find(c => c.aliases && c.aliases.includes(name));
+        message.channel.send(embed);
+    }}
+}
 
-		if (!command) {
-			return message.reply('that\'s not a valid command!');
-		}
-
-		data.push(`**Name:** ${command.name}`);
-
-		if (command.aliases) data.push(`**Aliases:** ${command.aliases.join(', ')}`);
-		if (command.description) data.push(`**Description:** ${command.description}`);
-		if (command.usage) data.push(`**Usage:** ${PREFIX}${command.name} ${command.usage}`);
-
-		data.push(`**Cooldown:** ${command.cooldown || 3} second(s)`);
-
-		message.channel.send(data, { split: true });
-	},
-};
+module.exports.config = {
+    name: "help",
+    description: "",
+    usage: "?help",
+    accessableby: "Members",
+    aliases: []
+}
