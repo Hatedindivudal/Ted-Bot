@@ -85,11 +85,9 @@ client.on('message', message => {
                 }
 
 
-                switch (args[0]) {
-                    case '50/50':
-                        client.commands.get('FiftyFifty').execute(message, args)
+                
 
-                }
+                
                             switch (args[0]) {
                                 case 'ping':
                                     client.commands.get('ping').execute(message, args)
