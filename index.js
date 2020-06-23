@@ -87,8 +87,8 @@ client.on('message', message => {
 
 
                 switch (args[0]) {
-                    case 'mock':
-                        client.commands.get('mock').execute(message, args)
+                    case '50/50':
+                        client.commands.get('FiftyFifty').execute(message, args)
 
                 }
                             switch (args[0]) {
