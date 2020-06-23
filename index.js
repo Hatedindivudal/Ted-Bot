@@ -7,7 +7,7 @@ const PREFIX = '.';
 
 const embed = new Discord.MessageEmbed();
 
-
+const fs = require("fs")
 
 
 
