@@ -1,13 +1,17 @@
 const Discord = require("discord.js");
 
-module.exports.run = async (bot, message, args) => {
+module.exports = {
+    name: 'help',
+    description: "help",
+
+	execute(message, args) {
     //We have to set a argument for the help command beacuse its going to have a seperate argument.
     let helpArray = message.content.split(" ");
     let helpArgs = helpArray.slice(1);
 
     //Custom Help command by using the second argument.
-    if(helpArgs[0] === 'gaming') {
-        return message.reply("This is a Gaming information Command.")
+    if(helpArgs[0] === 'warn') {
+        return message.reply("Warns a user")
     }
 
     //Normal usage of (prefix)help without any args. (Shows all of the commands and you should set the commands yourself)
@@ -15,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
         var embed = new Discord.MessageEmbed()
             .setAuthor(`Here is the Avaible Commands to use:`)
             .setDescription('```hi | hello | mute | unmute | addrole | removerole | embed | kick | ban```')
-            .addFields({ name: 'Prefix', value: '```?```', inline: true})
+            .addFields({ name: 'Prefix', value: '```.```', inline: true})
             .setColor('#00FFF3')
             
         message.channel.send(embed);
@@ -42,10 +46,4 @@ module.exports.run = async (bot, message, args) => {
     }}
 }
 
-module.exports.config = {
-    name: "help",
-    description: "",
-    usage: "?help",
-    accessableby: "Members",
-    aliases: []
 }
