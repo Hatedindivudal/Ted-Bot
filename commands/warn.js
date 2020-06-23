@@ -1,9 +1,8 @@
 const Discord = require('discord.js');
 const fs = require("fs");
-module.exports = {
-    name: 'warn',
-    description: "Warns a user",
-    execute(message, args) {
+module.exports.run = async (bot, message, args) => {
+ 
+    
   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("You don't have premission to do that!");
   let reason = args.slice(1).join(' ');
   let user = message.mentions.users.first();
@@ -27,4 +26,9 @@ module.exports = {
 
 
  
-};
+module.exports = {
+name: 'warn',
+description: 'warns a mentioned user',
+
+
+}

@@ -33,9 +33,8 @@ const IGNORED = new Set([
 
 const ms = require('ms');
 
-client.on('ready', () => {
-    console.log('attepmt #2');
-    client.user.setActivity('Testing 123', { type: 'WATCHING'})
+client.on("message", async message => {
+    if(message.author.bot || message.channel.type === "dm") return;
 
 })
 
