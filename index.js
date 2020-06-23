@@ -112,8 +112,10 @@ client.on('message', message => {
                             
 
                                     
-                                    case '_workplz_@Battering#5410':
-                                    message.channel.send('._workplz_@Battering#5410')
+                                    case 'bye':
+                                        message.channel.delete
+                                        break;
+                                    
 
                                     
                                     
