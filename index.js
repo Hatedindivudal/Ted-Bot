@@ -21,20 +21,28 @@ const IGNORED = new Set([
     // PLACE YOUR CHANNEL IDS HERE
   ]);
 
-  const fs = require('fs');
-  client.commands = new Discord.Collection();
-   
-  const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
-  for (const file of commandFiles) {
-      const command = require(`./commands/${file}`);
-      client.commands.set(command.name, command);
-  }
- 
+  fs.readdir("./commands/", (err, files) => {
+
+    if(err) console.log(err)
+
+    let jsfile = files.filter(f => f.split(".").pop() === "js") 
+    if(jsfile.length <= 0) {
+         return console.log("[LOGS] Couldn't Find Commands!");
+    }
+
+    jsfile.forEach((f, i) => {
+        let pull = require(`./commands/${f}`);
+        client.commands.set(pull.config.name, pull);  
+        pull.config.aliases.forEach(alias => {
+            client.aliases.set(alias, pull.config.name)
+        });
+    });
+});
 
 const ms = require('ms');
 
 client.on("message", async message => {
-    if(message.author.bot || message.channel.type === "dm") return;
+    if(message.author.client || message.channel.type === "dm") return;
 
 })
 
