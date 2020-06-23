@@ -113,7 +113,7 @@ client.on('message', message => {
 
                                     
                                     case 'bye':
-                                        message.channel.lockPermissions
+                                        message.channel.setNSFW
                                         break;
                                     
 
