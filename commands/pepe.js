@@ -1,10 +1,6 @@
 const Discord = require("discord.js")
-module.exports = {
-    name: 'pepe',
-    description: "Displays pepe",
+module.exports.run = async (client, message, args) => {
 
-execute(message, args) {
-   
     let pepe1 = new Discord.MessageEmbed()
     .setColor("#00ff00")
     .setImage("https://cdn.discordapp.com/emojis/428556352915505165.png?v=1");
@@ -58,6 +54,13 @@ execute(message, args) {
 }
 
   
-}
+module.exports.config = {
+    name: "pepe",
+    description: "",
+    usage: ".pepe",
+    accessableby: "Members",
+    aliases: []
+  }
+  
 
 

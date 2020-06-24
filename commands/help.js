@@ -1,10 +1,7 @@
 const Discord = require("discord.js");
 
-module.exports = {
-    name: 'help',
-    description: "help",
+module.exports.run = async (bot, message, args) => {  
 
-	execute(message, args) {
     //We have to set a argument for the help command beacuse its going to have a seperate argument.
     let helpArray = message.content.split(" ");
     let helpArgs = helpArray.slice(1);
@@ -46,4 +43,10 @@ module.exports = {
     }}
 }
 
+module.exports.config = {
+    name: "help",
+    description: "",
+    usage: ".help",
+    accessableby: "Members",
+    aliases: []
 }

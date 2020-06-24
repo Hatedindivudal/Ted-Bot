@@ -1,11 +1,9 @@
 const Discord = require('discord.js');
 const moment = require('moment');
 
-module.exports = {
-    name: 'whois',
-    description: "Finds info about a specified user",
+module.exports.run = async (bot, message, args) => {
+    
 
-	execute(message, args) {
     let userArray = message.content.split(" ");
     let userArgs = userArray.slice(1);
     let member = message.mentions.members.first() || message.guild.members.cache.get(userArgs[0]) || message.guild.members.cache.find(x => x.user.username.toLowerCase() === userArgs.slice(0).join(" ") || x.user.username === userArgs[0]) || message.member;
@@ -38,4 +36,10 @@ module.exports = {
 
 
 
+module.exports.config = {
+    name: "whois",
+    description: "",
+    usage: ".whois",
+    accessableby: "Members",
+    aliases: []
 }

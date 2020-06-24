@@ -1,8 +1,6 @@
 const Discord = require('discord.js');  
-module.exports = {
-    name: 'ban',
-    description: 'Bans specified user.',
-    execute(message, args) {
+module.exports.run = async (bot, message, args) => {
+
                      if(!message.member.hasPermission('BAN_MEMBERS'))
                        message.channel.send("You do not have Ban perms")
                        const user = message.mentions.users.first();
@@ -31,4 +29,12 @@ module.exports = {
                         }
                     }
 
+                
+
+                module.exports.config = {
+                    name: "ban",
+                    description: "",
+                    usage: ".ban",
+                    accessableby: "Members",
+                    aliases: []
                 }

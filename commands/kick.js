@@ -1,8 +1,6 @@
 const Discord = require("discord.js");
-module.exports = {
-    name: 'kick',
-    description: "Kicks Mentioned user",
-	execute(message, args) {
+mmodule.exports.run = async (bot, message, args) => {  
+
 
 
 
@@ -36,4 +34,13 @@ module.exports = {
 } 
 
 
+
+
+
+module.exports.config = {
+    name: "kick",
+    description: "",
+    usage: ".kick",
+    accessableby: "Members",
+    aliases: []
 }

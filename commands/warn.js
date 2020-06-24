@@ -26,9 +26,10 @@ module.exports.run = async (client, message, args) => {
 
 
  
-module.exports = {
-name: 'warn',
-description: 'warns a mentioned user',
-
-
+module.exports.config = {
+  name: "warn",
+  description: "",
+  usage: ".warn",
+  accessableby: "Members",
+  aliases: []
 }
