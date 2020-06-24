@@ -3,7 +3,7 @@ const client = new Discord.Client();
 
 
 
-const PREFIX = '.';
+const prefix = '.';
 
 const embed = new Discord.MessageEmbed();
 
@@ -46,12 +46,16 @@ client.on('message', message => {
 
     
 
-    if (!message.content.startsWith(PREFIX)) return;
-    let args = message.content.substring(PREFIX.length).split(" ");
+    if (!message.content.startsWith(prefix)) return;
+    let args = message.content.substring(prefix.length).split(" ");
+
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+    let args = message.content.substring(message.content.indexOf(' ')+1);
     
 
 
-    if(!message.content.startsWith(prefix)) return;
+    if(!message.content.startsWith(PREFI)) return;
     let commandfile = bot.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)))
     if(commandfile) commandfile.run(bot,message,args)
 })
