@@ -47,7 +47,6 @@ client.on('message', message => {
     
 
     if (!message.content.startsWith(prefix)) return;
-    let args = message.content.substring(prefix.length).split(" ");
 
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
