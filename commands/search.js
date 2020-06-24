@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
 
 image(message);
  
-break;
+
 
 
 
