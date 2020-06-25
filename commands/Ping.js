@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
 	module.exports.config = {
 		name: "ping",
 		description: "",
-		usage: "ping",
-		accessableby: "ping",
+		usage: ".ping",
+		accessableby: "Members",
 		aliases: []
 	}
