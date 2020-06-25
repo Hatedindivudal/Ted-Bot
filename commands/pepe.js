@@ -1,5 +1,5 @@
 const Discord = require("discord.js")
-module.exports.run = async (client, message, args) => {
+module.exports.run = async (bot, message, args) => {
 
     let pepe1 = new Discord.MessageEmbed()
     .setColor("#00ff00")

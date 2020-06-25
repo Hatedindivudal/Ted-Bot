@@ -22,23 +22,23 @@ const IGNORED = new Set([
   ]);
 
   const fs = require('fs');
-  client.commands = new Discord.Collection();
+  bot.commands = new Discord.Collection();
    
   const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
   for (const file of commandFiles) {
       const command = require(`./commands/${file}`);
-      client.commands.set(command.name, command);
+      bot.commands.set(command.name, command);
   }
  
 
 const ms = require('ms');
 
-client.on("message", async message => {
-    if(message.author.client || message.channel.type === "dm") return;
+bot.on("message", async message => {
+    if(message.author.bot || message.channel.type === "dm") return;
 
 })
 
-client.on('message', message => {
+bot.on('message', message => {
 
 
 
@@ -55,7 +55,7 @@ client.on('message', message => {
 
 
     if(!message.content.startsWith(prefix)) return;
-    let commandfile = client.commands.get(cmd.slice(prefix.length)) || client.commands.get(client.aliases.get(cmd.slice(prefix.length)))
-    if(commandfile) commandfile.run(client,message,args)
+    let commandfile = bot.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)))
+    if(commandfile) commandfile.run(bot,message,args)
 })
-client.login(process.env.token);
+bot.login(process.env.token);
