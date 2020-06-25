@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 
 
 
-const prefix = '.';
+const prefix = '=';
 
 const embed = new Discord.MessageEmbed();
 
@@ -69,5 +69,9 @@ bot.on('message', message => {
     if(!message.content.startsWith(prefix)) return;
     let commandfile = bot.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)))
     if(commandfile) commandfile.run(bot,message,args)
+
+
+
+    
 })
 bot.login(process.env.token);
