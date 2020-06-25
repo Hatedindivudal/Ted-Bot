@@ -55,7 +55,7 @@ client.on('message', message => {
 
 
     if(!message.content.startsWith(prefix)) return;
-    let commandfile = client.commands.get(cmd.slice(prefix.length))
+    let commandfile = client.commands.get(cmd.slice(prefix.length)) || client.commands.get(client.aliases.get(cmd.slice(prefix.length)))
     if(commandfile) commandfile.run(client,message,args)
 })
 client.login(process.env.token);
