@@ -6,21 +6,6 @@ module.exports.run = async (bot, message, args) => {
     let helpArray = message.content.split(" ");
     let helpArgs = helpArray.slice(1);
 
-    //Custom Help command by using the second argument.
-    if(helpArgs[0] === 'warn') {
-        return message.reply("Warns a user")
-    }
-
-    //Normal usage of (prefix)help without any args. (Shows all of the commands and you should set the commands yourself)
-    if(!helpArgs[0]) {
-        var embed2 = new Discord.MessageEmbed()
-            .setAuthor(`Here is the Avaible Commands to use:`)
-            .setDescription('```hi | hello | mute | unmute | addrole | removerole | embed | kick | ban```')
-            .addFields({ name: 'Prefix', value: '```.```', inline: true})
-            .setColor('#00FFF3')
-            
-        message.channel.send(embed2);
-    }
 
     //Reads the moudle.exports.config (This line of code is on commands folder, each command will read automaticly) by the second argument (the command name) and shows the information of it.
     if(helpArgs[0]) {
