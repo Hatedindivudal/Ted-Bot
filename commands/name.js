@@ -20,11 +20,14 @@ message.channel.name('noodleman')
 
 
 
+
+}
+
 module.exports.config = {
     name: "name",
     description: "",
     usage: ".name",
     accessableby: "Members",
     aliases: []
-}
+
 }
