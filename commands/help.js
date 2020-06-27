@@ -14,12 +14,12 @@ module.exports.run = async (bot, message, args) => {
     if(!helpArgs[0]) {
         var embed = new Discord.MessageEmbed()
             .setAuthor(`Here is the Avaible Commands to use:`)
-            .setDescription('```kick | ban```')
-            .addFields({ name: 'Prefix', value: '```?```', inline: true})
+            .setDescription('```kick | ban | pepe | cursed | ping | search | whois ```')
+            .addFields({ name: 'Prefix', value: '```=```', inline: true})
             .setColor('#00FFF3')
             
         message.channel.send(embed);
-    }
+    } 
 
     //Reads the moudle.exports.config (This line of code is on commands folder, each command will read automaticly) by the second argument (the command name) and shows the information of it.
     if(helpArgs[0]) {
