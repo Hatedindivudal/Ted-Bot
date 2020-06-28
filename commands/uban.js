@@ -11,7 +11,7 @@ const Discord = require('discord.js');
         if(!message.guild.me.hasPermission(["BAN_MEMBERS"])) return message.channel.send("I dont have permission to perform this command!")|
         message.delete()
         try {
-            message.guild.members.unban(bannedMember)
+            guild.members.unban(bannedMember)
             message.channel.send(`**${bannedMember.tag}** has been unbanned from the guild!`)
         } catch(e) {
             console.log(e.message)
