@@ -2,39 +2,73 @@
 const Discord = require('discord.js');
 module.exports.run = async (bot, message, args) => {
     
+    let unbanned = message.mentions.users.first() || client.users.resolve(args[0]);
+    let reason = args.slice(1).join(" ");
 
-    if(!message.member.hasPermission(["BAN_MEMBERS", "ADMINISTRATOR"])) return message.channel.send("You can't do that.")
+    let member = await client.users.fetch(unbanned);
+    let ban = await message.guild.fetchBans();
 
-    if(!args[0]) return message.channel.send("Give me a valid ID"); 
-    //This if() checks if we typed anything after "!unban"
+    // MESSAGES
 
-    let bannedMember;
-    //This try...catch solves the problem with the await
-    try{                                                            
-        bannedMember = await bot.users.fetch(args[0])
-    }catch(e){
-        if(!bannedMember) return message.channel.send("That's not a valid ID")
+    if (!unbanned) {
+      let unbaninfoembed = new Discord.MessageEmbed()
+        .setTitle("Command: unban")
+        .setDescription(
+          `**Description:** Unban a member. \n` +
+            "**Sub Commands:**\n" +
+            "" +
+            "**Usage:**\n" +
+            "-unban [user] (limit) (reason) \n" +
+            "**Examples:** \n" +
+            "-unban <@597253939469221891> good guy \n" +
+            "-unban 597253939469221891 good guy "
+        )
+        .setColor("#2C2F33");
+      message.channel.send(unbaninfoembed);
+
+      return;
     }
 
-    //Check if the user is not banned
-    try {
-            await message.guild.fetchBan(args[0])
-        } catch(e){
-            message.channel.send('This user is not banned.');
-            return;
-        }
+    if (!ban.get(member.id)) {
+      let notbannedembed = new Discord.MessageEmbed()
+        .setDescription("This user is not banned")
+        .setColor("#2C2F33");
+      message.channel.send(notbannedembed);
 
-    let reason = args.slice(1).join(" ")
-    if(!reason) reason = "..."
-
-    if(!message.guild.me.hasPermission(["BAN_MEMBERS", "ADMINISTRATOR"])) return message.channel.send("I can't do that")
-    message.delete()
-    try {
-        message.guild.members.unban(bannedMember, {reason: reason})
-        message.channel.send(`${bannedMember.tag} was readmitted.`)
-    } catch(e) {
-        console.log(e.message)
+      return;
     }
+
+    if (!message.guild.me.permissions.has("BAN_MEMBERS")) {
+      let botnoperms = new Discord.MessageEmbed()
+        .setDescription(
+          "I do not have permissions, please contact an administrator"
+        )
+        .setColor("#2C2F33");
+      message.channel.send(botnoperms);
+
+      return;
+    }
+
+    if (!message.member.permissions.has("BAN_MEMBERS")) {
+      let nopermsembed = new Discord.MessageEmbed()
+        .setDescription(
+          "You do not have permission `BAN MEMBERS` contact an administrator"
+        )
+        .setColor("#2C2F33");
+      message.channel.send(nopermsembed);
+
+      return;
+    }
+
+    var user = ban.get(member.id);
+    message.guild.members.unban(member);
+    let successfullyembed = new Discord.MessageEmbed()
+      .setTitle(`${member.tag} has been successfully unbanned.`)
+      .setColor("#2C2F33");
+
+    message.channel.send(successfullyembed);
+
+
 }
 
 module.exports.config = {
