@@ -35,13 +35,15 @@ module.exports.run = async (bot, message, args) => {
     
     }
     
+    
+    }
+
+
     module.exports.config = {
         name: "unban",
         description: "Unban a user from the guild!",
         usage: "!unban",
         accessableby: "Administrators",
         aliases: ["ub", "unbanish"]
+
     }
-
-
-}
