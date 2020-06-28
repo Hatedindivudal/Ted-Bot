@@ -1,22 +1,41 @@
 
 const Discord = require('discord.js');
     
-    module.exports.run = async (bot, message, args) => {
-        if(!message.member.hasPermission(["BAN_MEMBERS"])) return message.channel.send("You dont have permission to perform this command!")
-        if(isNaN(args[0])) return message.channel.send("You need to provide an ID.")
-        let bannedMember =  bot.users.fetch(args[0])
-            if(!bannedMember) return message.channel.send("Please provide a user id to unban someone!")
-    
-    
-        if(!message.guild.me.hasPermission(["BAN_MEMBERS"])) return message.channel.send("I dont have permission to perform this command!")|
-        message.delete()
-        try {
-            guild.members.unban(bannedMember)
-            message.channel.send(`**${bannedMember.tag}** has been unbanned from the guild!`)
-        } catch(e) {
-            console.log(e.message)
-        }
+module.exports.run = async (bot, message, args) => { 
+
+    if(!message.member.hasPermission(["BAN_MEMBERS", "ADMINISTRATOR"])) return message.channel.send("You can't do that.")
+
+    if(!args[0]) return message.channel.send("Give me a valid ID"); 
+    //This if() checks if we typed anything after "!unban"
+
+    let bannedMember;
+    //This try...catch solves the problem with the await
+    try{                                                            
+        bannedMember = await bot.users.fetch(args[0])
+    }catch(e){
+        if(!bannedMember) return message.channel.send("That's not a valid ID")
     }
+
+    //Check if the user is not banned
+    try {
+            await message.guild.fetchBan(args[0])
+        } catch(e){
+            message.channel.send('This user is not banned.');
+            return;
+        }
+
+    
+
+    if(!message.guild.me.hasPermission(["BAN_MEMBERS", "ADMINISTRATOR"])) return message.channel.send("I can't do that")
+    message.delete()
+    try {
+        message.guild.members.unban(bannedMember)
+        message.channel.send(`${bannedMember.tag} was readmitted.`)
+    } catch(e) {
+        console.log(e.message)
+    }
+}
+    
     
 
     
