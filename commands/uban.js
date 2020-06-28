@@ -2,10 +2,10 @@
 const Discord = require('discord.js');
 module.exports.run = async (bot, message, args) => {
     
-    let unbanned = message.mentions.users.first() || client.users.resolve(args[0]);
+    let unbanned = message.mentions.users.first() || bot.users.resolve(args[0]);
     let reason = args.slice(1).join(" ");
 
-    let member = await client.users.fetch(unbanned);
+    let member = await bot.users.fetch(unbanned);
     let ban = await message.guild.fetchBans();
 
     // MESSAGES
