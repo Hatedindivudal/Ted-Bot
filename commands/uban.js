@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
     if(!args[0]) return message.channel.send("Give me a valid ID"); 
     //This if() checks if we typed anything after "!unban"
 
-    let bannedMember
+    let bannedMember;
     try{                                                            
         bannedMember = await bot.users.fetch(args[0])
     }catch(e){
