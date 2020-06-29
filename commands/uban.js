@@ -2,7 +2,8 @@
 const Discord = require('discord.js');
     
 module.exports.run = (bot, message, [id]) => {
-    if (!message.member.roles.cache.find(r => r.name === "UNBAN_PERMS")) return message.channel.send('❌**You do not have perms**')
+    if(!message.member.hasPermission('BAN_MEMBERS'))
+    message.channel.send("You do not have Ban perms")
 
     if (id) {
         message.guild.members.unban(id).then(() => {
