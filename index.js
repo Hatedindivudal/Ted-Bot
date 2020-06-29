@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 
 
 
-const prefix = '=';
+const prefix = '-';
 
 const embed = new Discord.MessageEmbed();
 
