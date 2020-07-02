@@ -59,10 +59,11 @@ bot.on("message", async message => {
     
 
     if (!message.content.startsWith(prefix)) return;
-    const args = message.content.slice(prefix.length).split(/ +/);
-    const commandName = args.shift().toLowerCase();
-    const command = bot.commands.get(commandName)
-            || bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+    let cmd = messageArray[0];
+const args = message.content.slice(prefix.length).split(/ +/);
+const commandName = args.shift().toLowerCase();
+const command = client.commands.get(commandName)
+        || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
     
 
 
