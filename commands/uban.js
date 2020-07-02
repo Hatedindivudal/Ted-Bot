@@ -34,7 +34,7 @@ module.exports.run = async (bot, message, args) => {
         name: "unban",
         description: "Unban a user from the guild!",
         usage: "!unban",
-        accessableby: "Members",
+        accessableby: "Staff",
         aliases: ["ub", "unbanish"]
 
     }
