@@ -45,12 +45,12 @@ fs.readdir("./commands/", (err, files) => {
 
 const ms = require('ms');
 
+
 bot.on("message", async message => {
     if(message.author.bot || message.channel.type === "dm") return;
 
-})
 
-bot.on('message', message => {
+
 
 
 
@@ -59,10 +59,10 @@ bot.on('message', message => {
     
 
     if (!message.content.startsWith(prefix)) return;
-
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    let args = message.content.substring(message.content.indexOf(' ')+1);
+    const args = message.content.slice(prefix.length).split(/ +/);
+    const commandName = args.shift().toLowerCase();
+    const command = client.commands.get(commandName)
+            || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
     
 
 
@@ -74,4 +74,5 @@ bot.on('message', message => {
 
     
 })
+
 bot.login(process.env.token);
