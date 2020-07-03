@@ -3,7 +3,7 @@ module.exports.run = async (bot, message, args) => {
 
                      if(!message.member.hasPermission('BAN_MEMBERS'))
                        message.channel.send("You do not have Ban perms")
-                       if (banMember.bannable) return;
+                       if (!banMember.bannable) return;
 
                        const user = message.mentions.users.first();
 
