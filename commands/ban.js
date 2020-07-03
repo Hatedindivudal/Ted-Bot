@@ -1,42 +1,25 @@
-const Discord = require('discord.js');  
 module.exports.run = async (bot, message, args) => {
+    if(!message.member.hasPermission('BAN_MEMBERS')) 
+        message.channel.send("You do not have Permission");
+    else {
+        let bannedMember = await message.guild.members.ban(args);
+        if(bannedMember){
 
-                     if(!message.member.hasPermission('BAN_MEMBERS'))
-                       message.channel.send("You do not have Ban perms")
-                       if (!banMember.bannable) return;
+        try {
+            console.log(bannedMember.tag + " has been removed");
+            message.channel.send (`${bannedMember} has been kicked!`)
+        }
+            catch(err) {
+            console.log(err);
+        }
+    }
+}
+}
 
-                       const user = message.mentions.users.first();
-
-                        if (user) {
-                            const member = message.guild.member(user);
-
-                            if (member) {
-                                member.ban({
-                                    ression: 'You have been removed from the server'
-                                }).then(() => {
-                                    message.reply(`${user.tag} Has been removed from the server!`)
-
-
-                                })
-                            } else {
-                                message.reply('I Could not find that user inside this server.')
-
-
-                            }
-
-
-                        } else {
-                            message.reply('I Could not find that user inside this server.')
-                            
-                        }
-                    }
-
-                
-
-                module.exports.config = {
-                    name: "ban",
-                    description: "",
-                    usage: ".ban",
-                    accessableby: "Members",
-                    aliases: []
-                }
+module.exports.config = {
+    name: "ban",
+    description: "Bans a Users",
+    usage: "?ban",
+    accessableby: "Admins",
+    aliases: []
+}
