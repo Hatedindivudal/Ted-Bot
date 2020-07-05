@@ -3,7 +3,7 @@ const Discord = require("discord.js")
 module.exports.run = async (bot, message, args) => {
     if (!message.member.hasPermission("KICK_MEMBERS")  && message.author.id !== "291221132256870400") return message.channel.send("Sorry, you don't have permissions to use this!");
     
-    let xdemb = new Discord.RichEmbed()
+    let xdemb = new Discord.MessageEmbed()
     .setColor("#00ff00")
     .setTitle("Kick Command")
     .addField("Description:", `Kick a member`, true)
