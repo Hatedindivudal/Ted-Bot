@@ -27,7 +27,7 @@ module.exports.run = async (bot, message, args) => {
 
 
 
-    channel.updateOverwrite(channel.guild.roles.everyone, { SEND_MESSAGES: false });
+    guild.channel.updateOverwrite(channel.guild.roles.everyone, { SEND_MESSAGES: false });
 
 
 
