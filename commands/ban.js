@@ -35,13 +35,12 @@ module.exports.run = async (bot, message, args) => {
 
     message.channel.send(bean)
 
-    message.delete()
 }
 
 module.exports.config = {
     name: "ban",
-    description: "Bans a Users",
-    usage: "?ban",
+    description: "Bans a User",
+    usage: "-ban",
     accessableby: "Admins",
     aliases: []
 }
