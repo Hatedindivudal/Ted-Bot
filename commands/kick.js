@@ -36,11 +36,12 @@ module.exports.run = async (bot, message, args) => {
         .addField("Reason", res)
         .setTimestamp()
         .setFooter(member.id)
-    }
+    
   
         message.channel.send(kick)
   
       message.delete();
+    }
 
 module.exports.config = {
     name: "kick",
