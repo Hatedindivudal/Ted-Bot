@@ -1,6 +1,6 @@
 const Discord = require("discord.js")
 module.exports.run = async (bot, message, args) => {
-    let xdemb = new Discord.MessageEmbed()
+    const xdemb = new Discord.MessageEmbed()
     .setColor("#00ff00")
     .setTitle("Ban Command")
     .addField("Description:", `Ban a member`, true)
@@ -25,7 +25,7 @@ module.exports.run = async (bot, message, args) => {
 
     await member.ban(reason).catch(error => message.channel.send(`Sorry, I coldn't ban because of: ${error}`));
 
-    let bean = new Discord.MessageEmbed()
+    const bean = new Discord.MessageEmbed()
     .setColor("#00ff00")
     .setTitle(`Ban | ${member.user.tag}`)
     .addField("User", member, true)
