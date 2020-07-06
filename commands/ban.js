@@ -9,13 +9,13 @@ module.exports.run = async (bot, message, args) => {
 
     if(!message.member.hasPermission('KICK_MEMBERS'))
     message.channel.send("You don't have permission to use that command.");
-    let member = message.mentions.members.first();
+    const member = message.mentions.members.first();
     if(!member) return message.channel.send(xdemb)
     if(!member.bannable) return message.channel.send("I can't ban this user!")
 
     if(member.id === message.author.id) return message.channel.send("You can't ban your self")
 
-    let reason = args.slice(1).join(" ");
+    const reason = args.slice(1).join(" ");
 
     if(!reason) {
         res = "No reason given";
