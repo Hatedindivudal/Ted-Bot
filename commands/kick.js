@@ -1,7 +1,7 @@
 
 const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
-    if (!message.member.hasPermission("KICK_MEMBERS")) 
+    if (!message.member.hasPermission("KICK_MEMBERS"));
     const xdemb = new Discord.MessageEmbed()
     .setColor("#00ff00")
     .setTitle("Kick Command")
