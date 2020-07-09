@@ -8,7 +8,7 @@ const embed = new Discord.MessageEmbed()
 .setColor("RANDOM")
 .setTitle('**BATTLE!!**')
 .addField(
-    ":  **:monkey:- 150 hp -- 300 dps**",
+    ":  **:monkey:- 150 hp -- 300 dps**      **:monkey:- 150 hp -- 300 dps**",
     "***He is overpowered***"
   )                
   .addField(
@@ -17,7 +17,8 @@ const embed = new Discord.MessageEmbed()
 
   ) 
   .addField(
-    " :horse: - 50 hp -- 10 dps",
+    " :horse: - 50 hp -- 10 dps           :horse: - 50 hp -- 10 dps",
+    
     "***man what the fuck ***"
 
 )                                                                              
