@@ -6,9 +6,9 @@ module.exports.run = async (bot, message, args) => {
 
 const embed = new Discord.MessageEmbed()
 .setColor("RANDOM")
-.setTitle('**BATTLE!!**')
+.setTitle('**Jazzy Vs Hated!!**')
 .addField(
-    ":  **:monkey:- 150 hp -- 300 dps**      **:monkey:- 150 hp -- 300 dps**",
+    "**:monkey:- 150 hp -- 300 dps**      **:monkey:- 150 hp -- 300 dps**",
     "***Jazzys retarded animal***"
   )                
   .addField(
@@ -19,7 +19,7 @@ const embed = new Discord.MessageEmbed()
   .addField(
     " :horse: - 50 hp -- 10 dps           :cat2: - 50 hp -- 10 dps",
     
-    "***Trained horse***"
+    "***H                                    ***"
 
 )                                                                              
 message.channel.send(embed)
