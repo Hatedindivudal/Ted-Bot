@@ -11,7 +11,7 @@ message.channel.send('Is my daddy')
 
 
 module.exports.config = {
-    name: "help",
+    name: "jazzy",
     description: "",
     usage: "?help",
     accessableby: "Members",
