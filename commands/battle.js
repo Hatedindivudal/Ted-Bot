@@ -7,9 +7,13 @@ module.exports.run = async (bot, message, args) => {
 const embed = new Discord.MessageEmbed()
 .setColor("RANDOM")
 .setTitle('**BATTLE!!**')
-.addField('L. 6 :cat2:')    
-.set                                                                                            
+.addField(
+    ":cat2:  **- 100 hp -- 70 dps**",
+    "***He is overpowered***"
+  )                                                                                           
 message.channel.send(embed)
+
+
 
 
 
