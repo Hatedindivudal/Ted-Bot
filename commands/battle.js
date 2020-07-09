@@ -9,17 +9,17 @@ const embed = new Discord.MessageEmbed()
 .setTitle('**BATTLE!!**')
 .addField(
     ":  **:monkey:- 150 hp -- 300 dps**      **:monkey:- 150 hp -- 300 dps**",
-    "***He is overpowered***"
+    "***Jazzys retarded animal***"
   )                
   .addField(
-      "**:bear: - 150 hp -- 20 dps**",
-      "***bruh everything else is insane but bear like tf***"
+      "**:bear: - 150 hp -- 20 dps**       :bee: -20 hp -- 50 dps",
+      "***Wild bear***"
 
   ) 
   .addField(
-    " :horse: - 50 hp -- 10 dps           :horse: - 50 hp -- 10 dps",
+    " :horse: - 50 hp -- 10 dps           :cat2: - 50 hp -- 10 dps",
     
-    "***man what the fuck ***"
+    "***Trained horse***"
 
 )                                                                              
 message.channel.send(embed)
