@@ -47,7 +47,6 @@ const ms = require('ms');
 
 
 bot.on("message", async message => {
-    if(message.author.bot || message.channel.type === "dm") return;
     if (message.content.toLowerCase() === '-rules'){
         let filter = m => m.author.id === message.author.id;
         let q1 = new Discord.MessageCollector(message.channel, filter, {
