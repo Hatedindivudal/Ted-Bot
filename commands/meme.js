@@ -18,8 +18,8 @@ module.exports.run = async (bot, message, args) => {
 
 module.exports.config = {
     name: "meme",
-    description: "",
-    usage: ".",
+    description: "Pulls random memes from r/meme r/memes and r/dankmemes Some memes will not load i am not sure why it is an issue",
+    usage: "-",
     accessableby: "Members",
     aliases: []
 }

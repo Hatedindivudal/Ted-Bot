@@ -14,8 +14,8 @@ module.exports.run = async (bot, message, args) => {
     if(!helpArgs[0]) {
         var embed = new Discord.MessageEmbed()
             .setAuthor(`Here is the Avaible Commands to use:`)
-            .setDescription('```kick | ban | pepe | cursed | ping | search | whois ```')
-            .addFields({ name: 'Prefix', value: '```=```', inline: true})
+            .setDescription('```kick | ban | pepe | cursed | ping | search | whois | unban | meme | ping | purge | serverinfo ```')
+            .addFields({ name: 'Prefix', value: '```-```', inline: true})
             .setColor('#00FFF3')
             
         message.channel.send(embed);

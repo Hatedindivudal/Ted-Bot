@@ -28,9 +28,9 @@ module.exports.run = async (bot, message, args) => {
 }
 
 module.exports.config = {
-    name: "clear",
-    description: "clears message",
-    usage: "?clear",
+    name: "purge",
+    description: "Purges Specified amount can not go past 100",
+    usage: "-purge",
     accessableby: "Members",
     aliases: ['c', 'purge']
 }

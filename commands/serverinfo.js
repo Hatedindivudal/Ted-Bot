@@ -32,7 +32,7 @@ module.exports.run = async (bot, message, args) => {
 
 module.exports.config = {
     name: "serverinfo",
-    description: "",
+    description: "Shows information about the guild",
     usage: ".serverinfo",
     accessableby: "Members",
     aliases: []
