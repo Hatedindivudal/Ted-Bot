@@ -78,6 +78,8 @@ bot.on("message", async message => {
 
 
 
+    }
+})
 
 
     const usersMap = new Map();
@@ -94,8 +96,6 @@ bot.on("message", async message => {
 
 
 
-}
-})
 
 
 
