@@ -65,7 +65,7 @@ bot.on("message", async message => {
             })
             q2.on('collect', async (message, col) => {
                 var embed2 = new Discord.MessageEmbed()
-                .setColor('RANDOM')
+                .setColor('#add8e6')
                 .setTitle('Server Rules')
                 .addField('The server rules are', message.content)
                 
