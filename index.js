@@ -71,7 +71,7 @@ bot.on("message", async message => {
                 channel.send(embed2);
                 await message.react('😀');
                 message.channel.send(`Its working! go to ${channel} to check your message out!!`)
-                q2.stop()
+                q2.stop
 
 
 
