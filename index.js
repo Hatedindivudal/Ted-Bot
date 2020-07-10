@@ -48,6 +48,27 @@ const ms = require('ms');
 
 bot.on("message", async message => {
     if(message.author.bot || message.channel.type === "dm") return;
+    if (message.content.toLowerCase() === '-rules'){
+        let filter = m => m.author.id === message.author.id;
+        let q1 = new Discord.MessageCollector(message.channel, filter, {
+            max: 1
+        })
+        message.channel.send('Which Channel Should I Send The Meseage Too?');
+
+        q1.on('collect', async (message, col) => {
+            let channel = message.mentions.channels.first();
+
+            message.channel.send('Great! Now what should i say?')
+            q1.stop();
+            let q2 = new Discord.MessageCollector(message.channel, filter, {
+                max: 1
+            })
+            q2.on('collect', async (message, col) => {
+                channel.send(message.content);
+                await message.react('😀');
+                message.channel.send(`Its working! go to ${channel} to check your message out!!`)
+                q2.stop();
+         
 
 
 
@@ -65,9 +86,14 @@ bot.on("message", async message => {
     bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
     if(command) command.run(bot,message,args)
 
-
-
-    
 })
+})
+
+
+}
+})
+
+
+
 
 bot.login(process.env.token);

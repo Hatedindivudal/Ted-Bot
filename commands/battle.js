@@ -9,17 +9,17 @@ const embed = new Discord.MessageEmbed()
 .setTitle('**Jazzy Vs Hated!!**')
 .addField(
     "**:monkey:- 150 hp -- 300 dps**      **:monkey:- 150 hp -- 300 dps**",
-    "***Jazzys retarded animal***"
+    "***Jazzys retarded animal              Hateds Slave                 ***"
   )                
   .addField(
       "**:bear: - 150 hp -- 20 dps**       :bee: -20 hp -- 50 dps",
-      "***Wild bear***"
+      "***Wild bear                         Buzzy Boi               ***"
 
   ) 
   .addField(
     " :horse: - 50 hp -- 10 dps           :cat2: - 50 hp -- 10 dps",
     
-    "***H                                    ***"
+    "***Jazzys trained horse               Hateds dumb pussy              ***"
 
 )                                                                              
 message.channel.send(embed)
