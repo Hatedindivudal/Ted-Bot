@@ -64,7 +64,12 @@ bot.on("message", async message => {
                 max: 1
             })
             q2.on('collect', async (message, col) => {
-                channel.send(message.content);
+                var embed2 = new Discord.MessageEmbed()
+                .setColor('RANDOM')
+                .setTitle('Server Rules')
+                .addField('The server rules are', message.content)
+                
+                channel.send(embed2);
                 await message.react('😀');
                 message.channel.send(`Its working! go to ${channel} to check your message out!!`)
                 q2.stop();
