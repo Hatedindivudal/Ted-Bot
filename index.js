@@ -72,19 +72,18 @@ bot.on("message", async message => {
                 await message.react('😀');
                 message.channel.send(`Its working! go to ${channel} to check your message out!!`)
                 q2.stop();
+
+
+
             })
+        })
+    }
+        
         })
 
 
 
-
-    }
-})
-
-
-    const usersMap = new Map();
-
-    
+           
 
     if (!message.content.startsWith(prefix)) return;
     const args = message.content.slice(prefix.length).split(/ +/);
@@ -92,6 +91,11 @@ bot.on("message", async message => {
     const command = bot.commands.get(commandName)
     bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
     if(command) command.run(bot,message,args)
+
+
+ 
+
+
 
 
 
