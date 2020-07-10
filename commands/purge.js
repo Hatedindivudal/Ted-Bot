@@ -19,6 +19,8 @@ module.exports.run = async (bot, message, args) => {
     } else {
         deleteAmount = parseInt(args[0]);
     }
+    if(!deleteAmount) 
+    message.channel.send('Please Specifiy a nymber')
 
     message.channel.bulkDelete(deleteAmount, true)
     .catch(err => message.reply(`Something went wrong... ${err}`));
