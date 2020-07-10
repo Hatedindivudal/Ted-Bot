@@ -19,24 +19,24 @@ const validateFlag = f => f === 'true' || f === 'false' || f === 'null';
 
 const IGNORED = new Set([
     // PLACE YOUR CHANNEL IDS HERE
-  ]);
+]);
 
-  const fs = require('fs');
-  bot.commands = new Discord.Collection();
+const fs = require('fs');
+bot.commands = new Discord.Collection();
 bot.aliases = new Discord.Collection();
 
 fs.readdir("./commands/", (err, files) => {
 
-    if(err) console.log(err)
+    if (err) console.log(err)
 
-    let jsfile = files.filter(f => f.split(".").pop() === "js") 
-    if(jsfile.length <= 0) {
-         return console.log("[LOGS] Couldn't Find Commands!");
+    let jsfile = files.filter(f => f.split(".").pop() === "js")
+    if (jsfile.length <= 0) {
+        return console.log("[LOGS] Couldn't Find Commands!");
     }
 
     jsfile.forEach((f, i) => {
         let pull = require(`./commands/${f}`);
-        bot.commands.set(pull.config.name, pull);  
+        bot.commands.set(pull.config.name, pull);
         pull.config.aliases.forEach(alias => {
             bot.aliases.set(alias, pull.config.name)
         });
@@ -47,7 +47,7 @@ const ms = require('ms');
 
 
 bot.on("message", async message => {
-    if (message.content.toLowerCase() === '-rules'){
+    if (message.content.toLowerCase() === '-rules') {
         let filter = m => m.author.id === message.author.id;
         let q1 = new Discord.MessageCollector(message.channel, filter, {
             max: 1
@@ -64,10 +64,10 @@ bot.on("message", async message => {
             })
             q2.on('collect', async (message, col) => {
                 var embed2 = new Discord.MessageEmbed()
-                .setColor('#add8e6')
-                .setTitle('Server Rules')
-                .addField('The server rules are', message.content)
-                
+                    .setColor('#add8e6')
+                    .setTitle('Server Rules')
+                    .addField('The server rules are', message.content)
+
                 channel.send(embed2);
                 await message.react('😀');
                 message.channel.send(`Its working! go to ${channel} to check your message out!!`)
@@ -75,25 +75,26 @@ bot.on("message", async message => {
 
 
 
+
+
+
+
+
+                if (!message.content.startsWith(prefix)) return;
+                const args = message.content.slice(prefix.length).split(/ +/);
+                const commandName = args.shift().toLowerCase();
+                const command = bot.commands.get(commandName)
+                bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+                if (command) command.run(bot, message, args)
+
             })
         })
     }
-        
-        })
+
+})
 
 
 
-           
-
-    if (!message.content.startsWith(prefix)) return;
-    const args = message.content.slice(prefix.length).split(/ +/);
-    const commandName = args.shift().toLowerCase();
-    const command = bot.commands.get(commandName)
-    bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
-    if(command) command.run(bot,message,args)
-
-
- 
 
 
 
