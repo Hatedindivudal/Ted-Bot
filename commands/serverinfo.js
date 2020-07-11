@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 module.exports.run = async (bot, message, args) => {
 
-
+  const roles = message.guild.roles.cache.sort((a, b) => b.position - a.position).map(role => role.toString());
 
 
 
@@ -22,7 +22,11 @@ module.exports.run = async (bot, message, args) => {
         .addField('Owner', message.guild.owner)
         .addField('Created Date', message.guild.createdAt)
         .addField('Member count', message.guild.memberCount)
+        .addField(` ${roles.length}`, 'test 123')
+
+        
         .setThumbnail(message.guild.iconURL)
+
 
     message.channel.send(embed);
 
