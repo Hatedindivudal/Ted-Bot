@@ -17,6 +17,7 @@ module.exports.run = async (bot, message, args) => {
             .setDescription('```kick | ban | pepe | cursed | ping | search | whois | unban | meme | ping | purge | serverinfo ```')
             .addFields({ name: 'Prefix', value: '```-```', inline: true})
             .setColor('#00FFF3')
+            .setFooter('This bot is still in progress if you have any suggestions or issues dm me ♔🐛caterpillargang♔🐛#7777')
             
         message.channel.send(embed);
     } 
