@@ -22,7 +22,7 @@ module.exports.run = async (bot, message, args) => {
         .addField('Owner', message.guild.owner)
         .addField('Created Date', message.guild.createdAt)
         .addField('Member count', message.guild.memberCount)
-        .addField(` ${roles.length}`, 'test 123')
+        .addField('Role Count', `${roles.length} `)
 
         
         .setThumbnail(message.guild.iconURL)
