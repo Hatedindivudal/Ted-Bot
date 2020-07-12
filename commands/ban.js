@@ -12,12 +12,7 @@ module.exports.run = async (bot, message, args) => {
     const member = message.mentions.members.first();
     if(!member) return message.channel.send(xdemb)
     if(!member.bannable) return message.channel.send("I can't ban this user!")
-    if(member)
-    let embed2 = new Discord.MessageEmbed()
-    .setColor('RANDOM')
-    .setTitle('You have been banned!')
-    .addField(`You have been banned from ${message.guild.name}`, `For ${reason}`)
-    message.channel.send(embed2)
+    newFunction(member, message, reason);
 
     if(member.id === message.author.id) return message.channel.send("You can't ban your self")
 
@@ -51,3 +46,5 @@ module.exports.config = {
     accessableby: "Admins",
     aliases: []
 }
+
+
