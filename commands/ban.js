@@ -15,6 +15,12 @@ module.exports.run = async (bot, message, args) => {
 
     if(member.id === message.author.id) return message.channel.send("You can't ban your self")
 
+    if(member)
+    const embed2 = Discord.MessageEmbed()
+    .setColor('RANDOM')
+    .setTitle('You have been banned!')
+    .addField(`You have been banned from ${message.guild.name}`, `For ${reason}`)
+    message.channel.send(embed2)
     const reason = args.slice(1).join(" ");
 
     if(!reason) {
