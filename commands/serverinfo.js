@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
 
 
 
-    let embed = new Discord.MessageEmbed()
+    const embed = new Discord.MessageEmbed()
 
         .setColor('0x#ff0000')
         .setTitle('Server Information')
