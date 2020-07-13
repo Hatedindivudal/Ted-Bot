@@ -20,8 +20,7 @@ if(!muterole) return message.reply("Couldn't find the mute role.")
 if(!mainrole) return message.reply("Couldn't find the default / member role.")
 
 // This makes it so that the second argument is the time.
-let time = args[2];
-
+let time = args[3];
 // If you didn't specify a time in the second argument:
 if(!time) {
 
