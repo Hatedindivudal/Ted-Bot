@@ -52,3 +52,16 @@ setTimeout(function() {
 
 }
 
+
+
+
+
+
+module.exports.config = {
+    name: "mute",
+    description: "Pulls random memes from r/meme r/memes and r/dankmemes Some memes will not load i am not sure why it is an issue",
+    usage: "-",
+    accessableby: "Members",
+    aliases: []
+}
+
