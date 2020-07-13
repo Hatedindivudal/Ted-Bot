@@ -11,7 +11,7 @@ if(!member) return message.channel.send("I couldn't find a user by that name.");
 
 // This defines the main role and the muted role (this works from a config file, so you need to replace
 // botconfig.memberrole and botconfig.mutedrole with the names of the roles.)
-let mainrole = message.guild.roles.cache.find(role => role.name === "Member");
+let mainrole = message.guild.roles.cache.find(role => role.name === "Members");
 let muterole = message.guild.roles.cache.find(role => role.name === "Muted");
 
 // If either role is missing it will send a reply to the user trying to mute someone.
