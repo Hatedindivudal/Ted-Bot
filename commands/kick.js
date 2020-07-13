@@ -45,6 +45,6 @@ module.exports.config = {
     name: "kick",
     description: "Kicks a user",
     usage: "-kick",
-    accessableby: "Admins",
+    accessableby: "Admins, ",
     aliases: []
 }
