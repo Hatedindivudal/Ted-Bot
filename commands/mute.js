@@ -1,7 +1,8 @@
 // MS is used for the time function. You can install it by typing "npm install ms".
 const Discord = require("discord.js");
-module.exports.run = async (bot, message, args) => {
 const ms = require('ms');
+
+module.exports.run = async (bot, message, args) => {
  
 // This defines member as the first person that get's mentioned in the message.
 let member = message.guild.member(message.mentions.users.first());
