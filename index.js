@@ -1,5 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
+const mongoose = require('mongoose');
+mongoose.connect('mongodb+srv://Hated:Hated123@hated.tvdjz.mongodb.net/Data', { useNewUrlParser: true, useUnifiedTopology: true})
 
 
 
