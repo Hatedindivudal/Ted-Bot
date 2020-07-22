@@ -25,7 +25,7 @@ let time = args[2];
 if(!time) {
 
     // Reply with this message.
-    message.reply("You need to specify a time in the second argument!");
+    message.reply("You need to specify a time in the second argument!")
    
     // Stop.
     return;
