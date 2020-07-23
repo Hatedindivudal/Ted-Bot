@@ -14,9 +14,11 @@ module.exports.run = async (bot, message, args) => {
     if(!helpArgs[0]) {
         var embed = new Discord.MessageEmbed()
             .setAuthor(`Here is the Avaible Commands to use:`)
-            .setDescription('```kick | ban | pepe | cursed | ping | search | whois | unban | meme | ping | purge | serverinfo ```')
-            .addFields({ name: 'Prefix', value: '```-```', inline: true})
-            .setColor('#00FFF3')
+            .addField(
+                "Kick",
+                "see i have to put something here or else i get an error"
+
+            )
             .setFooter('This bot is still in progress if you have any suggestions or issues dm me ♔🐛caterpillargang♔🐛#7777')
             
         message.channel.send(embed);
