@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
   user.send(dmsEmbed);
 
   
-  message.channel.send(`${user.tag} has been warned for ${reason}`)
+  message.channel.send(`${user.tag} has been warned for \`${reason}\``)
 
 }
 
