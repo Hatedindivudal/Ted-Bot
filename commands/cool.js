@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args) => {
     const randomnumber =  Math.floor(Math.random() * 100 ) + 1;
 
     const embed = new Discord.MessageEmbed()
-    .setAuthor(RANDOM)
+    .setColor("RANDOM")
     .setTitle("How cool are you?")
     .addField('You are', `${random}% cool!`)
     message.channel.send(embed);
