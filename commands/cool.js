@@ -5,8 +5,8 @@ module.exports.run = async (bot, message, args) => {
 
     const embed = new Discord.MessageEmbed()
     .setColor('0x#ff0000')
-    .setTitle("testing")
-    .addField('You are', `testing a command`)
+    .setTitle("How cool are you?")
+    .addField('You are', `${random}% cool!`)
     message.channel.send(embed);
     
 
