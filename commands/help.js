@@ -14,13 +14,8 @@ module.exports.run = async (bot, message, args) => {
     if(!helpArgs[0]) {
         var embed = new Discord.MessageEmbed()
             .setAuthor(`Here is the Avaible Commands to use:`)
-            .addField(
-                "Kick",
-                "see i have to put something here or else i get an error"
-
-            )
-            .setFooter('This bot is still in progress if you have any suggestions or issues dm me ♔🐛caterpillargang♔🐛#7777')
-            
+            .setDescription('kick')
+            .setDescription('Ban')
         message.channel.send(embed);
     } 
 
