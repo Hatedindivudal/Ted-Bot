@@ -3,7 +3,6 @@ const Discord = require("discord.js");
 const ms = require('ms');
 
 module.exports.run = async (bot, message, args) => {
-    if(message.member.hasPermission('MANAGE_MESSAGES')) {
         var member = message.guild.member(message.mentions.users.first() || message.guild.members.cache.get(args[0]));
         if(!member) return message.reply('Please Provide a Member to TempMute.')
 
@@ -28,12 +27,8 @@ module.exports.run = async (bot, message, args) => {
             message.channel.send(`@${member.user.tag} has been unmuted.`)
         }, ms(time));
 
-    } else {
-        return message.channel.send('You dont have perms.')
+
     }
-
-}
-
 
 
 module.exports.config = {
