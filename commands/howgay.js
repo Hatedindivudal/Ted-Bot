@@ -7,13 +7,13 @@ module.exports.run = async (bot, message, args) => {
     const member = message.mentions.members.first();
 
     const gayembed = new Discord.MessageEmbed()
-    .setAuthor('The Gay Machine')
+    .setAuthor(':rainbow_flag: The Gay Machine :rainbow_flag: ')
     .setDescription(`${member} is ${number123}% Lol retard `)
     message.channel.send(gayembed) ;
     
     const yourself = new Discord.MessageEmbed()
     .setAuthor('The Gay Machine')
-    .setDescription(`You are ${number123}% gay`)
+    .setDescription(`:rainbow_flag: You are ${number123}% gay :rainbow_flag: `)
 
     if(!member) return message.channel.send(yourself);
     
@@ -23,7 +23,7 @@ module.exports.run = async (bot, message, args) => {
     }
        
     module.exports.config = {
-        name: "",
+        name: "howgay",
         description: "Purges Specified amount can not go past 100",
         usage: "-purge",
         accessableby: "Members",
