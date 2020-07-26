@@ -1,8 +1,6 @@
 const Discord = require('discord.js');
 module.exports.run = async (bot, message, args) => {
-    const Discord = require("discord.js")
-    module.exports.run = async (bot, message, args) => {
-    
+   
     const number123 = Math.floor(Math.random() * 100 ) + 1;
     const member = message.mentions.members.first()
 
@@ -19,16 +17,7 @@ module.exports.run = async (bot, message, args) => {
     
     
     
-    
-    }
-       
-    module.exports.config = {
-        name: "howgay",
-        description: "Purges Specified amount can not go past 100",
-        usage: "-purge",
-        accessableby: "Members",
-        aliases: ['c', 'purge']
-    }
+   
     
 
 
