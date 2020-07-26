@@ -1,7 +1,7 @@
 const Discord = require("discord.js")
 module.exports.run = async (bot, message, args) => {
 
-const number123 = Math.floor(Math.random() * 12837131928731928371827461235678123912391728736123876 ) + 987198712387;
+const number123 = Math.floor(Math.random() * 100 ) + 1;
 
 message.channel.send(number123);
 
