@@ -12,7 +12,7 @@ var absiembed = new Discord.MessageEmbed()
 if(message.author.id == 483262780376481801){
     return message.channel.send(absiembed)
   }
-  if(mention.user.id === '483262780376481801'){
+  if(member.user.id === '483262780376481801'){
 return message.channel.send(absiembed)
   }
 const Shipembed = new Discord.MessageEmbed()
