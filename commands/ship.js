@@ -6,6 +6,7 @@ const member = message.mentions.members.first();
 
 if(!member) return message.channel.send('Please mention a valid user.')
 
+if(message.author.id !== "483262780376481801") return;
 
 const Shipembed = new Discord.MessageEmbed()
 .setAuthor('How compatible are you?')
