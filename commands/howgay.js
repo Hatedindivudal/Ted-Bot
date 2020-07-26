@@ -13,8 +13,9 @@ module.exports.run = async (bot, message, args) => {
     .setAuthor('The Gay Machine')
     .setDescription(`:rainbow_flag: You are ${number123}% gay :rainbow_flag: `)
 
-    if(!member) return message.channel.send(yourself)
-    
+    if(!member){
+     return message.channel.send(yourself)
+    }
     
     
    
