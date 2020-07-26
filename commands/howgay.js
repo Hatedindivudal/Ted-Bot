@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args) => {
     module.exports.run = async (bot, message, args) => {
     
     const number123 = Math.floor(Math.random() * 100 ) + 1;
-    const member = message.mentions.members.first();
+    const member = message.mentions.members.first()
 
     const gayembed = new Discord.MessageEmbed()
     .setAuthor(':rainbow_flag: The Gay Machine :rainbow_flag: ')
