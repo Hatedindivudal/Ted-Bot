@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 const ms = require('ms');
 
 module.exports.run = async (bot, message, args) => {
-    if(message.member.hasPermission('CREATE_INVITE')) {
+    if(message.member.hasPermission('MANAGE_MESSAGES')) {
         var member = message.guild.member(message.mentions.users.first() || message.guild.members.cache.get(args[0]));
         if(!member) return message.reply('Please Provide a Member to TempMute.')
 
