@@ -6,11 +6,14 @@ const member = message.mentions.members.first();
 
 if(!member) return message.channel.send('Please mention a valid user.')
 
-const absiembed = new Discord.MessageEmbed()
+var absiembed = new Discord.MessageEmbed()
 .setAuthor('How compatible are you?')
 .setDescription(`You and ${member} are 0% Compatible!`)
 if(message.author.id == 483262780376481801){
     return message.channel.send(absiembed)
+  }
+  if(message.member.id == 483262780376481801 ){
+return message.channel.send(absiembed)
   }
 const Shipembed = new Discord.MessageEmbed()
 .setAuthor('How compatible are you?')
