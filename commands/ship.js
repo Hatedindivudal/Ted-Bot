@@ -5,7 +5,7 @@ const ship = Math.floor(Math.random() * 100 ) + 1;
 const member = message.mentions.members.first();
 
 if(!member) return message.channel.send('Please mention a valid user.')
-if(msg.author.id == 483262780376481801){
+if(message.author.id == 483262780376481801){
     return
   }
 const Shipembed = new Discord.MessageEmbed()
