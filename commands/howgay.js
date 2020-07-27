@@ -7,16 +7,17 @@ module.exports.run = async (bot, message, args) => {
     const gayembed = new Discord.MessageEmbed()
     .setAuthor(':rainbow_flag: The Gay Machine :rainbow_flag: ')
     .setDescription(`${member} is ${number123}% Lol retard `)
-    message.channel.send(gayembed).catch(error => message.channel.send(`Sorry, I coldn't ban because of: ${error}`));
+   
     
     const yourself = new Discord.MessageEmbed()
     .setAuthor('The Gay Machine')
     .setDescription(`:rainbow_flag: You are ${number123}% gay :rainbow_flag: `)
 
     if(!member){
-     return message.channel.send(yourself).catch(error => message.channel.send(`Sorry, I coldn't rate gay because of: ${error}`));
+     return message.channel.send(yourself)
      
     }
+    if(member) return message.channel.send(gayembed)
     
     
    
