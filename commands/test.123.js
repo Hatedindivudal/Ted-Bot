@@ -47,7 +47,7 @@ module.exports.run = async (bot, message, args) => {
                     .setDescription(`${message.content}`)
                     
                let hi = channel.send(embed2)
-               hi.react('✔')
+               hi.react('✔');
 
                 await message.react('😀');
                 message.channel.send(`Its working! go to ${channel} to check your message out!!`)
