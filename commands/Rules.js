@@ -23,8 +23,6 @@ module.exports.run = async (bot, message, args) => {
 
 
 
-
-
    
     let filter = m => m.author.id === message.author.id;
         let q1 = new Discord.MessageCollector(message.channel, filter, {
@@ -48,17 +46,26 @@ module.exports.run = async (bot, message, args) => {
 
                     
 
+
+                    
+
+                    
+                
+               bot.on("messageReactionAdd", async (reaction, user) => {
+
+            
                let hi = await channel.send(embed2)
                hi.react('✔')
                await reaction.message.guild.members.cache.get(user.id).roles.add("736589991437926401");
-            
+               q2.stop
+               q2.stop();
+           
+               })
 
+        
 
-                await message.react('😀');
-                message.channel.send(`Its working! go to ${channel} to check your message out!!`)
-                q2.stop
-                q2.stop();
             
+               
 
           
 
