@@ -55,6 +55,10 @@ module.exports.run = async (bot, message, args) => {
                 message.channel.send(`Its working! go to ${channel} to check your message out!!`)
                 q2.stop
                 q2.stop();
+
+                bot.on("messageReactionAdd", async (reaction, user) => {
+
+                })
             })
         })
 
