@@ -24,7 +24,7 @@ module.exports.config = {
     description: "Tells mentioned user how gay they or you are fucking loser",
     usage: "-howgay",
     accessableby: "Members",
-    aliases: ['hi', 'hi']
+    aliases: ['gay',]
 
 
 
