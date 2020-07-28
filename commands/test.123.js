@@ -45,9 +45,10 @@ module.exports.run = async (bot, message, args) => {
                     .setColor('#add8e6')
                     .setAuthor('Server Rules')
                     .setDescription(`${message.content}`)
-                    await message.react('✔')
+                    
+               let hi = channel.send(embed2)
+               hi.react('✔')
 
-                channel.send(embed2);
                 await message.react('😀');
                 message.channel.send(`Its working! go to ${channel} to check your message out!!`)
                 q2.stop
