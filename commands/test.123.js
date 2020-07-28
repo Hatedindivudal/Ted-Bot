@@ -47,7 +47,9 @@ module.exports.run = async (bot, message, args) => {
                     .setDescription(`${message.content}`)
                     
                let hi = await channel.send(embed2)
-               hi.react('✔');
+               hi.react('✔')
+               await reaction.message.guild.members.cache.get(user.id).roles.add("736589991437926401");
+
 
                 await message.react('😀');
                 message.channel.send(`Its working! go to ${channel} to check your message out!!`)
