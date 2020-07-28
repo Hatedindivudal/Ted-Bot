@@ -46,7 +46,7 @@ module.exports.run = async (bot, message, args) => {
                     .setAuthor('Server Rules')
                     .setDescription(`${message.content}`)
                     
-               let hi = channel.send(embed2)
+               let hi = await channel.send(embed2)
                hi.react('✔');
 
                 await message.react('😀');
