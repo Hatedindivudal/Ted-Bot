@@ -39,7 +39,6 @@ module.exports.run = async (bot, message, args) => {
                 max: 1
             })
             q2.on('collect', async (message, col) => {
-                 bot.on("messageReactionAdd", async (reaction, user) => {
                 var embed2 = new Discord.MessageEmbed()
                     .setColor('#add8e6')
                     .setAuthor('Server Rules')
@@ -58,7 +57,7 @@ module.exports.run = async (bot, message, args) => {
                let hi = await channel.send(embed2)
                hi.react('✔')
                await reaction.message.guild.members.cache.get(user.id).roles.add("736589991437926401")
-            })
+            
 
                q2.stop
                q2.stop();
