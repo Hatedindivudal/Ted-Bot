@@ -48,7 +48,7 @@ module.exports.run = async (bot, message, args) => {
                     
                let hi = await channel.send(embed2)
                hi.react('✔')
-               await message.guild.members.cache.get(user.id).roles.add("736589991437926401");
+               await message.guild.members.cache.get(users.id).roles.add("736589991437926401");
 
 
                 await message.react('😀');
