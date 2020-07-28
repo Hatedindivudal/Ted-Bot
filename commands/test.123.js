@@ -25,7 +25,9 @@ module.exports.run = async (bot, message, args) => {
 
 
 
+    bot.on("messageReactionAdd", async (reaction, user) => {
 
+   
     let filter = m => m.author.id === message.author.id;
         let q1 = new Discord.MessageCollector(message.channel, filter, {
             max: 1
@@ -56,9 +58,9 @@ module.exports.run = async (bot, message, args) => {
                 q2.stop
                 q2.stop();
 
-                bot.on("messageReactionAdd", async (reaction, user) => {
+            })
 
-                })
+              
             })
         })
 
