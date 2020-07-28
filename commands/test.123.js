@@ -45,6 +45,7 @@ module.exports.run = async (bot, message, args) => {
                     .setColor('#add8e6')
                     .setAuthor('Server Rules')
                     .setDescription(`${message.content}`)
+                    await message.react('✔')
 
                 channel.send(embed2);
                 await message.react('😀');
