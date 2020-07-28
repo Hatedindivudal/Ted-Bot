@@ -53,11 +53,12 @@ module.exports.run = async (bot, message, args) => {
                 
               
 
-            
+                    bot.on("messageReactionAdd", async (reaction, user) => {
+
                let hi = await channel.send(embed2)
                hi.react('✔')
                await reaction.message.guild.members.cache.get(user.id).roles.add("736589991437926401")
-            
+            })
 
                q2.stop
                q2.stop();
