@@ -43,8 +43,8 @@ module.exports.run = async (bot, message, args) => {
             q2.on('collect', async (message, col) => {
                 var embed2 = new Discord.MessageEmbed()
                     .setColor('#add8e6')
-                    .setTitle('Server Rules')
-                    .addField('The server rules are', message.content)
+                    .setAuthor('Server Rules')
+                    .setDescription(`${message.content}`)
 
                 channel.send(embed2);
                 await message.react('😀');
