@@ -51,7 +51,12 @@ const ms = require('ms');
 bot.on("message", async message => {
     if(message.author.bot || message.channel.type === "dm") return;
 
-
+    bot.on('ready', () => {
+        bot.user.setActivity('Currently in development!', { type: 'WATCHING' })
+        console.log('Ready!')
+    })
+    
+    
 
 
 
