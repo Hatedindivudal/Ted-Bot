@@ -51,6 +51,9 @@ const ms = require('ms');
 bot.on("message", async message => {
     if(message.author.bot || message.channel.type === "dm") return;
 
+    bot.user.setPresence({ activity: { name: 'In devolpment!' }, status: 'idle' })
+    .then(console.log)
+    .catch(console.error);
     
     
     
