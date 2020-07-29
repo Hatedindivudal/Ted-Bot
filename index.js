@@ -54,7 +54,7 @@ bot.on("message", async message => {
     bot.on('ready', () => {
         bot.user.setActivity('Currently in development!', { type: 'WATCHING' })
         console.log('Ready!')
-    })
+    
     
     
 
@@ -77,6 +77,6 @@ bot.on("message", async message => {
     
 })
 
-
+})
 
 bot.login(process.env.token);
