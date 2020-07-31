@@ -1,5 +1,7 @@
 const Discord = require('discord.js');
 module.exports.run = async (bot, message, args) => {
+    if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('you dont have the correct perms!') 
+
 
 
 
@@ -53,13 +55,9 @@ module.exports.run = async (bot, message, args) => {
                 
               
 
-                    bot.on("messageReactionAdd", async (reaction, user) => {
 
                let hi = await channel.send(embed2)
-               hi.react('✔')
-               await reaction.message.guild.members.cache.get(user.id).roles.add("736589991437926401")
-            })
-
+               hi.react('✔');
                q2.stop
                q2.stop();
            
