@@ -10,7 +10,7 @@ message.channel.send(a)
     }
     
     module.exports.config = {
-        name: "@Dove#2807",
+        name: "topic",
         description: "Says hi",
         usage: "-hi",
         accessableby: "Members",
