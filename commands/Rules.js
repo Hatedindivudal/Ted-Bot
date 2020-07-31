@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 module.exports.run = async (bot, message, args) => {
-    if(message.author.id == 358399448461606912){
+    if(!message.author.id == 358399448461606912){
         return message.channel.send('This command is only active to Hated Currently')
     }
 
