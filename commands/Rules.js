@@ -1,7 +1,8 @@
 const Discord = require('discord.js');
 module.exports.run = async (bot, message, args) => {
-    if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('you dont have the correct perms!') 
-
+    if(member.user.id === ''){
+        return message.channel.send('Only hated can use this command currently.')
+          }
 
 
 
