@@ -29,6 +29,7 @@ return message.channel.send(absiembed)
     return message.channel.send(doveembed)
       }
 const Shipembed = new Discord.MessageEmbed()
+.setColor("0x#32CD32")
 .setAuthor('How compatible are you?')
 .setDescription(`You and ${member} are ${ship}% compatible! `)
 message.channel.send(Shipembed);
