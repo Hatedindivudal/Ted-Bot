@@ -45,7 +45,6 @@ module.exports.run = async (bot, message, args) => {
             q2.on('collect', async (message, col) => {
                 var embed2 = new Discord.MessageEmbed()
                     .setColor('#add8e6')
-                    .setAuthor('Server Rules')
                     .setDescription(`${message.content}`)
 
                     
