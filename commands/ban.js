@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
     .setColor('RANDOM')
     .setTitle('You have been banned!')
     .addField(`You have been banned from ${message.guild.name}`, `For ${reason}`)
-    message.channel.send(embed2)
+    message.channel.send(embed2);
 
 
     if(member.id === message.author.id) return message.channel.send("You can't ban your self")
