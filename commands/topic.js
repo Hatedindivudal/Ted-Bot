@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
     module.exports.run = async (bot, message, args) => {
     
-        let aa = ['you should get a life', 'get a life loser a life', 'how are you']
+        let aa = ['If you could have any superpower what would it be?', '', '']
         const a = aa[Math.floor(Math.random()*aa.length)];
 message.channel.send(a).then().catch(console.error);
     
