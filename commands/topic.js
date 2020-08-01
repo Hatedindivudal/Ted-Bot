@@ -3,7 +3,7 @@ const Discord = require('discord.js');
     
         let aa = ['you should get a life', 'get a life loser a life', 'how are you']
         const a = aa[Math.floor(Math.random()*aa.length)];
-message.channel.send(a)
+message.channel.send(a).then().catch(console.error);
     
     }
     
