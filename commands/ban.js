@@ -5,20 +5,22 @@ module.exports.run = async (bot, message, args) => {
     .setTitle("Ban Command")
     .addField("Description:", `Ban a member`, true)
     .addField("Usage:", `!ban [user] [reason]`, true)
-    .addField("Example:", `!ban @Randomexample#7183`)
+    .addField("Example:", `!ban @Randomexample#7183`);
+
+    let embed2 = new Discord.MessageEmbed()
+    .setColor('RANDOM')
+    .setTitle('You have been banned!')
+    .addField(`You have been banned from ${message.guild.name}`, `For ${reason}`)
+    member.send(embed2);
 
     if (!message.member.hasPermission("BAN_MEMBERS")) {
         return message.reply("Missing Permissions!").then(m => m.delete(5000));
     }
     const member = message.mentions.members.first();
     if(!member) return message.channel.send(xdemb)
-    if(!member.bannable) return message.channel.send("I can't ban this user!")
-    if(member)
-    let embed2 = new Discord.MessageEmbed()
-    .setColor('RANDOM')
-    .setTitle('You have been banned!')
-    .addField(`You have been banned from ${message.guild.name}`, `For ${reason}`)
-    message.channel.send(embed2);
+    if(!member.bannable) return message.channel.send("I can't ban this user!");
+    if(member) return 
+   
 
 
     if(member.id === message.author.id) return message.channel.send("You can't ban your self")
