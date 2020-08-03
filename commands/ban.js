@@ -17,7 +17,11 @@ module.exports.run = async (bot, message, args) => {
     if(!member.bannable) return message.channel.send("I can't ban this user!");
     if(member) return member.send(embed2);
 
-   
+    let embed2 = new Discord.MessageEmbed()
+    .setColor('RANDOM')
+    .setTitle('You have been banned!')
+    .addField(`You have been banned from ${message.guild.name}`, `For ${reason}`);
+
 
 
     if(member.id === message.author.id) return message.channel.send("You can't ban your self")
@@ -43,11 +47,7 @@ module.exports.run = async (bot, message, args) => {
 
     message.channel.send(bean);
 
-    let embed2 = new Discord.MessageEmbed()
-    .setColor('RANDOM')
-    .setTitle('You have been banned!')
-    .addField(`You have been banned from ${message.guild.name}`, `For ${reason}`);
-
+   
 }
 
 module.exports.config = {
