@@ -7,10 +7,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("Usage:", `!ban [user] [reason]`, true)
     .addField("Example:", `!ban @Randomexample#7183`);
 
-    let embed2 = new Discord.MessageEmbed()
-    .setColor('RANDOM')
-    .setTitle('You have been banned!')
-    .addField(`You have been banned from ${message.guild.name}`, `For ${reason}`)
+    
 
     if (!message.member.hasPermission("BAN_MEMBERS")) {
         return message.reply("Missing Permissions!").then(m => m.delete(5000));
@@ -44,7 +41,12 @@ module.exports.run = async (bot, message, args) => {
     .addField("Reason", res)
     .setTimestamp()
 
-    message.channel.send(bean)
+    message.channel.send(bean);
+
+    let embed2 = new Discord.MessageEmbed()
+    .setColor('RANDOM')
+    .setTitle('You have been banned!')
+    .addField(`You have been banned from ${message.guild.name}`, `For ${reason}`);
 
 }
 
