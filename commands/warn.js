@@ -8,6 +8,7 @@ module.exports.run = async (bot, message, args) => {
   let user = message.mentions.users.first();
   if (message.mentions.users.size < 1) return message.reply('You must mention someone to warn them.');
   if (reason.length < 1) return message.reply('You must have a reason for the warning.');
+  if(member.id === message.author.id) return message.channel.send("You can't ban your self")
 
   let dmsEmbed = new Discord.MessageEmbed()
   .setTitle("Warn")
