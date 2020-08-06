@@ -5,7 +5,7 @@ mongoose.connect('mongodb+srv://Hated:Hated123@hated.tvdjz.mongodb.net/Data', { 
 
 
 
-const prefix = '-';
+const prefix = '/';
 
 const embed = new Discord.MessageEmbed();
 
