@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
     if(!helpArgs[0]) {
         var embed = new Discord.MessageEmbed()
             .setAuthor(`My commands are`)
-            .addField('`ban`, `kick`, `mute`, `purge` `ping` `warn` `unban` `meme` `cursed` `whois` `serverinfo` `bean`', 'The prefix is -')
+            .addField('`ban`, `kick`, `mute`, `purge` `ping` `warn` `unban` `meme` `cursed` `whois` `serverinfo` `bean`', 'The prefix is /')
             
         message.channel.send(embed);
     } 
