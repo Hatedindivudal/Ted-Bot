@@ -5,7 +5,7 @@ const got = require('got');
 module.exports.run = async (bot, message, args) => {
 
     const embed = new Discord.MessageEmbed()
-    got('https://www.reddit.com/r/memes/random/.json').then(response => {
+    got('https://www.reddit.com/r/memes/random/.json', 'https://www.reddit.com/r/spicypillows/random/.json').then(response => {
         let content = JSON.parse(response.body);
         let permalink = content[0].data.children[0].data.permalink;
         let memeUrl = `https://reddit.com${permalink}`;
