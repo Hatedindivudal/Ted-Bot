@@ -17,14 +17,14 @@ module.exports.run = async (bot, message, args) => {
             return message.reply("You didnt specify a time!");
         }
 
-        member.roles.remove(mainrole.id)
-        member.roles.add(role.id);
+        member.roles.remove(mainrole)
+        member.roles.add(role);
 
         message.channel.send(`@${member.user.tag} has now been muted for ${ms(ms(time))}`)
 
         setTimeout( function () {
-            member.roles.add(mainrole.id)
-            member.roles.remove(role.id);
+            member.roles.add(mainrole)
+            member.roles.remove(role);
             message.channel.send(`@${member.user.tag} has been unmuted.`)
         }, ms(time));
 
