@@ -9,7 +9,10 @@ module.exports.run = async (bot, message, args) => {
         let mainrole = message.guild.roles.cache.find(role => role.name === "Member");
         let role = message.guild.roles.cache.find(role => role.name === "Muted");
 
-        if(!message.member.roles.find(r => r.name === "Muted")) return message.channel.send('That user is not muted!')
+        if(!message.member.roles.cache.find(r => r.name === "Muted")) {
+        return message.channel.send('That user is not muted!')
+
+        }
 
         
             member.roles.add(mainrole)
