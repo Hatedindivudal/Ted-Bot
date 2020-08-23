@@ -1,4 +1,3 @@
-// MS is used for the time function. You can install it by typing "npm install ms".
 const Discord = require("discord.js");
 const ms = require('ms');
 
@@ -11,6 +10,8 @@ module.exports.run = async (bot, message, args) => {
         let role = message.guild.roles.cache.find(role => role.name === "Muted");
 
         if (!role) return message.reply("Couldn't find the 'muted' role.")
+        if (message.member.roles.highest.position >= member.roles.highest.position) return message.channel.send('That user has a higher role then you!')
+
 
         let time = args[1];
         if (!time) {
