@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
         let mainrole = message.guild.roles.cache.find(role => role.name === "Member");
         let role = message.guild.roles.cache.find(role => role.name === "Muted");
 
-        if (user.roles.highest.position >= message.member.roles.highest.position) return message.channel.send('That user has a higher role then you!')
+        if (message.member.roles.highest.position >= member.roles.highest.position) return message.channel.send('That user has a higher role then you!')
         
 
         if(!member.roles.cache.find(r => r.name === "Muted")) {
