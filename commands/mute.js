@@ -10,8 +10,7 @@ module.exports.run = async (bot, message, args) => {
         let role = message.guild.roles.cache.find(role => role.name === "Muted");
 
         if (!role) return message.reply("Couldn't find the 'muted' role.")
-        if (member.roles.highest.position.roles.highest.position >= message.member.roles.highest.position) return message.channel.send('That user has a higher role then you!')
-
+        if (member.roles.highest.position >= message.member.roles.highest.position && message.author.id !== message.guild.owner.id) return message.channel.send('That user has a role above you!')
 
         let time = args[1];
         if (!time) {
