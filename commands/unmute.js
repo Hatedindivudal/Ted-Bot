@@ -9,7 +9,6 @@ module.exports.run = async (bot, message, args) => {
         let mainrole = message.guild.roles.cache.find(role => role.name === "Member");
         let role = message.guild.roles.cache.find(role => role.name === "Muted");
 
-        if (message.member.roles.highest.position >= member.roles.highest.position) return message.channel.send('That user has a higher role then you!')
         
 
         if(!member.roles.cache.find(r => r.name === "Muted")) {
@@ -20,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
         
             member.roles.add(mainrole)
             member.roles.remove(role);
-            message.channel.send(`${member} has been unmuted!`)
+            message.channel.send(`${member.user.tag} has been unmuted!`)
             
         
 
