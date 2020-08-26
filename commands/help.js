@@ -16,10 +16,11 @@ module.exports.run = async (bot, message, args) => {
         .addFields(
             { name: 'test123', value: 'even more test' },
             { name: '\u200B', value: '\u200B' },
-            { name: 'jasjdjasd', value: '', inline: true },
+            { name: 'jasjdjasd', value: 'asd', inline: true },
             { name: 'joadjkasjd', value: 'jaskjdhaskjdh', inline: true },
         )
-            
+        .addField('Inline field title', 'Some value here', true)
+
         message.channel.send(embed);
     } 
 
