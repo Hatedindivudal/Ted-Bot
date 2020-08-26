@@ -86,7 +86,7 @@ var roast = [
     const roasts = roast[Math.floor(Math.random() * roast.length)];
     const embed = new Discord.MessageEmbed()
         .setColor(0x00A2E8)
-        .setDescription(member + ", " + roasts);
+        .setDescription(member.user.tag + ", " + roasts);
     message.channel.send(embed)
   }
 
