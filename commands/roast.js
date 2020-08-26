@@ -84,7 +84,7 @@ var roast = [
     "have you been shopping lately? They're selling lives at the mall, you should get one"
 ]
     const roasts = roast[Math.floor(Math.random() * roast.length)];
-    const embed = new Discord.MessageEmbed
+    const embed = new Discord.MessageEmbed()
         .setColor(0x00A2E8)
         .setDescription(user.username + ", " + roasts);
     message.channel.send(embed)
