@@ -92,7 +92,7 @@ var roast = [
 
     
 module.exports.config = {
-    name: "randomnumber",
+    name: "roast",
     description: "Purges Specified amount can not go past 100",
     usage: "-purge",
     accessableby: "Members",
