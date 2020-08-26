@@ -22,7 +22,7 @@ module.exports.run = async (bot, message, args) => {
                   `${i} - Moderator: ${
                     message.guild.members.cache.get(w.Moderator).user.tag
                   } Reason: ${w.Reason}`
-              ).join("\n");
+              )
             })
           );
         message.channel.send(Embed);
