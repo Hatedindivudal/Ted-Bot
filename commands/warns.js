@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
     
 module.exports.run = async (bot, message, args) => {
-const warns = require("../../models/warns");
+    const warns = require("../models/warns");
 
     let user = message.mentions.members.first();
     if (!user) return message.channel.send(`No user specified!`);

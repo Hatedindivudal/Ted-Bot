@@ -1,6 +1,8 @@
 const Discord = require('discord.js');
 const fs = require("fs");
 module.exports.run = async (bot, message, args) => {
+  const warns = require("../models/warns");
+
      const reason = args.slice(1).join(" ");
 
     
