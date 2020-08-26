@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
           Warns: [
             {
               Moderator: message.author.id,
-              Reason: args.slice(1).join(" "),
+              Reason: reason,
             },
           ],
         });
