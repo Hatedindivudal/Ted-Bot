@@ -40,6 +40,6 @@ module.exports.config = {
     name: "whois",
     description: "Shows information about a mentioned user",
     usage: "-whois",
-    accessableby: "Members",
+    accessableby: "Member",
     aliases: []
 }
