@@ -1,28 +1,47 @@
 const Discord = require('discord.js');
 const fs = require("fs");
 module.exports.run = async (bot, message, args) => {
- 
+     const reason = args.slice(1).join(" ");
+
     
-  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("You don't have premission to do that!");
-  let reason = args.slice(1).join(' ');
   let user = message.mentions.users.first();
-  if (message.mentions.users.size < 1) return message.reply('You must mention someone to warn them.');
-  if (reason.length < 1) return message.reply('You must have a reason for the warning.');
-  if(member.id === message.author.id) return message.channel.send("You can't ban your self")
-
-  let dmsEmbed = new Discord.MessageEmbed()
-  .setTitle("Warn")
-  .setColor("#00ff00")
-  .setDescription(`You have been warned on \`${message.guild.name}\``)
-  .addField("Warned by", message.author.tag)
-  .addField("Reason", reason);
-
-  user.send(dmsEmbed);
-
-  
-  message.channel.send(`${user.tag} has been warned for \`${reason}\``)
-
-}
+  if (!user) return message.channel.send(`You did not mention a user!`);
+  if (!reason)
+    return message.channel.send(`You did not specify a reason!`);
+  warns.findOne(
+    { Guild: message.guild.id, User: user.id },
+    async (err, data) => {
+      if (err) console.log(err);
+      if (!data) {
+        let newWarns = new warns({
+          User: user.id,
+          Guild: message.guild.id,
+          Warns: [
+            {
+              Moderator: message.author.id,
+              Reason: args.slice(1).join(" "),
+            },
+          ],
+        });
+        newWarns.save();
+        message.channel.send(
+          `${user.tag} has been warned with the reason of ${
+            reason}. They now have 1 warn.`
+        );
+      } else {
+        data.Warns.unshift({
+          Moderator: message.author.id,
+          Reason: reason,
+        });
+        data.save();
+        message.channel.send(
+          `${user.tag} has been warned with the reason of ${reason}
+            .join(" ")}. They know have ${data.Warns.length} warns.`
+        );
+      }
+    }
+  );
+},
 
 
  
