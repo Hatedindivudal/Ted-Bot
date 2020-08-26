@@ -38,7 +38,7 @@ module.exports.run = async (bot, message, args) => {
         data.save();
         message.channel.send(
           `${user.tag} has been warned with the reason of ${reason}
-            .join(" ")}. They know have ${data.Warns.length} warns.`
+             They now have ${data.Warns.length} warns.`
         );
       }
     }
