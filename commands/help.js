@@ -13,8 +13,12 @@ module.exports.run = async (bot, message, args) => {
     //Normal usage of (prefix)help without any args. (Shows all of the commands and you should set the commands yourself)
     if(!helpArgs[0]) {
         var embed = new Discord.MessageEmbed()
-            .setAuthor(`My commands are`)
-            .addField('`ban`, `kick`, `mute`, `purge` `ping` `warn` `unban` `meme` `cursed` `whois` `serverinfo` `bean`', 'The prefix is /')
+        .addFields(
+            { name: 'test123', value: 'even more test' },
+            { name: '\u200B', value: '\u200B' },
+            { name: 'jasjdjasd', value: '', inline: true },
+            { name: 'joadjkasjd', value: 'jaskjdhaskjdh', inline: true },
+        )
             
         message.channel.send(embed);
     } 
