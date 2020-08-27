@@ -12,16 +12,11 @@ module.exports.run = async (bot, message, args) => {
 
     //Normal usage of (prefix)help without any args. (Shows all of the commands and you should set the commands yourself)
     if(!helpArgs[0]) {
-        var embed = new Discord.MessageEmbed()
-        .addFields(
-            { name: 'test123', value: 'even more test' },
-            { name: '\u200B', value: '\u200B' },
-            { name: 'jasjdjasd', value: 'asd', inline: true },
-            { name: 'joadjkasjd', value: 'jaskjdhaskjdh', inline: true },
-        )
-        .addField('Inline field title', 'Some value here', true)
+        const embed1 = new Discord.MessageEmbed()
+        .addField('**Moderation**', ' `lock` `kick` `ban` `mute` `purge` `unban` `warn` `warns` `moderation` `unmute`')
+      
 
-        message.channel.send(embed);
+        message.channel.send(embed1);
     } 
 
     //Reads the moudle.exports.config (This line of code is on commands folder, each command will read automaticly) by the second argument (the command name) and shows the information of it.
