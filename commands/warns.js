@@ -11,7 +11,6 @@ if (!target) {
 const guildId = message.guild.id
 const userId = target.id
 
-await mongo().then(async (mongoose) => {
   try {
     const results = await warns.findOne({
       guildId,
@@ -32,9 +31,7 @@ await mongo().then(async (mongoose) => {
   } finally {
     mongoose.connection.close()
   }
-})
-},
-
+}
   
 module.exports.config = {
     name: "warns",
