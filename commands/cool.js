@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
     const embed = new Discord.MessageEmbed()
     .setColor('0x#ff0000')
     .setTitle("How cool are you?")
-    .addField('You are', `${random}% cool!`)
+    .addField('You are', `${randomnumber}% cool!`)
     message.channel.send(embed);
     
 
