@@ -13,7 +13,8 @@ module.exports.run = async (bot, message, args) => {
     //Normal usage of (prefix)help without any args. (Shows all of the commands and you should set the commands yourself)
     if(!helpArgs[0]) {
         const embed1 = new Discord.MessageEmbed()
-        .addField('**Moderation**', ' `lock` `kick` `ban` `mute` `purge` `unban` `warn` `warns` `moderation` `unmute`')
+        .addField('⚙**Moderation**', ' `lock` `kick` `ban` `mute` `purge` `unban` `warn` `warns` `moderation` `unmute`')
+        .addField('👾**Fun**', '`Meme` `Topic` `Roast` `Ship` `howcool` `randomnumber`')
       
 
         message.channel.send(embed1);
