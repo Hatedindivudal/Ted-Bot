@@ -39,7 +39,7 @@ module.exports.run = async (bot, message, args) => {
 module.exports.config = {
     name: "whois",
     description: "Shows information about a mentioned user",
-    usage: "-whois",
+    usage: "/whois",
     accessableby: "Member",
     aliases: []
 }

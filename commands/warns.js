@@ -1,37 +1,34 @@
 const Discord = require('discord.js');
     
 module.exports.run = async (bot, message, args) => {
-const warns = require("../models/warns");
-const target = message.mentions.users.first()
-if (!target) {
-  message.reply('Please specify a user to load the warnings for.')
-  return
-}
+    const warns = require("../models/warns");
 
-const guildId = message.guild.id
-const userId = target.id
-
-  try {
-    const results = await warns.findOne({
-      guildId,
-      userId,
-    })
-
-    let reply = `Previous warnings for <@${userId}>:\n\n`
-
-    for (const warning of results.warnings) {
-      const { author, timestamp, reason } = warning
-
-      reply += `By ${author} on ${new Date(
-        timestamp
-      ).toLocaleDateString()} for "${reason}"\n\n`
-    }
-
-    message.reply(reply)
-  } finally {
-    mongoose.connection.close()
+    let user = message.mentions.members.first();
+    if (!user) return message.channel.send(`No user specified!`);
+    warns.find(
+      { Guild: message.guild.id, User: user.id },
+      async (err, data) => {
+        if (err) console.log(err);
+        if (!data.length)
+          return message.channel.send(
+            `${user.user.tag} has not got any warns in this guild!`
+          );
+        const Embed = new Discord.MessageEmbed()
+          .setTitle(`${user.user.tag}'s warns in ${message.guild.name}.. `)
+          .setDescription(
+            data.map((d) => {
+              return d.Warns.map(
+                (w, i) =>
+                  `${i} - Moderator: ${
+                    message.guild.members.cache.get(w.Moderator).user.tag
+                  } Reason: ${w.Reason}`
+              )
+            })
+          );
+        message.channel.send(Embed);
+      }
+    );
   }
-}
   
 module.exports.config = {
     name: "warns",
