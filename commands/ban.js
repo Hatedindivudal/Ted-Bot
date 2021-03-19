@@ -22,7 +22,7 @@ module.exports.run = async (bot, message, args) => {
 
 
 
-    if(member.id === message.author.id) return message.channel.send("You can't ban your self")
+    if(member.id === message.author.id) return message.channel.send("You can't ban your self");
 
    
     const reason = args.slice(1).join(" ");
