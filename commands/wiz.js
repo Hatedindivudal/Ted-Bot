@@ -3,7 +3,7 @@ const moment = require('moment');
 
 module.exports.run = async (bot, message, args) => {
 
-    message.channel.send('/<@367298431200264195>')
+    message.channel.send('-<@367298431200264195>')
 
 
 
