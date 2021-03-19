@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
         deleteAmount = 1000;
     } else {
         deleteAmount = parseInt(args[0])
-        message.channel.send(`Sucessfuly deleted ${deleteAmount} messages!`)
+        message.channel.send(`Sucessfuly deleted ${deleteAmount} messages!`).then(m => m.delete(5000));
     }
     if(!deleteAmount) 
     message.channel.send('Please Specifiy a number')
