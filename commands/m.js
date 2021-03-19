@@ -3,7 +3,6 @@ module.exports.run = async (bot, message, args) => {
 
 const { inspect } = require('util');
 
-if (message.author.id !== '717230139527921705' || '367298431200264195')return;
     
 let evaled;
 try {
