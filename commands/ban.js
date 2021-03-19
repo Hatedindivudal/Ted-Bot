@@ -42,16 +42,6 @@ module.exports.run = async (bot, message, args) => {
 
     await member.ban(reason).catch(error => message.channel.send(`Sorry, I coldn't ban because of: ${error}`));
 
-    const bean = new Discord.MessageEmbed()
-    .setColor("#00ff00")
-    .setTitle(`Ban | ${member.user.tag}`)
-    .addField("User", member, true)
-    .addField("Moderator", message.author, true)
-    .addField("Reason", res)
-    .setTimestamp()
-
-    message.channel.send(bean);
-
    
 }
 
