@@ -21,7 +21,7 @@ module.exports.run = async (bot, message, args) => {
 
 }
 module.exports.config = {
-    name: "<@367298431200264195?",
+    name: "<@367298431200264195>",
     description: "Shows information about a mentioned user",
     usage: "/whois",
     accessableby: "Member",
