@@ -6,15 +6,14 @@ module.exports.run = async (bot, message, args) => {
     .setColor("#00ff00")
     .setTitle("Ban Command")
     .addField("Description:", `Ban a member`, true)
-    .addField("Usage:", `!ban [user] [reason]`, true)
-    .addField("Example:", `!ban @Randomexample#7183`);
+    .addField("Usage:", `-ban [user] [reason]`, true)
+    .addField("Example:", `-ban @Randomexample#7183`);
 
     
 
     if (!message.member.hasPermission("BAN_MEMBERS")) {
         return message.reply("Missing Permissions!").then(m => m.delete(5000));
     }
-    const member = message.mentions.members.first();
     if(!member) return message.channel.send(xdemb)
     if(!member.bannable) return message.channel.send("I can't ban this user!");
    
