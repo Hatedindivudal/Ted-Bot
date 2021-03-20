@@ -9,9 +9,9 @@ module.exports.run = async (bot, message, args) => {
   const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
 
   // Final Check
-  if(!member) return message.channel.send('member not found');
+  if(!member) return message.channel.send('Please provide a valid ID or mention a user');
   if(member.id === message.author.id) return message.channel.send("You can't ban your self");
-  if(!member.bannable) return message.channel.send('not bannable');
+  if(!member.bannable) return message.channel.send('This user is probably higher then you!');
 
   // Reason
   let reason = args.slice(1).join(" ");
