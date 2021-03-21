@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
   // Final Check
   if(!member) return message.channel.send('Please provide a valid ID or mention a user');
   if(member.id === message.author.id) return message.channel.send("You can't ban your self");
-  if(!member.bannable) return message.channel.send('This user is probably higher then you!');
+  if(!member.bannable) return message.channel.send('This user is higher than me!');
 
   // Reason
   let reason = args.slice(1).join(" ");
