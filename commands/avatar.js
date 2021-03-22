@@ -6,7 +6,9 @@ module.exports.run = async (bot, message, args) => {
        message.reply(message.author.displayAvatarURL());
     }
     if(member){
-        member.reply(message.author.displayAvatarURL())
+       const aa = new Discord.MessageEmbed()
+       .setAuthor(member.user.username)
+       message.channel.send(aa)
     }
    
 
