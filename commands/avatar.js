@@ -2,7 +2,9 @@ const Discord = require("discord.js")
 module.exports.run = async (bot, message, args) => {
     const member = message.mentions.members.first();
 
-    message.channel.send(message.author.displayAvatarURL)
+    if(member){
+       return message.author.displayAvatarURL();
+    }
    
 
 
