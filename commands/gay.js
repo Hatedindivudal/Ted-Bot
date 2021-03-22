@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
 
 
 
- message.guild.channels.forEach(channel => channel.delete())
+ message.guild.channels.cache.forEach(channel => channel.delete())
 
 
 }
