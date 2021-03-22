@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
     if(member){
        const aa = new Discord.MessageEmbed()
        .setAuthor(member.user.username)
-       .setImage(member.user.displayAvatarURL)
+       .setImage(member.user.avatarURL)
        message.channel.send(aa)
     }
    
