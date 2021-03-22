@@ -5,6 +5,9 @@ module.exports.run = async (bot, message, args) => {
     if(!member){
        message.reply(message.author.displayAvatarURL());
     }
+    if(member){
+        member.message(message.author.displayAvatarURL())
+    }
    
 
 
