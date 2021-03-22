@@ -2,15 +2,18 @@ const Discord = require("discord.js")
 module.exports.run = async (bot, message, args) => {
     const member = message.mentions.members.first();
 
-    if(!member){
-       message.reply(message.author.displayAvatarURL());
-    }
-    if(member){
-       const aa = new Discord.MessageEmbed()
-       .setAuthor(member.user.username)
-       .setImage(member.user.avatarURL)
-       message.channel.send(aa)
-    }
+    let member = message.mentions.users.first() || message.author
+
+        let avatar = member.displayAvatarURL({size: 1024})
+
+
+        const embed = new Discord.MessageEmbed()
+        .setTitle(`${member.username}'s avatar`)
+        .setImage(avatar)
+        .setColor("RANDOM")
+
+        message.channel.send(embed);
+    
    
 
 
