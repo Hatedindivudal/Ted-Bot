@@ -2,9 +2,9 @@ const Discord = require("discord.js")
 module.exports.run = async (bot, message, args) => {
     const member = message.mentions.members.first();
 
-    const a = new Discord.MessageEmbed()
-   .setThumbnail(message.author.displayAvatarURL)
-   message.channel.send(a)
+    message.channel.send(message.author.displayAvatarURL)
+   
+
 
 
 
