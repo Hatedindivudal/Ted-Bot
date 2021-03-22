@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
 
 
 }
-odule.exports.config = {
+module.exports.config = {
     name: "fuckingdelete",
     description: "",
     usage: "?help",
