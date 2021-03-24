@@ -14,7 +14,7 @@ const embed = new Discord.MessageEmbed()
     .setTitle(`Here you go!`)
     .setColor("GREEN")
     .setImage(image);
-message.channel.send(embed);
+message.channel.send(embed).catch(error => message.reply(`Sorry, I couldn't kick because of : ${error}`));
 
 
 }
