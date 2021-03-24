@@ -3,7 +3,7 @@ module.exports.run = async (bot, message, args) => {
    
     const embed = new Discord.MessageEmbed()
     .setAuthor('Thanks for inviting my bot!')
-    .addField("Click on this", "Add Ted to your server! [Click here]( https://discord.com/oauth2/authorize?client_id=704153409309376562&scope=bot&permissions=8)")
+    .addField("Click on this", "Add Ted to your server! [Click here]( https://discord.com/api/oauth2/authorize?client_id=822262797022527519&permissions=8&scope=bot)")
     message.channel.send(embed)
 
     
