@@ -23,7 +23,7 @@ let data = await punishments.findOne({
   UserID: member.id
 });
 if(data) {
-  data.Punishments.unshift({
+  data.punishments.unshift({
       PunishType: 'Warn',
       Moderator: message.author.id,
       Reason: reason,
