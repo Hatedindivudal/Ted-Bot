@@ -1,51 +1,67 @@
 const Discord = require('discord.js');
 const fs = require("fs");
+const punishments = require('../models/ModSchema');
+
 module.exports.run = async (bot, message, args) => {
-  const warns = require("../models/warns");
+  const punishments = require('../models/ModSchema');
+  const mongoose = require('mongoose');
 
-     const reason = args.slice(1).join(" ");
 
-    
-  let user = message.mentions.users.first();
-  if (!user) return message.channel.send(`You did not mention a user!`);
-  if (!reason)
-    return message.channel.send(`You did not specify a reason!`);
-  warns.findOne(
-    { Guild: message.guild.id, User: user.id },
-    async (err, data) => {
-      if (err) console.log(err);
-      if (!data) {
-        let newWarns = new warns({
-          User: user.id,
-          Guild: message.guild.id,
-          Warns: [
-            {
-              Moderator: message.author.id,
-              Reason: reason,
-            },
-          ],
-        });
-        newWarns.save();
-        message.channel.send(
-          `${user.tag} has been warned with the reason of ${
-            reason}. They now have 1 warn.`
-        );
-      } else {
-        data.Warns.unshift({
+  let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(x => x.user.username.toLowerCase() === args.slice(0).join(" ") || x.user.username === args[0]);
+  if (!message.member.hasPermission("MANAGE_MESSAGES")) {
+    return message.reply("You are not allowed to warn members!")
+}
+
+if(message.author.id === member.id) return;
+
+let reason = args.slice(1).join(" ")
+
+if(!reason) return message.channel.send('NO REASON!')
+
+let data = await punishments.findOne({
+  GuildID: message.guild.id,
+  UserID: member.id
+});
+if(data) {
+  data.Punishments.unshift({
+      PunishType: 'Warn',
+      Moderator: message.author.id,
+      Reason: reason,
+  });
+  data.save();
+
+  message.channel.send(`warned ${member} for \`${reason}\``)
+} else if (!data) {
+  let newData = new punishments({
+      GuildID: message.guild.id,
+      UserID: member.id,
+      Punishments: [{
+          PunishType: 'Warn',
           Moderator: message.author.id,
           Reason: reason,
-        });
-        data.save();
-        message.channel.send(
-          `${user.tag} has been warned with the reason of ${reason}
-             They now have ${data.Warns.length} warns.`
-        );
-      }
-    }
-  );
-},
+      }, ],
+  });
+  newData.save();
+
+  message.channel.send(`warned ${member} for \`${reason}\``)
+}
 
 
+}
+
+  
+
+
+
+
+
+
+
+
+
+
+
+}
  
 module.exports.config = {
   name: "warn",
