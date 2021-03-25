@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const fs = require("fs");
-const punishments = require('../models/mod');
+
 
 module.exports.run = async (bot, message, args) => {
   const punishments = require('../models/mod');
