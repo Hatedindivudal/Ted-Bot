@@ -61,7 +61,7 @@ if(data) {
 
 
 
-}
+
  
 module.exports.config = {
   name: "warn",
