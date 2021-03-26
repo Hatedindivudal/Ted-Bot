@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://Hated:7reiRRZ32Q7FF5qy@cluster0.gpkqk.mongodb.net/Data', { useNewUrlParser: true, useUnifiedTopology: true})
 
 const profileModel = require("./models/profileSchema");
-
+mongoose.set('useCreateIndex', true);
 
 module.exports = async (client, discord, member) => {
   let profile = await profileModel.create({
