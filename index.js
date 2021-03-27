@@ -21,9 +21,6 @@ const prefix = '-';
 
 const embed = new Discord.MessageEmbed();
 
-['commandhandler', 'eventhandler'].forEach(handler =>{
-  require(`./handlers/${handler}`)(bot, Discord)
-})
 
 const cheerio = require('cheerio')
 
