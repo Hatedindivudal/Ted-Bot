@@ -102,7 +102,7 @@ bot.on("message", async message => {
     console.log(err);
   }
   
-  command.execute(message, args, cmd, client, Discord, profileData);
+  command.execute(message, args, command, client, Discord, profileData);
 
 
 
