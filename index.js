@@ -11,7 +11,7 @@ const prefix = '-';
 
 const embed = new Discord.MessageEmbed();
 
-require("./util/eventHandler")(bot)
+require("./util/eventHandler")(bot);
 
 
 
