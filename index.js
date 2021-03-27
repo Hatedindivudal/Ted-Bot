@@ -7,15 +7,6 @@ mongoose.connect('mongodb+srv://Hated:7reiRRZ32Q7FF5qy@cluster0.gpkqk.mongodb.ne
 const profileModel = require("./models/profileSchema");
 mongoose.set('useCreateIndex', true);
 
-module.exports = async (bot, discord, member) => {
-  let profile = await profileModel.create({
-    userID: member.id,
-    serverID: member.guild.id,
-    coins: 1000,
-    bank: 0,
-  });
-  profile.save();
-};
 
 const prefix = '-';
 
@@ -65,23 +56,6 @@ bot.on("message", async message => {
     const profileModel = require("./models/profileSchema");
 
   if (!message.content.startsWith(prefix) || message.author.bot) return;
-
-  let profileData;
-  try {
-    profileData = await profileModel.findOne({ userID: message.author.id });
-    if (!profileData) {
-      let profile = await profileModel.create({
-        userID: message.author.id,
-        serverID: message.guild.id,
-        coins: 1000,
-        bank: 0,
-      });
-      profile.save();
-    }
-  } catch (err) {
-    console.log(err);
-  }
-  command.run(message, args, command, bot, Discord, profileData);
 
   
   
