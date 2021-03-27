@@ -61,16 +61,14 @@ const ms = require('ms');
 
     
 
-    if (!message.content.startsWith(prefix)) return;
+
+  if (!message.content.startsWith(prefix) || message.author.bot) return;
+  if (!message.content.startsWith(prefix)) return;
     const args = message.content.slice(prefix.length).split(/ +/);
     const commandName = args.shift().toLowerCase();
     const command = bot.commands.get(commandName)
     bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
     if(command) command.run(bot,message,args);
-
-    const profileModel = require("./models/profileSchema");
-
-  if (!message.content.startsWith(prefix) || message.author.bot) return;
 
   
   
