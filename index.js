@@ -3,9 +3,7 @@ const bot = new Discord.Client();
 bot.events = new Discord.Collection();
 const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://Hated:7reiRRZ32Q7FF5qy@cluster0.gpkqk.mongodb.net/Data', { useNewUrlParser: true, useUnifiedTopology: true})
-['commandhandler', 'eventhandler'].forEach(handler =>{
-  require(`./handlers./${handler}`)(bot, Discord)
-})
+
 const profileModel = require("./models/profileSchema");
 mongoose.set('useCreateIndex', true);
 
@@ -23,7 +21,9 @@ const prefix = '-';
 
 const embed = new Discord.MessageEmbed();
 
-
+['commandhandler', 'eventhandler'].forEach(handler =>{
+  require(`./handlers./${handler}`)(bot, Discord)
+})
 
 
 const cheerio = require('cheerio')
