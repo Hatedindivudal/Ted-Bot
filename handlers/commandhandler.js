@@ -1,6 +1,7 @@
-const Discord = require('discord.js');
 
-module.exports = (bot, Discord) =>{
+module.exports = (bot, Discord, message, args) =>{
+    const Discord = require('discord.js');
+
     const fs = require('fs');
   bot.commands = new Discord.Collection();
 bot.aliases = new Discord.Collection();
