@@ -6,7 +6,7 @@ mongoose.connect('mongodb+srv://Hated:7reiRRZ32Q7FF5qy@cluster0.gpkqk.mongodb.ne
 const profileModel = require("./models/profileSchema");
 mongoose.set('useCreateIndex', true);
 
-module.exports = async (client, discord, member) => {
+module.exports = async (bot, discord, member) => {
   let profile = await profileModel.create({
     userID: member.id,
     serverID: member.guild.id,
@@ -102,7 +102,7 @@ bot.on("message", async message => {
     console.log(err);
   }
   
-  command.execute(message, args, command, client, Discord, profileData);
+  command.execute(message, args, command, bot, Discord, profileData);
 
 
 
