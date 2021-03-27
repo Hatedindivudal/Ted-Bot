@@ -3,6 +3,8 @@ module.exports.run = async (bot, message, args) => {
    
 const ship = Math.floor(Math.random() * 100 ) + 1;
 const member = message.mentions.members.first();
+if(!member) return message.channel.send('Please mention a valid user.');
+
 
 const Shipembed = new Discord.MessageEmbed()
 .setColor("RANDOM")
@@ -12,7 +14,6 @@ message.channel.send(Shipembed).catch(error => message.reply(`Sorry, I couldn't 
 
 
 
-if(!member) return message.channel.send('Please mention a valid user.')
 
     
     
