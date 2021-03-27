@@ -81,7 +81,8 @@ bot.on("message", async message => {
     const command = bot.commands.get(commandName)
     bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
     if(command) command.run(bot,message,args);
-    const profileModel = require("../../models/profileSchema");
+
+    const profileModel = require("./models/profileSchema");
 
   if (!message.content.startsWith(prefix) || message.author.bot) return;
 
