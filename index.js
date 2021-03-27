@@ -80,7 +80,7 @@ bot.on("message", async message => {
     const commandName = args.shift().toLowerCase();
     const command = bot.commands.get(commandName)
     bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
-    if(command) command.run(bot,message,args);
+    if(command) command.run(bot,message,args, profileData);
 
     const profileModel = require("./models/profileSchema");
 
