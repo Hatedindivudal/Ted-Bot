@@ -4,8 +4,6 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://Hated:7reiRRZ32Q7FF5qy@cluster0.gpkqk.mongodb.net/Data', { useNewUrlParser: true, useUnifiedTopology: true})
 
 
-mongoose.set('useCreateIndex', true);
-
 
 const prefix = '-';
 
@@ -50,30 +48,9 @@ fs.readdir("./commands/", (err, files) => {
 const ms = require('ms');
 
 
-
-    
-
-
-
-
-    const usersMap = new Map();
-
-    
-
-
-  if (!message.content.startsWith(prefix) || message.author.bot) return;
-  if (!message.content.startsWith(prefix)) return;
-    const args = message.content.slice(prefix.length).split(/ +/);
-    const commandName = args.shift().toLowerCase();
-    const command = bot.commands.get(commandName)
-    bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
-    if(command) command.run(bot,message,args);
-
-  
-  
-
-
-
+bot.on("message", async message => {
+   
+})
     
 
 
