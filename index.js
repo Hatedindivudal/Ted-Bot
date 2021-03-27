@@ -28,7 +28,7 @@ const embed = new Discord.MessageEmbed();
 
 const cheerio = require('cheerio')
 
-const request = require('request')
+const request = require('request');
 
 const validateFlag = f => f === 'true' || f === 'false' || f === 'null';
 
