@@ -28,5 +28,5 @@ module.exports.config = {
     description: "Says hi",
     usage: "-hi",
     accessableby: "Members",
-    aliases: ['hi', 'hi']
+    aliases: ['av']
 }
