@@ -102,7 +102,7 @@ bot.on("message", async message => {
   } catch (err) {
     console.log(err);
   }
-  command.run(message, args,  profileData);
+  command.run(profileData);
 
   
   
