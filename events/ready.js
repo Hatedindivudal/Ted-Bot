@@ -1,8 +1,7 @@
 
-const Discord = require("discord.js")
 
 module.exports = bot => { 
    
-    bot.user.setPresence({ activity: { name: 'Hitler.' }, status: 'dnd' })
+    bot.user.setPresence({ activity: { name: 'Not Done Yet!' }, status: 'dnd' })
     .catch(console.error);
 }
