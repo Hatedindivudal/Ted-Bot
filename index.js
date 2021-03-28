@@ -94,7 +94,7 @@ try {
 } catch (err) {
   console.log(err);
 } 
-}
+
 
 let profile = await profileModel.create({
     userID: member.id,
@@ -103,6 +103,6 @@ let profile = await profileModel.create({
     bank: 0,
   });
   profile.save();
-
+}
 
 bot.login(process.env.token);
