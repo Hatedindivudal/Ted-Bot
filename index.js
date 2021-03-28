@@ -75,7 +75,7 @@ bot.on("message", async message => {
     
 })
 //----------------------------------------------------------------------------------------------------------------
-const profileModel = require("../../models/profileSchema");
+const profileModel = require("./models/profileSchema");
 
 module.exports.run = async (bot, message, args) => {
 
