@@ -1,4 +1,5 @@
 module.exports = bot => { 
+    const profileModel = require("../../models/profileSchema");
 
 let profile = await profileModel.create({
     userID: member.id,
