@@ -76,13 +76,7 @@ bot.on("message", async message => {
 
     
 
-    if (!message.content.startsWith(prefix)) return;
-    const args = message.content.slice(prefix.length).split(/ +/);
-    const commandName = args.shift().toLowerCase();
-    const command = bot.commands.get(commandName)
-    bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
-    if(command) command.run(message, args, command, bot, Discord, profileData);
-
+   
 
   if (!message.content.startsWith(prefix) || message.author.bot) return;
 
@@ -103,6 +97,13 @@ bot.on("message", async message => {
   }
 
   
+  if (!message.content.startsWith(prefix)) return;
+  const args = message.content.slice(prefix.length).split(/ +/);
+  const commandName = args.shift().toLowerCase();
+  const command = bot.commands.get(commandName)
+  bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+  if(command) command.run(message, args, command, bot, Discord, profileData);
+
   
 
 
