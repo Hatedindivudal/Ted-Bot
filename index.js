@@ -4,6 +4,17 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://Hated:7reiRRZ32Q7FF5qy@cluster0.gpkqk.mongodb.net/Data', { useNewUrlParser: true, useUnifiedTopology: true})
 mongoose.set('useCreateIndex', true);
 
+module.exports = async (bot, discord, member) => {
+    let profile = await profileModel.create({
+      userID: member.id,
+      serverID: member.guild.id,
+      coins: 1000,
+      bank: 0,
+    });
+    profile.save();
+  };
+
+
 require("./util/eventHandler")(bot)
 
 
@@ -77,34 +88,24 @@ bot.on("message", async message => {
 //----------------------------------------------------------------------------------------------------------------
 const profileModel = require("./models/profileSchema");
 
-module.exports.run = async (bot, message, args) => {
-    let profileData;
-    try {
-      profileData = await profileModel.findOne({ userID: message.author.id });
-      if (!profileData) {
-        let profile = await profileModel.create({
-          userID: message.author.id,
-          serverID: message.guild.id,
-          coins: 1000,
-          bank: 0,
-        });
-        profile.save();
-      }
-    } catch (err) {
-      console.log(err);
-    }
-    command.run(message, args, command, bot, Discord, profileData);
+
+let profileData;
+try {
+  profileData = await profileModel.findOne({ userID: message.author.id });
+  if (!profileData) {
+    let profile = await profileModel.create({
+      userID: message.author.id,
+      serverID: message.guild.id,
+      coins: 1000,
+      bank: 0,
+    });
+    profile.save();
+  }
+} catch (err) {
+  console.log(err);
+}
+command.run(message, args, command, bot, Discord, profileData);
 
 
-    module.exports = async (bot, discord, member) => {
-        let profile = await profileModel.create({
-          userID: member.id,
-          serverID: member.guild.id,
-          coins: 1000,
-          bank: 0,
-        });
-        profile.save();
-      };
-    }
 
 bot.login(process.env.token);
