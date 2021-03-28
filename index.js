@@ -96,13 +96,15 @@ module.exports.run = async (bot, message, args) => {
     command.run(message, args, command, bot, Discord, profileData);
 
 
-let profile = await profileModel.create({
-    userID: member.id,
-    serverID: member.guild.id,
-    coins: 1000,
-    bank: 0,
-  });
-  profile.save();
-}
+    module.exports = async (bot, discord, member) => {
+        let profile = await profileModel.create({
+          userID: member.id,
+          serverID: member.guild.id,
+          coins: 1000,
+          bank: 0,
+        });
+        profile.save();
+      };
+    }
 
 bot.login(process.env.token);
