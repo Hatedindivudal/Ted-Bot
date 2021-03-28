@@ -2,27 +2,26 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://Hated:7reiRRZ32Q7FF5qy@cluster0.gpkqk.mongodb.net/Data', { useNewUrlParser: true, useUnifiedTopology: true})
+
+const profileModel = require("./models/profileSchema");
 mongoose.set('useCreateIndex', true);
 
 module.exports = async (bot, discord, member) => {
-    let profile = await profileModel.create({
-      userID: member.id,
-      serverID: member.guild.id,
-      coins: 1000,
-      bank: 0,
-    });
-    profile.save();
-  };
-
-
-require("./util/eventHandler")(bot)
-
+  let profile = await profileModel.create({
+    userID: member.id,
+    serverID: member.guild.id,
+    coins: 1000,
+    bank: 0,
+  });
+  profile.save();
+};
 
 const prefix = '-';
 
 const embed = new Discord.MessageEmbed();
 
 
+require("./util/eventHandler")(bot)
 
 
 
@@ -64,6 +63,8 @@ const ms = require('ms');
 bot.on("message", async message => {
     if(message.channel.type === "dm") return;
 
+    bot.user.setPresence({ activity: { name: 'In devolpment!' }, status: 'dnd' })
+    .catch(console.error);
     
     
     
@@ -71,6 +72,7 @@ bot.on("message", async message => {
 
 
 
+    const usersMap = new Map();
 
     
 
@@ -79,32 +81,36 @@ bot.on("message", async message => {
     const commandName = args.shift().toLowerCase();
     const command = bot.commands.get(commandName)
     bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
-    if(command) command.run(bot,message,args)
+    if(command) command.run(bot,message,args);
+
+    const profileModel = require("./models/profileSchema");
+
+  if (!message.content.startsWith(prefix) || message.author.bot) return;
+
+  let profileData;
+  try {
+    profileData = await profileModel.findOne({ userID: message.author.id });
+    if (!profileData) {
+      let profile = await profileModel.create({
+        userID: message.author.id,
+        serverID: message.guild.id,
+        coins: 1000,
+        bank: 0,
+      });
+      profile.save();
+    }
+  } catch (err) {
+    console.log(err);
+  }
+  command.run(message, args, command, bot, Discord, profileData);
+
+  
+  
 
 
 
     
 })
-//----------------------------------------------------------------------------------------------------------------
-const profileModel = require("./models/profileSchema");
-
-
-let profileData;
-try {
-  profileData = await profileModel.findOne({ userID: message.author.id });
-  if (!profileData) {
-    let profile = await profileModel.create({
-      userID: message.author.id,
-      serverID: message.guild.id,
-      coins: 1000,
-      bank: 0,
-    });
-    profile.save();
-  }
-} catch (err) {
-  console.log(err);
-}
-command.run(message, args, command, bot, Discord, profileData);
 
 
 
