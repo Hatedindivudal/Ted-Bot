@@ -75,6 +75,7 @@ bot.on("message", async message => {
     
 })
 //----------------------------------------------------------------------------------------------------------------
+module.exports.run = async (bot, message, args) => {
 
 let profileData;
 try {
@@ -91,7 +92,7 @@ try {
 } catch (err) {
   console.log(err);
 } 
-
+}
 
 
 bot.login(process.env.token);
