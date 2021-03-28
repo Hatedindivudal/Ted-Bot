@@ -73,22 +73,7 @@ bot.on("message", async message => {
 
 
     const usersMap = new Map();
-    let profileData;
-    try {
-      profileData = await profileModel.findOne({ userID: message.author.id });
-      if (!profileData) {
-        let profile = await profileModel.create({
-          userID: message.author.id,
-          serverID: message.guild.id,
-          coins: 1000,
-          bank: 0,
-        });
-        profile.save();
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  
+
     
 
     if (!message.content.startsWith(prefix)) return;
@@ -96,12 +81,29 @@ bot.on("message", async message => {
     const commandName = args.shift().toLowerCase();
     const command = bot.commands.get(commandName)
     bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
-    if(command) command.run(message, args, command,  profileData);
+    if(command) command.run(bot,message,args);
 
+    const profileModel = require("./models/profileSchema");
 
   if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-  
+  let profileData;
+  try {
+    profileData = await profileModel.findOne({ userID: message.author.id });
+    if (!profileData) {
+      let profile = await profileModel.create({
+        userID: message.author.id,
+        serverID: message.guild.id,
+        coins: 1000,
+        bank: 0,
+      });
+      profile.save();
+    }
+  } catch (err) {
+    console.log(err);
+  }
+  command.run(message, args, command, bot, Discord, profileData);
+
   
   
 
