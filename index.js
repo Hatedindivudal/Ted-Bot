@@ -96,7 +96,7 @@ bot.on("message", async message => {
     const commandName = args.shift().toLowerCase();
     const command = bot.commands.get(commandName)
     bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
-    if(command) command.run(message, args, command, , profileData);
+    if(command) command.run(message, args, command,  profileData);
 
 
   if (!message.content.startsWith(prefix) || message.author.bot) return;
