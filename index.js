@@ -1,8 +1,12 @@
-const Discord = require('discord.js');
-const bot = new Discord.Client();
-const mongoose = require('mongoose');
+const Discord = require('discord.js');//it stopped, I didnt do anything, on my life bro istg
+const bot = new Discord.Client(); //okay im gonna apply the changes now  what tfkc
+const mongoose = require('mongoose'); //alright alright alright as i was saying im gona apply the changes now
+// i need to make sure that the comand is still working properly if not thats a big issue
+//why is the eco stuff in your index file,oh  
+// oh i can just do it by hand dont worry and why am i getting a error its gone 
+// because as i said i've been having issues with a event handler their suppoused to go inside of it but im struggling so index it is 
 mongoose.connect('mongodb+srv://Hated:7reiRRZ32Q7FF5qy@cluster0.gpkqk.mongodb.net/Data', { useNewUrlParser: true, useUnifiedTopology: true})
-
+//thats fine, is there a command to remove all of the notes, or do you have to do it by hand, where did you go, hated is dead :skull:
 const profileModel = require("./models/profileSchema");
 mongoose.set('useCreateIndex', true);
 
@@ -13,7 +17,7 @@ module.exports = async (bot, discord, member) => {
     coins: 1000,
     bank: 0,
   });
-  profile.save();
+  profile.save();aht
 };
 
 const prefix = '-';
@@ -34,6 +38,7 @@ const validateFlag = f => f === 'true' || f === 'false' || f === 'null';
 const IGNORED = new Set([
     // PLACE YOUR CHANNEL IDS HERE
   ]);
+  // no im not that ape
 
   const fs = require('fs');
   bot.commands = new Discord.Collection();
@@ -85,7 +90,6 @@ bot.on("message", async message => {
 
     if (!message.content.startsWith(prefix) || message.author.bot)
         return;
-        const command = bot.commands.get(commandName)
     let profileData;
     try {
         profileData = await profileModel.findOne({ userID: message.author.id });
@@ -97,7 +101,7 @@ bot.on("message", async message => {
                 bank: 0,
             });
             profile.save(); // it will add them to the database with ^
-        }
+        }//wow so you actually make sto
     } catch (err) {
         console.log(err);
     }
