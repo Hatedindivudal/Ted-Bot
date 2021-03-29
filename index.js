@@ -63,9 +63,6 @@ const ms = require('ms');
 bot.on("message", async message => {
     if(message.channel.type === "dm") return;
 
-    bot.user.setPresence({ activity: { name: 'In devolpment!' }, status: 'dnd' })
-    .catch(console.error);
-    
     
     
 
@@ -81,30 +78,9 @@ bot.on("message", async message => {
     const commandName = args.shift().toLowerCase();
     const command = bot.commands.get(commandName)
     bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
-    if(command) command.run(bot,message,args);
+    if(command) command.run(bot,message,args,);
 
-    const profileModel = require("./models/profileSchema");
-
-  if (!message.content.startsWith(prefix) || message.author.bot) return;
-
-  let profileData;
-  try {
-    profileData = await profileModel.findOne({ userID: message.author.id });
-    if (!profileData) {
-      let profile = await profileModel.create({
-        userID: message.author.id,
-        serverID: message.guild.id,
-        coins: 1000,
-        bank: 0,
-      });
-      profile.save();
-    }
-  } catch (err) {
-    console.log(err);
-  }
-  command.run(profileData);
-
-  
+    
   
 
 
