@@ -86,7 +86,7 @@ bot.on("message", async message => {
     if(command) command.run(bot,message,args,);
 
     
-    const profileModel = require("../models/profileSchema");
+    const profileModel = require("./models/profileSchema");
 
     if (!message.content.startsWith(prefix) || message.author.bot)
         return;
@@ -101,7 +101,11 @@ bot.on("message", async message => {
                 bank: 0,
             });
             profile.save(); // it will add them to the database with ^
-        }//wow so you actually make sto
+        }//wow so you actually notes? understandable, ok, ransom by little tecca, ok
+        //sometimes, im gonna start adding notes i find i've been getting confused in my own code
+        // i had to fix something thats why its not done updating i accidently declared commands twice had to remove the other one  ok 
+        //whats your jam ape?
+        //okay so go to the plug
     } catch (err) {
         console.log(err);
     }
