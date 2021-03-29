@@ -22,5 +22,6 @@ module.exports = async  (bot) => {
     } catch (err) {
         console.log(err);
     }
-    command.run(profileData); // everytime someone runs a command it will check if they have any data
+    command.run(message, args, command, bot, Discord, profileData);
+    // everytime someone runs a command it will check if they have any data
 }
