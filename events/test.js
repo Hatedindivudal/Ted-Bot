@@ -6,7 +6,7 @@ module.exports = async  (bot) => {
 
     if (!message.content.startsWith(prefix) || message.author.bot)
         return;
-
+        const command = bot.commands.get(commandName)
     let profileData;
     try {
         profileData = await profileModel.findOne({ userID: message.author.id });
