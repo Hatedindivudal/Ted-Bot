@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 module.exports.run = async (bot, message, args) => {
     if(!message.channel.nsfw) return;
 
-
+//hey ape can you see this
 
 const Discord = require("discord.js");
 const NSFW = require("discord-nsfw");

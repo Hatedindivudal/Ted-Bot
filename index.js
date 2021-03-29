@@ -81,6 +81,28 @@ bot.on("message", async message => {
     if(command) command.run(bot,message,args,);
 
     
+    const profileModel = require("../models/profileSchema");
+
+    if (!message.content.startsWith(prefix) || message.author.bot)
+        return;
+        const command = bot.commands.get(commandName)
+    let profileData;
+    try {
+        profileData = await profileModel.findOne({ userID: message.author.id });
+        if (!profileData) { // if the user does not have any data
+            let profile = await profileModel.create({
+                userID: message.author.id,
+                serverID: message.guild.id,
+                coins: 1000,
+                bank: 0,
+            });
+            profile.save(); // it will add them to the database with ^
+        }
+    } catch (err) {
+        console.log(err);
+    }
+    command.run(message, args, command, bot, Discord, profileData);
+    // everytime someone runs a command it will check if they have any data
   
 
 
