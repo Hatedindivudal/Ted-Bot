@@ -2,7 +2,7 @@
 
 module.exports = async  (bot) => {
 
-    const profileModel = require("./models/profileSchema");
+    const profileModel = require("../models/profileSchema");
 
     if (!message.content.startsWith(prefix) || message.author.bot)
         return;
