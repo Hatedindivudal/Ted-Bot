@@ -106,10 +106,12 @@ bot.on("message", async message => {
         // i had to fix something thats why its not done updating i accidently declared commands twice had to remove the other one  ok 
         //whats your jam ape?
         //okay so go to the plug
+        //im here, can we test
+        //hi okay so everything is fixed 
     } catch (err) {
         console.log(err);
     }
-    command.run(message, args, command, bot, Discord, profileData);
+    command.run(message, args, command, bot, Discord, profileData).catch()
     // everytime someone runs a command it will check if they have any data
   
 
