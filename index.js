@@ -9,6 +9,7 @@ mongoose.connect('mongodb+srv://Hated:7reiRRZ32Q7FF5qy@cluster0.gpkqk.mongodb.ne
 //thats fine, is there a command to remove all of the notes, or do you have to do it by hand, where did you go, hated is dead :skull:
 const profileModel = require("./models/profileSchema");
 mongoose.set('useCreateIndex', true);
+mongoose.set('useFindAndModify', false);
 
 module.exports = async (bot, discord, member) => {
   let profile = await profileModel.create({
