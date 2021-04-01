@@ -24,7 +24,7 @@ module.exports.run = async (bot, message, args, profileData) => {
 
 
 module.exports.config = {
-    name: "bal",
+    name: "work",
     description: "",
     usage: ".",
     accessableby: "Members",
