@@ -3,7 +3,8 @@ module.exports.run = async (bot, message, args, profileData) => {
     
 
 const balanceembed = new Discord.MessageEmbed()
-.setTitle('hi test', 'hitest')
+.setTitle(`${message.member}`)
+.addField(`Pocket: ${profileData.coins}`)
 message.channel.send(balanceembed);
 
 
