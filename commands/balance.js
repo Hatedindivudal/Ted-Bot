@@ -2,8 +2,11 @@ const Discord = require("discord.js")
 module.exports.run = async (bot, message, args, profileData) => {
     
 
+const balanceembed = new Discord.MessageEmbed()
+.addField('hi test', 'hitest')
 
-message.channel.send(`Your wallet balance is currently ${profileData.coins}`)
+
+
 }
 
 
