@@ -3,7 +3,7 @@ module.exports.run = async (bot, message, args, profileData) => {
     
 
 const balanceembed = new Discord.MessageEmbed()
-.setDescription('hi test', 'hitest')
+.setTitle('hi test', 'hitest')
 message.channel.send(balanceembed);
 
 
