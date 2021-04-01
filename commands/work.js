@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 
-module.exports.run = async (bot, message, args, profileData, profileModel) => {
+module.exports.run = async (bot, message, args, profileData, ) => {
+    const profileModel = require("../models/profileSchema");
 
 
 
