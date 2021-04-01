@@ -8,7 +8,7 @@ message.channel.send(`Your wallet balance is currently ${profileData.coins}`)
 
 
 module.exports.config = {
-    name: "ban",
+    name: "bal",
     description: "Bans a User",
     usage: "-ban",
     accessableby: "Admins",
