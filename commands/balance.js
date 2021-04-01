@@ -4,6 +4,7 @@ module.exports.run = async (bot, message, args, profileData) => {
 
 const balanceembed = new Discord.MessageEmbed()
 .addField('hi test', 'hitest')
+message.channel.send(balanceembed);
 
 
 
