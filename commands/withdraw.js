@@ -21,7 +21,7 @@ module.exports.run = async (bot, message, args, profileData) => {
             }
           );
     
-          return message.channel.send(`You withdrew ${amount} of coins into your wallet`);
+          return message.channel.send(`You withdrew ${amount} of coins into your pocket`);
         } catch (err) {
           console.log(err);
         }
