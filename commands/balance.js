@@ -6,7 +6,7 @@ const balanceembed = new Discord.MessageEmbed()
 .setTitle(`${message.author.tag}`)
 .setDescription(`
 **Pocket:** ${profileData.coins}$
-**Bank:** ${profileData.bank}$`);
+**Bank:** ${profileData.bank}$`)
 message.channel.send(balanceembed);
 
 
