@@ -7,7 +7,7 @@ const balanceembed = new Discord.MessageEmbed()
 .setDescription(`
 **Bank:** ${profileData.bank}
 **Pocket** ${profileData.coins}`)
-message.channel.send(balanceembed)
+message.channel.send(balanceembed);
 
 
 
