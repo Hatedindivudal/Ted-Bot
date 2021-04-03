@@ -10,7 +10,7 @@ if(amount > profileData.coins) return message.reply('You dont have that much to 
 let chances = ['Win', 'Lose']
 var pick = chances[Math.floor(Math.random() * chances.length)]
 
-if(pick == "Lose") 
+if(pick == "Lose"){
 await profileModel.findOneAndUpdate(
     {
       userID: message.author.id,
@@ -21,7 +21,8 @@ await profileModel.findOneAndUpdate(
       },
   }
   );
-  message.channel.send(`You have lost ${amount} your new balance is ${profileData.coins}`)
+  return message.channel.send(`You have lost ${amount} your new balance is ${profileData.coins}`);
+}
 if(pick == "Win"){
      await profileModel.findOneAndUpdate(
       {
