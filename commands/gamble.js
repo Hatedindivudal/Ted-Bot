@@ -10,6 +10,8 @@ module.exports.run = async (bot, message, args, profileData) => {
 
 let chances = ['Win', 'Lose']
 var pick = chances[Math.floor(Math.random() * chances.length)]
+if(pick == "Lose") return message.channel.send("testing for errors")
+
 if(pick == "Win"){
      await profileModel.findOneAndUpdate(
       {
