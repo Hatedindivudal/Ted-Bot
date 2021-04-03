@@ -21,7 +21,7 @@ await profileModel.findOneAndUpdate(
       },
   }
   );
-  return message.channel.send(`You have lost ${amount} your new balance is ${profileData.coins}`);
+  return message.channel.send(`You have lost ${amount}$`);
 }
 if(pick == "Win"){
      await profileModel.findOneAndUpdate(
@@ -34,7 +34,7 @@ if(pick == "Win"){
         },
     }
     );
-    return message.channel.send(`You have won ${amount} your new balance is ${profileData.coins}`);
+    return message.channel.send(`You have gained ${amount}$`);
   }
 }
 
