@@ -26,7 +26,6 @@ if(pick == "Win"){
     return message.channel.send(`You have won ${amount}`);
   }
 }
-if(pick == "Lose") return message.channel.send("testing for errors")
 
 
 
