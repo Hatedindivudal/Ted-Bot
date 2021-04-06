@@ -34,7 +34,13 @@ module.exports.config = {
     usage: "-hi",
     accessableby: "Members",
     aliases: ['hi', 'hi'],
-    cooldown: 120,
+    _cooldown: 120,
+    get cooldown() {
+        return this._cooldown;
+    },
+    set cooldown(value) {
+        this._cooldown = value;
+    },
 
 
 
