@@ -109,19 +109,19 @@ bot.on("message", async message => {
     if (!message.content.startsWith(prefix)) return;
     const args = message.content.slice(prefix.length).split(/ +/);
     const commandName = args.shift().toLowerCase();
-    const command = bot.commands.get(commandName)
-    bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+    const command = bot.command.get(commandName)
+    bot.command.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
     if(command) command.run(bot,message,args, profileData);
 
 
     const cooldowns = new Map();
-    if(!cooldowns.has(commands.name)){
-        cooldowns.set(commands.name, new Discord.Collection());
+    if(!cooldowns.has(command.name)){
+        cooldowns.set(command.name, new Discord.Collection());
     }
 
     const current_time = Date.now();
-    const time_stamps = cooldowns.get(commands.name);
-    const cooldown_amount = (commands.cooldown) * 1000;
+    const time_stamps = cooldowns.get(command.name);
+    const cooldown_amount = (command.cooldown) * 1000;
 
     //If time_stamps has a key with the author's id then check the expiration time to send a message to a user.
     if(time_stamps.has(message.author.id)){
