@@ -106,12 +106,7 @@ bot.on("message", async message => {
     }
     // everytime someone runs a command it will check if they have any data
   
-    if (!message.content.startsWith(prefix)) return;
-    const args = message.content.slice(prefix.length).split(/ +/);
-    const commandName = args.shift().toLowerCase();
-    const command = bot.command.get(commandName)
-    bot.command.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
-    if(command) command.run(bot,message,args, profileData);
+   
 
 
     const cooldowns = new Map();
@@ -138,8 +133,13 @@ bot.on("message", async message => {
     time_stamps.set(message.author.id, current_time);
     //Delete the user's id once the cooldown is over.
     setTimeout(() => time_stamps.delete(message.author.id), cooldown_amount);
-    
-    
+    if (!message.content.startsWith(prefix)) return;
+    const args = message.content.slice(prefix.length).split(/ +/);
+    const commandName = args.shift().toLowerCase();
+    bot.command.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+    if(command) command.run(bot,message,args, profileData);
+    const command = bot.command.get(commandName);
+
 })
 
 
