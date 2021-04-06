@@ -78,11 +78,12 @@ bot.on("message", async message => {
         .then(response => response.json())
         .then(data =>{
             message.channel.send(data.response)
+        })
             .catch(() =>{
 message.channel.send('Im Broken!')
             })
 
-        })
+        
     }
 
 
