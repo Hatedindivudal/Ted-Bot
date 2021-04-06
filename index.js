@@ -77,7 +77,7 @@ bot.on("message", async message => {
         fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}&key=xz0Vo4KLSX6q3PoVFQH1BHisu`)
         .then(response => response.json())
         .then(data =>{
-            message.channel.send(data.response)
+            message.reply(data.response)
         })
             .catch(() =>{
 message.channel.send('Im Broken!')
