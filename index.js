@@ -72,12 +72,11 @@ const fetch = require("node-fetch").default
 
 
 bot.on("message", async message => {
-    if(message.author.bot || message.channel.type === "dm") return;
+    if(message.author.bot || message.channel.type === "dm" || message.author.id === "822262797022527519") return;
     if (message.channel.id === "829051130980859904"){
         fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}&key=xz0Vo4KLSX6q3PoVFQH1BHisu`)
         .then(response => response.json())
         .then(data =>{
-            if(message.author.id === "822262797022527519") return message.channel.send('stfu')
 
             message.reply(data.response)
 
