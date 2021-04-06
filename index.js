@@ -106,13 +106,13 @@ bot.on("message", async message => {
     }
     // everytime someone runs a command it will check if they have any data
   
-   
+    const command = bot.command.get(commandName);
+
     if (!message.content.startsWith(prefix)) return;
     const args = message.content.slice(prefix.length).split(/ +/);
     const commandName = args.shift().toLowerCase();
     bot.command.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
     if(command) command.run(bot,message,args, profileData);
-    const command = bot.command.get(commandName);
 
 
     const cooldowns = new Map();
