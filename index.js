@@ -124,7 +124,7 @@ bot.on("message", async message => {
 
     const current_time = Date.now();
     const time_stamps = cooldowns.get(command.name);
-    const cooldown_amount = (command.cooldown) * 1000;
+    const cooldown_amount = (command.cooldowns) * 1000;
 
     //If time_stamps has a key with the author's id then check the expiration time to send a message to a user.
     if (time_stamps.has(message.author.id)) {
