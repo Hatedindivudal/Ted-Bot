@@ -113,8 +113,6 @@ bot.on("message", async message => {
 
     const command = bot.commands.get(commandName)
 
-    bot.command.find((cmd) => cmd.aliases && cmd.aliases.includes(commandName));
-
     if (command) command.run(bot, message, args, profileData);
 
 
