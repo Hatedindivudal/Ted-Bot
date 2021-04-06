@@ -107,7 +107,6 @@ bot.on("message", async message => {
     // everytime someone runs a command it will check if they have any data
 
 
-    if (command) command.run(bot, message, args, profileData);
     if (!message.content.startsWith(prefix)) return;
     const args = message.content.slice(prefix.length).split(/ +/);
     const commandName = args.shift().toLowerCase();
