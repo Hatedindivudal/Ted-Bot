@@ -68,10 +68,22 @@ fs.readdir("./commands/", (err, files) => {
 
 
 const ms = require('ms');
+const fetch = require("node-fetch").default
 
 
 bot.on("message", async message => {
     if (message.channel.type === "dm") return;
+    if (message.channel.id === "829051130980859904"){
+        fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}`)
+        .then(response => response.json())
+        .then(data =>{
+            message.channel.send(data.response)
+            .catch(() =>{
+message.channel.send('Im Broken!')
+            })
+
+        })
+    }
 
 
 
