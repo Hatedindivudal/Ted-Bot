@@ -110,7 +110,6 @@ bot.on("message", async message => {
     if (!message.content.startsWith(prefix)) return;
     const args = message.content.slice(prefix.length).split(/ +/);
     const commandName = args.shift().toLowerCase();
-    bot.command.find((cmd) => cmd.aliases && cmd.aliases.includes(commandName));
 
     if (command) command.run(bot, message, args, profileData);
 
