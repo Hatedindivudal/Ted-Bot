@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args, profileData) => {
     if (amount % 1 != 0 || amount <= 0) return message.channel.send("That isn't a number!");
 if(amount > profileData.coins) return message.reply('You dont have that much to gamble!')
 
-let chances = ['Win', 'Lose']
+let chances = ['Win', 'Win', 'Lose']
 var pick = chances[Math.floor(Math.random() * chances.length)]
 
 if(pick == "Lose"){

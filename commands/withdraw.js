@@ -33,7 +33,8 @@ module.exports.config = {
     description: "Says hi",
     usage: "-hi",
     accessableby: "Members",
-    aliases: ['hi', 'hi']
+    aliases: ['hi', 'hi'],
+    cooldown: 120,
 
 
 
