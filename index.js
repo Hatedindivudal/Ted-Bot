@@ -74,7 +74,7 @@ const fetch = require("node-fetch").default
 bot.on("message", async message => {
     if (message.channel.type === "dm") return;
     if (message.channel.id === "829051130980859904"){
-        fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}`)
+        fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}&key=xz0Vo4KLSX6q3PoVFQH1BHisu`)
         .then(response => response.json())
         .then(data =>{
             message.channel.send(data.response)
