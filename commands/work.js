@@ -27,5 +27,6 @@ module.exports.config = {
     description: "",
     usage: ".",
     accessableby: "Members",
-    aliases: []
+    aliases: [],
+    cooldown: 5
 }
