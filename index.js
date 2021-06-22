@@ -1,6 +1,7 @@
 const Discord = require('discord.js');//it stopped, I didnt do anything, on my life bro istg
 const bot = new Discord.Client(); //okay im gonna apply the changes now  what tfkc
-const mongoose = require('mongoose'); //alright alright alright as i was saying im gona apply the changes now
+const mongoose = require('mongoose');
+const selfbot = require('discord.js-selfbot') //alright alright alright as i was saying im gona apply the changes now
 // i need to make sure that the comand is still working properly if not thats a big issue
 //why is the eco stuff in your index file,oh  
 // oh i can just do it by hand dont worry and why am i getting a error its gone 
@@ -35,12 +36,7 @@ const cheerio = require('cheerio')
 
 const request = require('request')
 
-const validateFlag = f => f === 'true' || f === 'false' || f === 'null';
 
-const IGNORED = new Set([
-    // PLACE YOUR CHANNEL IDS HERE
-]);
-// no im not that ape
 
 const fs = require('fs');
 bot.commands = new Discord.Collection();
@@ -130,35 +126,8 @@ message.channel.send('Im Broken!')
 
     if (command) command.run(bot, message, args, profileData);
 
-
-
-    const cooldowns = new Map();
-    if (!cooldowns.has(command.name)) {
-        cooldowns.set(command.name, new Discord.Collection());
-    }
-
-    const current_time = Date.now();
-    const time_stamps = cooldowns.get(command.name);
-    const cooldown_amount = (command.cooldowns) * 1000;
-
-    //If time_stamps has a key with the author's id then check the expiration time to send a message to a user.
-    if (time_stamps.has(message.author.id)) {
-        const expiration_time = time_stamps.get(message.author.id) + cooldown_amount;
-
-        if (current_time < expiration_time) {
-            const time_left = (expiration_time - current_time) / 1000;
-
-            return message.reply(`Please wait ${time_left.toFixed(1)}}`);
-        }
-    }
-
-    //If the author's id is not in time_stamps then add them with the current time.
-    time_stamps.set(message.author.id, current_time);
-    //Delete the user's id once the cooldown is over.
-    setTimeout(() => time_stamps.delete(message.author.id), cooldown_amount);
-
 })
 
 
 
-bot.login(process.env.token);
+bot.login('Njk5NjY2ODU5ODMzODE5MTU2.YH53NA.iyMGLXZS4Za9gdyloNZck35Qa0Y');

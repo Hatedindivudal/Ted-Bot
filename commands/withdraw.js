@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 module.exports.run = async (bot, message, args, profileData) => {
     const profileModel = require("../models/profileSchema");
+    
 let faggot = await  id.fetch(`faggot_${message.author.id}`)
 let timeout = 10000;
 if(faggot !== null && timeout - (Date.now() - faggot) > 0){
