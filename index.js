@@ -152,4 +152,4 @@ message.channel.send('Im Broken!')
 
 
 
-bot.login('Njk5NjY2ODU5ODMzODE5MTU2.YH53NA.iyMGLXZS4Za9gdyloNZck35Qa0Y');
+bot.login(process.env.token);
