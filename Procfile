@@ -1,1 +1,1 @@
-wasdasd wA D
+worker: node index.js
