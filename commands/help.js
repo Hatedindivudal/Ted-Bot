@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args) => {
 
     if (!args.length) {
         data.push('Here\'s a list of all my commands:');
-        data.push(commands.map(command => command.name).join(', '));
+        data.push(commands.map(bot.commands.set(pull.config.name).join(', ')))
         
     
         return message.author.send(data, { split: true })
