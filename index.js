@@ -2,7 +2,7 @@ const Discord = require('discord.js');//it stopped, I didnt do anything, on my l
 const bot = new Discord.Client(); //okay im gonna apply the changes now  what tfkc
 const mongoose = require('mongoose');
 const selfbot = require('discord.js-selfbot')
-client.cooldowns = new Discord.Collection();
+bot.cooldowns = new Discord.Collection();
  //alright alright alright as i was saying im gona apply the changes now
 // i need to make sure that the comand is still working properly if not thats a big issue
 //why is the eco stuff in your index file,oh  
