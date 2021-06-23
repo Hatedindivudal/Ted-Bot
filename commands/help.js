@@ -2,6 +2,9 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
     const data = [];
+    const { commands } = message.client;
+    const { commands } = message.client;
+
     if (!args.length) {
         data.push('Here\'s a list of all my commands:');
         data.push(commands.map(bot.commands.set(pull.config.name).join(', ')))
