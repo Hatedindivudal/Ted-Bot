@@ -3,7 +3,7 @@ module.exports.run = async (bot, message, args) => {
     const DisTube = require('distube');
 
 const music = args.join(" ");
-    distube.play(message, music);
+    bot.distube.play(message, music);
 
     
 
