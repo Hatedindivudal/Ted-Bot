@@ -3,7 +3,7 @@ const bot = new Discord.Client(); //okay im gonna apply the changes now  what tf
 const mongoose = require('mongoose');
 const selfbot = require('discord.js-selfbot')
 const DisTube = require('distube');
-bot.distube = new DisTube(bot, { searchSongs: true, emitNewSongOnly: true });
+bot.distube = new DisTube(bot, { searchSongs: false, emitNewSongOnly: true });
 
 bot.cooldowns = new Discord.Collection();
  //alright alright alright as i was saying im gona apply the changes now
