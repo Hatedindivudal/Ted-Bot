@@ -23,6 +23,7 @@
     "ms": "^2.1.2",
     "node-fetch": "^2.6.1",
     "random-puppy": "^1.1.0",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "ytdl-core": "^4.8.2"
   }
 }
