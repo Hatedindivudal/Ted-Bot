@@ -4,6 +4,10 @@ const mongoose = require('mongoose');
 const selfbot = require('discord.js-selfbot')
 const DisTube = require('distube');
 bot.distube = new DisTube(bot, { searchSongs: false, emitNewSongOnly: true });
+bot.distube
+ .on("playSong", (message, queue, song) => message.channel.send(
+        `Playing \`${song.name}\` - \`${song.formattedDuration}\`\nRequested by: ${song.user}\n${status(queue)}`
+    ))
 
 bot.cooldowns = new Discord.Collection();
  //alright alright alright as i was saying im gona apply the changes now
