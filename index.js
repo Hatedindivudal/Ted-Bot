@@ -6,7 +6,7 @@ const DisTube = require('distube');
 bot.distube = new DisTube(bot, { searchSongs: false, emitNewSongOnly: true });
 bot.distube
  .on("playSong", (message, queue, song) => message.channel.send(
-        `Playing \`${song.name}\` - \`${song.formattedDuration}\`\nRequested by: ${song.user}\n${status(queue)}`
+        `Playing \`${song.name}\` - \`${song.formattedDuration}\`\nRequested by: ${song.user}`
     ))
 
 bot.cooldowns = new Discord.Collection();
