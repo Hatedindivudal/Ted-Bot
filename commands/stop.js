@@ -1,8 +1,14 @@
 const Discord = require('discord.js');
 module.exports.run = async (bot, message, args) => {
+    let queue = await bot.distube.getQueue(message);
 
-    bot.distube.stop(message);
-    message.channel.send("Stopped the music!");
+    if(queue){
+        bot.distube.stop(message);
+        message.channel.send("Stopped the music!");
+    }
+    if(message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command!')
+
+   
 
 
 }

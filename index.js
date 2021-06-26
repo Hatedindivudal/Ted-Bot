@@ -8,6 +8,9 @@ bot.distube
  .on("playSong", (message, queue, song) => message.channel.send(
         `Playing \`${song.name}\` - \`${song.formattedDuration}\`\nRequested by: ${song.user}`
     ))
+    .on("addSong", (message, queue, song) => message.channel.send(
+        `Added ${song.name} - \`${song.formattedDuration}\` to the queue by ${song.user}`
+    ))
 
 bot.cooldowns = new Discord.Collection();
  //alright alright alright as i was saying im gona apply the changes now
