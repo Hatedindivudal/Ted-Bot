@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
         bot.distube.stop(message);
         message.channel.send("Stopped the music!");
     }
-    if(message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command!')
+    if(!message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command!')
 
    
 
