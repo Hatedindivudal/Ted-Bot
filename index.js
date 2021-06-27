@@ -3,7 +3,9 @@ const bot = new Discord.Client(); //okay im gonna apply the changes now  what tf
 const mongoose = require('mongoose');
 const selfbot = require('discord.js-selfbot')
 const DisTube = require('distube');
-bot.distube = new DisTube(bot, { searchSongs: false, emitNewSongOnly: true });
+bot.distube = new DisTube(bot, { searchSongs: false, emitNewSongOnly: true,
+youtubeCookie: 'VISITOR_INFO1_LIVE=uBc451HAej4; PREF=tz=America.Halifax; __Secure-3PSID=9Ae2vBzYxCur8qWVMEMw7RhMYY-4hu8tl2wxBeYn4RuRZxTg2dPCulZMeQcP-7iyLKcvpw.; __Secure-3PAPISID=Rd51jBCTXTINQJ2r/AftGpIelT1qTJneS3; LOGIN_INFO=AFmmF2swRQIgKzPn0taakADrLsnheqZ5TjSmMNTYiYLLSBwITsBtz7ICIQCOpIMH-vq-fdz0dzLGFX8mnaB13WDckGJnGTBOFjvIng:QUQ3MjNmelgtanBpOGRwMXR1V3psVHpjM0ZrNVJ5TVNuOE1odGVBZEU3d0tkbmxacDVnb1VUdDBHRlQ2a3RaUUFjcVhyLWdydER1YW9Dak5XUTJPaFZQMmlldHNzazZDU2UwWk1KMzFwSWJRU3U1SFRhdXVVTVpfSDdmM3hFdXhvWHZRY1dZZS1zZXhtQVpuelp0elczRmFYMm1DM1B5dHdlMFJtNk1LOUNJbGR1eko2aVZPaVJGQmlpcUtPTjc4d0k3bEVvLVBVYThE; YSC=NHQsnaCPFKs; __Secure-3PSIDCC=AJi4QfHBCvX5nbX_ACM0EsMuBW-130pHctscs2NyIOQdRmI63dPwYavNmP6umoCUuEl4d6-Uugc'
+ });
 bot.distube
  .on("playSong", (message, queue, song) => message.channel.send(
         `Playing \`${song.name}\` - \`${song.formattedDuration}\`\nRequested by: ${song.user}`
