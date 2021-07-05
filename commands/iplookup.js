@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
 
         })
             .catch(() =>{
-message.channel.send('Im Broken!')
+message.channel.send('Im Broken.')
             })
 
         
