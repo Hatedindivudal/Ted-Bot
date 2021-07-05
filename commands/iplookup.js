@@ -3,7 +3,7 @@ const ms = require('ms');
 
 module.exports.run = async (bot, message, args) => {
     const fetch = require("node-fetch").default
-    fetch(`http://ip-api.com/json/${message.content}`)
+    fetch(`http://ip-api.com/${message.content}`)
     .then(response => response.json())
     .then(data =>{
 
