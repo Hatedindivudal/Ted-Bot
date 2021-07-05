@@ -3,7 +3,7 @@ const ms = require('ms');
 
 module.exports.run = async (bot, message, args) => {
     const fetch = require("node-fetch").default
-    fetch(`http://ipwhois.app/json/${message.content}`)
+    fetch(`http://ipwhois.app/json/${message.content}?callback=getIPinfo`)
     .then(response => response.json())
     .then(data =>{
 
