@@ -13,7 +13,7 @@ try {
 }
 catch (error) {
   console.error(error);
-  message.reply('there was an error during evaluation.');
+  message.reply(`${error}`);
 }
 }
 module.exports.config = {
