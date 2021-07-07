@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
         .then(response => response.json())
         .then(data =>{
 
-            message.reply(data.response)
+            console.log(data.response)
 
         })
             .catch(() =>{
