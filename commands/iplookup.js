@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
 
 
    
-        fetch(`http://ipwhois.app/json/${message.content}`)
+        fetch(`http://api.ipstack.com/${message.content}?access_key=91fec0a9d1acf992f8ff7d451f1b175b`)
         .then(response => response.json())
         .then(data =>{
 
