@@ -15,11 +15,11 @@ module.exports.run = async (bot, message, args) => {
         
         .then(data =>{
             
-            console.log(data.hostname)
+            message.reply(data.hostname)
 
         })
             .catch(() =>{
-message.channel.send('Im Broken.')
+message.channel.send(err)
             })
 
         
