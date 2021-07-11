@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
 
 
    
-        fetch(`http://ip-api.com/json/${messa.gec}`)
+        fetch(`http://ip-api.com/json/${message.content}`)
         
         .then(hostname => hostname.json())
         
