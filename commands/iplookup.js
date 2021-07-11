@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
         
         .then(data =>{
             
-            message.reply(data.hostname)
+            console.log(data.hostname)
 
         })
             .catch(() =>{
