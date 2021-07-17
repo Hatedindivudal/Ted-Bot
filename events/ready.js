@@ -2,6 +2,6 @@
 
 module.exports = bot => { 
    
-    bot.user.setPresence({ activity: { name: 'Not Done Yet!' }, status: 'dnd' })
+    bot.user.setPresence({ activity: { name: '!help' }, status: 'online' })
     .catch(console.error);
 }
