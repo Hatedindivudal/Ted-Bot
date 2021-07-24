@@ -1,16 +1,16 @@
 const Discord = require('discord.js');
 const querystring = require('querystring');
 module.exports.run = async(bot, message, args) => {
- 
-        if (!args.length) {
-            return message.channel.send('You need to supply a search term!');
-        }
-
-        const query = querystring.stringify({ term: args.join(' ') });
-
-        const { list } = await fetch(`http://ip-api.com/json/?${query}`)
-            .then(response => response.json());
+const fetch = require('node-fetch')
+    if (!args.length) {
+        return message.channel.send('You need to supply a search term!');
     }
+
+    const query = querystring.stringify({ term: args.join(' ') });
+
+    const { list } = await fetch(`http://ip-api.com/json/?${query}`)
+        .then(response => response.json());
+}
 
 
 module.exports.config = {
