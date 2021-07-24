@@ -2,25 +2,21 @@ const Discord = require("discord.js");
 const ms = require('ms');
 
 module.exports.run = async (bot, message, args) => {
-    const fetch = require("node-fetch").default
-
+const axios = require('axios')
 
     
 
 
    
-        fetch(`http://ip-api.com/json/${message.content}`)
-        
-        .then(hostname => hostname.json())
-        
-        .then(data =>{
-            
-            console.log(data.hostname)
-
+        axios.get(`http://ip-api.com/json/${message.content}`)
+        .then((res) => {
+          console.log(`RES:`, res)
         })
-            .catch(() =>{
-message.channel.send(err)
-            })
+        .catch((err) => {
+            message.channel.send(err)
+        })
+    
+        
 
         
     
