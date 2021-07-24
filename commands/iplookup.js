@@ -10,7 +10,7 @@ return info1
 }
 let poop = await ipsearch();
 console.log(poop)
-        message.channel.send(info1)
+        message.channel.send(poop)
 }
 module.exports.config = {
     name: "lookup",
