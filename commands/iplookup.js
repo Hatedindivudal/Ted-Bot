@@ -4,7 +4,7 @@ module.exports.run = async(bot, message, args) => {
         const api = `http://ip-api.com/json/${args}`
         axios.get(api)
             .then(response => {
-                message.channel.send(response.data)
+                c(response.data)
 
             })
 
