@@ -8,7 +8,7 @@ const axios = require('axios')
 
 
    
-        axios.get(`http://ip-api.com/json/${message.content}`)
+        axios.get(`http://ip-api.com/json/${args}`)
         .then((res) => {
           console.log(`RES:`, res)
         })
@@ -16,18 +16,6 @@ const axios = require('axios')
             message.channel.send(err)
         })
     
-        
-
-        
-    
-
-
-    
-
-
-
-
-
 }
 
 module.exports.config = {
