@@ -5,7 +5,7 @@ module.exports.run = async(bot, message, args) => {
         const axios = require('axios')
         axios.get(api)
             .then(response => {
-                message.channel.send(response)
+                console.log(response)
 
             })
 
