@@ -10,7 +10,7 @@ const axios = require('axios')
    
         axios.get(`http://ip-api.com/json/${args}`)
         .then((res) => {
-          message.channel.send(`RES:`, res.data[0])
+          message.channel.send(`RES:`, res.data[0].country)
         })
         .catch((err) => {
             message.channel.send(err)
