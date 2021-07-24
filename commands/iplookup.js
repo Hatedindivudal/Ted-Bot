@@ -5,12 +5,12 @@ const axios = require("axios")
 let ipsearch = async ()  => {
     
 let response = axios.get(`http://ip-api.com/json/${args}`)
-let info =  response.data
-return info
+let info1 =  response.data
+return info1
 }
 let poop = await ipsearch();
 console.log(poop)
-        message.channel.send(response.data)
+        message.channel.send(info1)
 }
 module.exports.config = {
     name: "lookup",
