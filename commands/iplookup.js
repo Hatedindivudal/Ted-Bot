@@ -4,7 +4,7 @@ module.exports.run = async(bot, message, args) => {
 const axios = require("axios")
     axios.get(`http://ip-api.com/json/${args}`)
         .then((res) => {
-          console.log(`RES:`, res.data.toString())
+          message.channel.send(`RES:`, res.data.toString())
         })
         .catch((err) => {
             message.channel.send(err)
