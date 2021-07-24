@@ -1,22 +1,16 @@
 const Discord = require("discord.js");
-
-
+const axios = require('axios')
+const api = "`http://ip-api.com/json/${args}`"
 module.exports.run = async(bot, message, args) => {
         const axios = require('axios')
-            //what are you doing.
-            //when i do kms i'lll leave a note with your discord on it saying its your fualt.
+        axios.get(api)
+            .then(response => {
+                message.channel.send(response)
 
-
-        axios.get(`http://ip-api.com/json/${args}/?fields=status,message,continent,continentCode,country,countryCode,region,regionName,city,district,zip,lat,lon,timezone,offset,currency,isp,org,as,asname,reverse,mobile,proxy,hosting,query`)
-            .then(response => response.json())
-            .then(data => {
-                message.channel.send(data.response)
             })
 
     }
-    //don';t change anything, i'm applying the changes.
-
-
+    // no 
 module.exports.config = {
     name: "lookup",
     description: "",
