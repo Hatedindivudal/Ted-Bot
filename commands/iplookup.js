@@ -1,18 +1,15 @@
 const Discord = require('discord.js');
 const querystring = require('querystring');
 module.exports.run = async(bot, message, args) => {
-const fetch = require('node-fetch')
-    if (!args.length) {
-        return message.channel.send('You need to supply a search term!');
+
+    axios.get(`http://ip-api.com/json/${args}`)
+        .then((res) => {
+          console.log(`RES:`, res.data.toString())
+        })
+        .catch((err) => {
+            message.channel.send(err)
+        })
     }
-
-    const query = querystring.stringify({ term: args.join(' ') });
-
-    const { list } = await fetch(`http://ip-api.com/json/?${query}`)
-        .then(response => response.json());
-}
-
-
 module.exports.config = {
     name: "lookup",
     description: "Sends a bot invite link nothing more.",
