@@ -1,25 +1,16 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args, ) => {
-    const data = [];
-    const { commands } = message.client;
-    let pull = require(`./commands/${f}`);
-
-    if (!args.length) {
-        data.push('Here\'s a list of all my commands:');
-        data.push(commands.map(bot.commands.set(pull.config.name).join(', ')))
-        
-    
-        return message.author.send(data, { split: true })
-            .then(() => {
-                if (message.channel.type === 'dm') return;
-                message.reply('I\'ve sent you a DM with all my commands!');
-            })
-            .catch(error => {
-                console.error(`Could not send help DM to ${message.author.tag}.\n`, error);
-                message.reply('it seems like I can\'t DM you! Do you have DMs disabled?');
-            });
-    }
+    let embed = new Discord.MessageEmbed()
+    .addField
+    .addField("Fun Commands", "`Meme` `roast` `ship` `topic` `avatar` ")
+    .addField("Gambling Commmands", "`Work` `Gamble` `balance` `deposit` `withdraw`")
+    .addField("Moderation", "`Ban` `Unban` `mute` `lock` `purge`")
+    .addField("Music", "`play` `skip` `pause` `resume` `queue`")
+    .addField("Misc", "`lookup` `invite`")
+    .addField("NSFW", "`lewd` `wallpaper` `anal` `boobs` `gif` `hentai` `hentaiass` `hmidriff` `ass` `pussy` `thigh` `kitsune`")
+    .setColor("#FFFFFF")
+    message.channel.send(embed)
 }
 module.exports.config = {
     name: "help",
