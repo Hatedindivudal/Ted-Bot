@@ -5,7 +5,7 @@ const axios = require("axios")
     axios.get(`http://ip-api.com/json/${args}`)
         .then((res) => {
             
-          message.channel.send(res.data)
+          message.channel.send(res.data.toString())
           .catch(err => message.reply(`Something went wrong... ${err}`));
         })
        
