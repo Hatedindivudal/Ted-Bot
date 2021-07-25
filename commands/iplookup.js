@@ -3,7 +3,7 @@ const querystring = require('querystring');
 module.exports.run = async(bot, message, args, ) => {
 
 const axios = require("axios")
-axios.get(`http://ip-api.com/json/${text}`)
+axios.get(`http://ip-api.com/json/${args}`)
 .then((res) => {
     const embed = new Discord.MessageEmbed()
     .addField('Country',  `${JSON.stringify(res.data.country)}`)
