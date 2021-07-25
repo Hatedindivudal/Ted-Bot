@@ -8,6 +8,7 @@ const axios = require("axios")
             var fag = JSON.stringify(res.data);
             const embed = new Discord.MessageEmbed()
             .addField('Country',  `${fag.country}`)
+            message.channel.send(embed)
           .catch(err => message.reply(`Something went wrong... ${err}`));
         })
        
