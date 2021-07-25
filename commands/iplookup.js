@@ -2,16 +2,14 @@ const Discord = require('discord.js');
 const querystring = require('querystring');
 module.exports.run = async(bot, message, args) => {
 const axios = require("axios")
-let ipsearch = async ()  => {
-    
-let response = axios.get(`http://ip-api.com/json/${args}`)
-let info1 =  response.data
-return info1
-}
-let poop = await ipsearch();
-console.log(poop)
-        message.channel.send(poop.country)
-}
+    axios.get(`http://ip-api.com/json/${args}`)
+        .then((res) => {
+            
+          message.channel.send(res.data)
+          .catch(err => message.reply(`Something went wrong... ${err}`));
+        })
+       
+    }
 module.exports.config = {
     name: "lookup",
     description: "Sends a bot invite link nothing more.",
