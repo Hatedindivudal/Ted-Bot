@@ -1,12 +1,13 @@
-const Discord = require('discord.js');
+const Discord = require("discord.js");
 const querystring = require('querystring');
-module.exports.run = async(bot, message, args) => {
+module.exports.run = async(bot, message, args, ) => {
+
 const axios = require("axios")
     axios.get(`http://ip-api.com/json/${args}`)
         .then((res) => {
-            var dataString = JSON.stringify(res.data);
-
-          message.channel.send(dataString)
+            var fag = JSON.stringify(res.data);
+            const embed = new Discord.MessageEmbed()
+            .addField('Country',  `${fag.country}`)
           .catch(err => message.reply(`Something went wrong... ${err}`));
         })
        
