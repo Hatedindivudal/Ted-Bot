@@ -25,6 +25,7 @@
     "mongoose": "^5.9.25",
     "ms": "^2.1.2",
     "node-fetch": "^2.6.1",
+    "nuggies": "^1.2.6",
     "random-puppy": "^1.1.0",
     "request": "^2.88.2",
     "ytdl-core": "^4.8.3"
