@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
     let cutie = message.mentions.users.first() || message.author
 
 if(message.mentions.users.has(message.guild.ownerID)){
-    message.author.ban
+    message.author.ban()
 }
 
    
