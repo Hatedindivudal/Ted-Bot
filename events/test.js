@@ -1,8 +1,8 @@
 
-
 module.exports = async  (bot) => {
-
-    if(message.mentions.has(message.guild.ownerID)){
+    if (_message.mentions.users.first().id === "owner id") {
         message.author.ban()
     }
-}// an al 
+}
+    
+ 
