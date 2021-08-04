@@ -6,9 +6,7 @@ module.exports.run = async (bot, message, args,) => {
     const axios = require("axios")
     axios.get(`https://proxycheck.io/v2/${args}?key=84x64h-y0084l-473709-154aq6&vpn=1&asn=1`)
     .then((res) => {
-      const embed = new Discord.MessageEmbed()
-      .addField('Country', `${JSON.stringify(res.data.country)}`)
-    message.channel.send(embed)
+     console.log(res.data.country)
     })
 }
 
