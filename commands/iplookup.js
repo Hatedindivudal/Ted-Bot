@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args,) => {
     const axios = require("axios")
     fetch(`https://proxycheck.io/v2/${args}?key=84x64h-y0084l-473709-154aq6&vpn=1&asn=1`)
     .then((res) => {
-     console.log(JSON.stringify(res.data.args.country))
+     console.log(JSON.stringify(res.data.country))
     })
 }
 
