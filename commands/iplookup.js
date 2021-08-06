@@ -8,7 +8,9 @@ module.exports.run = async (bot, message, args,) => {
     .then((res) => {
         const embed = new Discord.MessageEmbed()
         .addFields(
-            {name: 'Country', value: `${JSON.stringify(res.data.location.country)}`}
+            {name: 'IP', value: `${JSON.stringify(res.data.ip)}`, inline: true},
+            {name: 'Country', value: `${JSON.stringify(res.data.location.country)}`, inline: true},
+            {name: 'City', value: `${JSON.stringify(res.data.location.city)}`, inline: true}
         )
     message.channel.send(embed)
     })
