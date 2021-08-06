@@ -4,9 +4,9 @@ const fetch = require("node-fetch").default
 module.exports.run = async (bot, message, args,) => {
 
     const axios = require("axios")
-    axios.get(`https://proxycheck.io/v2/${args}?key=84x64h-y0084l-473709-154aq6&vpn=1&asn=1`)
+    axios.get(`https://vpnapi.io/api/${args}?key=0d14f51ea0304c97a34e48a83f82a057`)
     .then((res) => {
-     console.log(JSON.stringify(res.data.country))
+     console.log(res.data.country)
     })
 }
 
