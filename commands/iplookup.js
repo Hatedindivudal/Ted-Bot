@@ -10,7 +10,10 @@ module.exports.run = async (bot, message, args,) => {
         .addFields(
             {name: 'IP', value: `${JSON.stringify(res.data.ip)}`, inline: true},
             {name: 'Country', value: `${JSON.stringify(res.data.location.country)}`, inline: true},
-            {name: 'City', value: `${JSON.stringify(res.data.location.city)}`, inline: true}
+            {name: 'City', value: `${JSON.stringify(res.data.location.city)}`, inline: true},
+            {name: 'Continent', value: `${JSON.stringify(res.data.location.continent)}`, inline: true},
+            {name: 'ISP', value: `${JSON.stringify(res.data.network.autonomous_system_organization)}`, inline: true},
+            
         )
     message.channel.send(embed)
     })
