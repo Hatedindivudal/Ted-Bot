@@ -7,7 +7,6 @@ module.exports.run = async (bot, message, args,) => {
     axios.get(`https://vpnapi.io/api/${args}?key=0d14f51ea0304c97a34e48a83f82a057`)
     .then((res) => {
         const embed = new Discord.MessageEmbed()
-        .addTitle('')
         .addFields(
             {name: 'IP', value: `${JSON.stringify(res.data.ip)}`, inline: true},
             {name: 'Country', value: `${JSON.stringify(res.data.location.country).replace(/"/g, '').replace(/}/g, '')}`, inline: true},
