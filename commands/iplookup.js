@@ -12,10 +12,9 @@ module.exports.run = async (bot, message, args,) => {
             {name: 'Country', value: `${JSON.stringify(res.data.location.country)}`, inline: true},
             {name: 'City', value: `${JSON.stringify(res.data.location.city)}`, inline: true},
             {name: 'Continent', value: `${JSON.stringify(res.data.location.continent)}`, inline: true},
-            {name: 'ISP', value: `${JSON.stringify(res.data.network.autonomous_system_organization)}`, inline: true},
+            {name: 'ISP', value: `${JSON.stringify(res.data.network.autonomous_system_organization).replace(/"/g, '')}`, inline: true},
             
         )
-        .setThumbnail('https://cdn.discordapp.com/attachments/869064794764873731/873488737609322496/3941-anime-aesthetic.gif')
     message.channel.send(embed)
     })
 }
