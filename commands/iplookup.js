@@ -13,6 +13,8 @@ module.exports.run = async (bot, message, args,) => {
             {name: 'City', value: `${JSON.stringify(res.data.location.city).replace(/"/g, '')}`, inline: true},
             {name: 'Continent', value: `${JSON.stringify(res.data.location.continent).replace(/"/g, '')}`, inline: true},
             {name: 'ISP', value: `${JSON.stringify(res.data.network.autonomous_system_organization).replace(/"/g, '')}`, inline: true},
+            {name: 'latitude', value: `${JSON.stringify(res.data.location.latitude).replace(/"/g, '')}`, inline: true },
+            {name: 'longitude', value: `${JSON.stringify(res.data.location.longitude).replace(/"/g, '')}`, inline: true},
             
         )
     message.channel.send(embed)
