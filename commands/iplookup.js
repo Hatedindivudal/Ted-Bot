@@ -15,6 +15,9 @@ module.exports.run = async (bot, message, args,) => {
             {name: 'ISP', value: `${JSON.stringify(res.data.network.autonomous_system_organization).replace(/"/g, '')}`, inline: true},
             {name: 'latitude', value: `${JSON.stringify(res.data.location.latitude).replace(/"/g, '')}`, inline: true },
             {name: 'longitude', value: `${JSON.stringify(res.data.location.longitude).replace(/"/g, '')}`, inline: true},
+            {name: 'VPN', value: `${JSON.stringify(res.data.security.vpn).replace(/"/g, '')}`},
+            {name: 'Proxy', value: `${JSON.stringify(res.data.security.proxy).replace(/"/g, '')}`}
+
             
         )
     message.channel.send(embed)
