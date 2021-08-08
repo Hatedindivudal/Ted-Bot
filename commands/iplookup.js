@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args,) => {
             {name: 'IP', value: `${JSON.stringify(res.data.ip).replace(/"/g, '')}`, inline: true},
             {name: 'Country', value: `${JSON.stringify(res.data.location.country).replace(/"/g, '')}`, inline: true},
             {name: 'City', value: `${JSON.stringify(res.data.location.city).replace(/"/g, '')}`, inline: true},
-            {name: 'Continent', value: `${JSON.stringify(res.data.location.continent).replace(/"/g, '')}`, inline: true},
+            {name: 'Continent', value: `${JSON.stringify(res.data.location.continent)}`, inline: true},
             {name: 'ISP', value: `${JSON.stringify(res.data.network.autonomous_system_organization).replace(/"/g, '')}`, inline: true},
             
         )
