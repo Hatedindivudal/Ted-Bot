@@ -10,7 +10,7 @@ const Shipembed = new Discord.MessageEmbed()
 .setColor("RANDOM")
 .setAuthor(':rainbow_flag: The Gay Machine :rainbow_flag: ')
 .setDescription(`:rainbow_flag: ${member} is ${ship}% Gay! :rainbow_flag:  `)
-message.channel.send(Shipembed).catch(error => message.reply(`Sorry, I couldn't kick because of : ${error}`));
+message.channel.send(Shipembed)
 
 
 

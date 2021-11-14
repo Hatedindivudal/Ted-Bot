@@ -4,31 +4,7 @@ module.exports.run = async (bot, message, args) => {
         return message.channel.send('This command is only active to Hated Currently')
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
-    let filter = m => m.author.id === message.author.id;
+       let filter = m => m.author.id === message.author.id;
         let q1 = new Discord.MessageCollector(message.channel, filter, {
             max: 1
         })
@@ -47,30 +23,11 @@ module.exports.run = async (bot, message, args) => {
                     .setColor('#add8e6')
                     .setDescription(`${message.content}`)
 
-                    
-
-
-                    
-
-                    
-                
-              
-
-
                let hi = await channel.send(embed2)
                hi.react('✔');
                q2.stop
                q2.stop();
-           
-            
-
-        
-
-            
-               
-
-          
-
+    
               
             
         })

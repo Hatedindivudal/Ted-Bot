@@ -88,7 +88,7 @@ bot.on("message", async message => {
         .then(response => response.json())
         .then(data =>{
 
-            message.reply(data.response)
+            message.reply(data.response) //YOU ARE SENDING IT
 
         })
             .catch(() =>{

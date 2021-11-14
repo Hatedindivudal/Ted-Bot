@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args, ) => {
     let embed = new Discord.MessageEmbed()
-    .addField("Fun Commands", "`Meme` `roast` `ship` `topic` `avatar` ")
+    .addField("Fun Commands", "`Meme` `roast` `ship` `topic` `avatar` `topic` ")
     .addField("Gambling Commmands", "`Work` `Gamble` `balance` `deposit` `withdraw`")
     .addField("Moderation", "`Ban` `Unban` `mute` `lock` `purge`")
     .addField("Music", "`play` `skip` `pause` `resume` `queue`")

@@ -4,8 +4,6 @@ module.exports.run = async (bot, message, args) => {
         return message.reply("Missing Permissions!").then(m => m.delete(5000));
     }
   
-
-  
   const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
 
   // Final Check
