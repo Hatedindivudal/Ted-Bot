@@ -75,7 +75,7 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 const userEmbed = new Discord.MessageEmbed()
-.setAuthor("*This server is protected by Ted, anti alt account and VPN bot. You must verify to access the server.*", true) 
+.setAuthor("*This server is protected by Ted, anti alt account and VPN bot. You must verify to access the server.*") 
 .addField("*Status*","[Verify Here](https://www.shorturl.at/hHTVZ)")
 
 bot.on('guildMemberAdd', member => {
