@@ -77,6 +77,8 @@ fs.readdir("./commands/", (err, files) => {
 const userEmbed = new Discord.MessageEmbed()
 .setAuthor("*This server is protected by Bleed, Anti Alt Account And VPN bot. You must verify to access the server.*") 
 .addField("*Status*","[Verify Here](https://www.shorturl.at/hHTVZ)")
+.setFooter('A.A.P from Bleed.')
+.setColor('#850101')
 
 bot.on('guildMemberAdd', member => {
     member.send(userEmbed)
