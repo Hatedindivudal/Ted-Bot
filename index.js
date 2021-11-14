@@ -75,6 +75,9 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 
+bot.on('guildMemberAdd', member => {
+    member.send("Welcome to the server!")
+ });
 
 
 const ms = require('ms');
