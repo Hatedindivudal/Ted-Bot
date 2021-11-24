@@ -81,7 +81,7 @@ const userEmbed = new Discord.MessageEmbed()
 .setColor('#850101')
 
 bot.on('guildMemberAdd', member => {
-    member.send(userEmbed)
+    member.send(userEmbed);
  });
 
 
