@@ -1,7 +1,6 @@
 const Discord = require('discord.js');//it stopped, I didnt do anything, on my life bro istg
 const bot = new Discord.Client(); //okay im gonna apply the changes now  what tfkc
 const mongoose = require('mongoose');
-const selfbot = require('discord.js-selfbot')
 const DisTube = require('distube');
 bot.distube = new DisTube(bot, { searchSongs: false, emitNewSongOnly: true,
 youtubeCookie: 'VISITOR_INFO1_LIVE=uBc451HAej4; PREF=tz=America.Halifax; __Secure-3PSID=9Ae2vBzYxCur8qWVMEMw7RhMYY-4hu8tl2wxBeYn4RuRZxTg2dPCulZMeQcP-7iyLKcvpw.; __Secure-3PAPISID=Rd51jBCTXTINQJ2r/AftGpIelT1qTJneS3; LOGIN_INFO=AFmmF2swRQIgKzPn0taakADrLsnheqZ5TjSmMNTYiYLLSBwITsBtz7ICIQCOpIMH-vq-fdz0dzLGFX8mnaB13WDckGJnGTBOFjvIng:QUQ3MjNmelgtanBpOGRwMXR1V3psVHpjM0ZrNVJ5TVNuOE1odGVBZEU3d0tkbmxacDVnb1VUdDBHRlQ2a3RaUUFjcVhyLWdydER1YW9Dak5XUTJPaFZQMmlldHNzazZDU2UwWk1KMzFwSWJRU3U1SFRhdXVVTVpfSDdmM3hFdXhvWHZRY1dZZS1zZXhtQVpuelp0elczRmFYMm1DM1B5dHdlMFJtNk1LOUNJbGR1eko2aVZPaVJGQmlpcUtPTjc4d0k3bEVvLVBVYThE; YSC=NHQsnaCPFKs; __Secure-3PSIDCC=AJi4QfHBCvX5nbX_ACM0EsMuBW-130pHctscs2NyIOQdRmI63dPwYavNmP6umoCUuEl4d6-Uugc'
@@ -14,14 +13,8 @@ bot.distube
         `Added ${song.name} - \`${song.formattedDuration}\` to the queue by ${song.user}`
     ))
 
-bot.cooldowns = new Discord.Collection();
- //alright alright alright as i was saying im gona apply the changes now
-// i need to make sure that the comand is still working properly if not thats a big issue
-//why is the eco stuff in your index file,oh  
-// oh i can just do it by hand dont worry and why am i getting a error its gone 
-// because as i said i've been having issues with a event handler their suppoused to go inside of it but im struggling so index it is 
+
 mongoose.connect('mongodb+srv://Hated:7reiRRZ32Q7FF5qy@cluster0.gpkqk.mongodb.net/Data', { useNewUrlParser: true, useUnifiedTopology: true })
-//thats fine, is there a command to remove all of the notes, or do you have to do it by hand, where did you go, hated is dead :skull:
 const profileModel = require("./models/profileSchema");
 mongoose.set('useCreateIndex', true);
 mongoose.set('useFindAndModify', false);
@@ -147,7 +140,22 @@ message.channel.send('Im Broken!')
     const command = bot.commands.get(commandName)
 
     if (command) command.run(bot, message, args, profileData);
-  
+    const cooldown = new Map()
+    if(!cooldown.has(command.name)){
+        cooldowns.set(command.name, new Discord.Collection());
+    }
+  const current_time = Date.now();
+  const time_stamps = cooldowns.get(command.name);
+  const cooldown_amount = (command.cooldown) * 1000
+  if(time_stamps.has(message.author.id)){
+      const expiration_time = time_stamps.get(message.author.id) * cooldown_amount
+      if(current_time < expiration_time){
+          const time_left = (expiration_time - current_time) / 1000
+          message.reply(`Woah, slow down you still have ${time_left.toFixed(1)} more seconds before using ${command.name}`)
+      }
+      time_stamps.set(message.author.id, current_time);
+      setTimeout(() => time_stamps.delete(message.author.id), cooldown_amount);
+  }
 })
 
 
