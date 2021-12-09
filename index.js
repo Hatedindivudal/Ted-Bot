@@ -146,7 +146,7 @@ message.channel.send('Im Broken!')
     }
   const current_time = Date.now();
   const time_stamps = cooldown.get(bot.commands.name);
-  const cooldown_amount = (bot.commands.name.cooldown) * 1000
+  const cooldown_amount = (bot.commands.cooldown) * 1000
   if(time_stamps.has(message.author.id)){
       const expiration_time = time_stamps.get(message.author.id) * cooldown_amount
       if(current_time < expiration_time){
