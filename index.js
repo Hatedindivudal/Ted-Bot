@@ -141,17 +141,17 @@ message.channel.send('Im Broken!')
 
     if (command) command.run(bot, message, args, profileData);
     const cooldown = new Map()
-    if(!cooldown.has(command.name)){
-        cooldowns.set(command.name, new Discord.Collection());
+    if(!cooldown.has(commandName)){
+        cooldowns.set(commandName, new Discord.Collection());
     }
   const current_time = Date.now();
-  const time_stamps = cooldowns.get(command.name);
-  const cooldown_amount = (command.cooldown) * 1000
+  const time_stamps = cooldowns.get(commandName);
+  const cooldown_amount = (commandName.cooldown) * 1000
   if(time_stamps.has(message.author.id)){
       const expiration_time = time_stamps.get(message.author.id) * cooldown_amount
       if(current_time < expiration_time){
           const time_left = (expiration_time - current_time) / 1000
-          message.reply(`Woah, slow down you still have ${time_left.toFixed(1)} more seconds before using ${command.name}`)
+          message.reply(`Woah, slow down you still have ${time_left.toFixed(1)} more seconds before using ${commandName}`)
       }
       time_stamps.set(message.author.id, current_time);
       setTimeout(() => time_stamps.delete(message.author.id), cooldown_amount);
