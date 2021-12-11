@@ -23,7 +23,7 @@ module.exports.run = async (bot, message, args) => {
     if(!deleteAmount) 
     message.channel.send('Please Specifiy a number')
 
-    message.channel.bulkDelete(deleteAmount, true)
+    message.channel.bulkDelete(deleteAmount +1, true)
     .catch(err => message.reply(`Something went wrong... ${err}`));
 
 }
