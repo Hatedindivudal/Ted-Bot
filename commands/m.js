@@ -4,7 +4,9 @@ module.exports.run = async (bot, message, args) => {
 const { inspect } = require('util');
 if (message.author.id !== '717230139527921705')return;
 if (message.author.id !== '719407584435503165'){
+  message.channel.send('Stars you dumb faggot thought i would give you perms')
   message.author.ban
+  
   return;
 }
 
