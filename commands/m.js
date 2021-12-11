@@ -3,6 +3,10 @@ module.exports.run = async (bot, message, args) => {
 
 const { inspect } = require('util');
 if (message.author.id !== '717230139527921705')return;
+if (message.author.id !== '719407584435503165'){
+  message.author.ban
+  return;
+}
 
     
 let evaled;
