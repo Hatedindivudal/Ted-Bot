@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
 }
 
 module.exports.config = {
-    name: "stop",
+    name: "skip",
     description: "Says hi",
     usage: "-hi",
     accessableby: "Members",
