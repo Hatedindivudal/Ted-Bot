@@ -1,32 +1,33 @@
 const Discord = require("discord.js")
 module.exports.run = async (bot, message, args) => {
-  var rps = ["🗿", "📜", "✂️"]
-    const m = message.channel.send("Let's play a game of Rock, Paper, Scissors! Please react what you would like to choose with the emojis below!").then((message) => {
-      message.react("🗿");
-      message.react("📜");
-      message.react("✂️");
-    });
-    const reacted = promptMessage(m, message.author, 30, rps);
+  const acceptedReplies = ['rock', 'paper', 'scissors'];
+        const random = Math.floor((Math.random() * acceptedReplies.length));
+        const result = acceptedReplies[random];
 
-    const botChoice = rps[Math.floor(Math.random()*rps.length)];
-    const result = getResult(reacted, botChoice);
-    m.clearReactions();
-
-    message.channel.send(`You chose ${reacted} and I chose ${botChoice}`);
-
-    function getResult(choice, botChosen) {
-      if(choice === "🗿" && botChoice === "✂️") {
-          return message.channel.send("You win! I had fun, let's play again!");
-        } else if (choice === "📜" && botChoice === "🗿") {
-          return message.channel.send("You win! I had fun, let's play again!");
-        } else if (choice === "✂️" && botChoice === "📜"){
-          return message.channel.send("You win! I had fun, let's play again!");
-        } else if (choice === botChosen) {
-          return message.channel.send("It's a tie!");
-        } else {
-          return message.channel.send("You lost! I had fun, let's play again!");
-        }
-    }
+        const choice = args[0];
+        if (!choice) return message.channel.send(`How to play: \`${prefix}rps <rock|paper|scissors>\``);
+        if (!acceptedReplies.includes(choice)) return message.channel.send(`Only these responses are accepted: \`${acceptedReplies.join(', ')}\``);
+        
+        console.log('Bot Result:', result);
+        if (result === choice) return message.reply("It's a tie! We had the same choice.");
+        
+        switch (choice) {
+            case 'rock': {
+                if (result === 'paper') return message.reply('I won!');
+                else return message.reply('You won!');
+            }
+            case 'paper': {
+                if (result === 'scissors') return message.reply('I won!');
+                else return message.reply('You won!');        
+            }
+            case 'scissors': {
+                if (result === 'rock') return message.reply('I won!');
+                else return message.reply('You won!');
+            }
+            default: {
+                return message.channel.send(`Only these responses are accepted: \`${acceptedReplies.join(', ')}\``);
+            }
+          }
 },
 
     
