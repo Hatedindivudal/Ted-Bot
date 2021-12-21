@@ -1,6 +1,6 @@
 const Discord = require("discord.js")
 module.exports.run = async (bot, message, args) => {
- var rps = ["🗿", "📜", "✂️"]
+  var rps = ["🗿", "📜", "✂️"]
     const m = message.channel.send("Let's play a game of Rock, Paper, Scissors! Please react what you would like to choose with the emojis below!").then((message) => {
       message.react("🗿");
       message.react("📜");
@@ -15,7 +15,6 @@ module.exports.run = async (bot, message, args) => {
     message.channel.send(`You chose ${reacted} and I chose ${botChoice}`);
 
     function getResult(choice, botChosen) {
-        message.reactions.removeAll()
       if(choice === "🗿" && botChoice === "✂️") {
           return message.channel.send("You win! I had fun, let's play again!");
         } else if (choice === "📜" && botChoice === "🗿") {
@@ -28,9 +27,10 @@ module.exports.run = async (bot, message, args) => {
           return message.channel.send("You lost! I had fun, let's play again!");
         }
     }
-  },
-};
-  }
+},
+
+    
+  
 
     
 module.exports.config = {
