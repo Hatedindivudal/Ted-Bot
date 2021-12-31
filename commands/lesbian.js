@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) => {
 }
 
 module.exports.config = {
-    name: "kiss",
+    name: "lesbian",
     description: "",
     usage: ".",
     accessableby: "Members",
