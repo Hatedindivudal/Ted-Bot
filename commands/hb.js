@@ -2,7 +2,7 @@
         
         const Discord = require('discord.js');
         module.exports.run = async (bot, message, args, profileData) => {
-        }
+        
         
         
         
@@ -18,7 +18,7 @@
           .setImage(res.data.url) 
           message.channel.send(embed)
         })
-        
+    }
         
         
         
