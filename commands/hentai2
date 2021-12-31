@@ -4,7 +4,6 @@ module.exports.run = async (bot, message, args) => {
     if(!message.channel.nsfw) return;
 
 
-    const member = message.mentions.members.first();
     
         const axios = require('axios')
         axios.get(`https://www.nekos.life/api/v2/img/bj`)
