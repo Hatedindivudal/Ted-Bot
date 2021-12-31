@@ -2,7 +2,6 @@
         
         const Discord = require('discord.js');
         module.exports.run = async (bot, message, args, profileData) => {
-            const profileModel = require("../models/profileSchema");
         }
         
         
@@ -11,7 +10,6 @@
         
         
         
-        const member = message.mentions.members.first();
     
         const axios = require('axios')
         axios.get(`https://www.nekos.life/api/v2/img/boobs`)

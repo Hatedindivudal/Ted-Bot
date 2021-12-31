@@ -1,7 +1,7 @@
   
         
         const Discord = require('discord.js');
-        module.exports.run = async (bot, message, args, profileData) => {
+        module.exports.run = async (bot, message, args,) => {
         
         
         
@@ -10,7 +10,6 @@
         
         
         
-        const member = message.mentions.members.first();
     
         const axios = require('axios')
         axios.get(`https://www.nekos.life/api/v2/img/feetg`)
