@@ -2,8 +2,7 @@
         
         const Discord = require('discord.js');
         module.exports.run = async (bot, message, args, profileData) => {
-            const profileModel = require("../models/profileSchema");
-        }
+        
         
         
         
@@ -23,7 +22,7 @@
         
         
         
-        
+    }
         
         module.exports.config = {
             name: "feet",
