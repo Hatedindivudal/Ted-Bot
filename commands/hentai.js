@@ -1,9 +1,7 @@
   
         
         const Discord = require('discord.js');
-        module.exports.run = async (bot, message, args, profileData) => {
-            const profileModel = require("../models/profileSchema");
-        }
+        module.exports.run = async (bot, message, args,) => {
         
         
         
@@ -11,7 +9,7 @@
         
         
         
-        const member = message.mentions.members.first();
+        
     
         const axios = require('axios')
         axios.get(`https://www.nekos.life/api/v2/img/Random_hentai_gif`)
@@ -22,7 +20,7 @@
         })
         
         
-        
+    }
         
         
         module.exports.config = {
