@@ -1,32 +1,26 @@
-
-
 const Discord = require('discord.js');
 
 module.exports.run = async (bot, message, args) => {
+    if(!message.channel.nsfw) return;
 
-    
-    const user = message.author;
+
     const member = message.mentions.members.first();
-    if(!member){
-        return message.reply('You must mention the user you want to slap!')
-    }
+    
         const axios = require('axios')
-        axios.get(`https://www.nekos.life/api/v2/img/slap`)
+        axios.get(`https://www.nekos.life/api/v2/img/bj`)
         .then((res) => {
          const embed = new Discord.MessageEmbed()
-         .addField(`Ouch`, `<@${user.id}> Slapped ${member}!` )
           .setImage(res.data.url) 
           message.channel.send(embed)
         
         })
+
 }
 
 module.exports.config = {
-    name: "slap",
+    name: "hbj",
     description: "",
     usage: ".",
     accessableby: "Members",
     aliases: []
 }
-
-

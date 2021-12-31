@@ -11,10 +11,10 @@ module.exports.run = async (bot, message, args) => {
         return message.reply('You must mention the user you want to slap!')
     }
         const axios = require('axios')
-        axios.get(`https://www.nekos.life/api/v2/img/slap`)
+        axios.get(`https://www.nekos.life/api/v2/img/les`)
         .then((res) => {
          const embed = new Discord.MessageEmbed()
-         .addField(`Ouch`, `<@${user.id}> Slapped ${member}!` )
+         .addField(`You gave a kiss!`, `<@${user.id}> kisses ${member}!` )
           .setImage(res.data.url) 
           message.channel.send(embed)
         
@@ -22,7 +22,7 @@ module.exports.run = async (bot, message, args) => {
 }
 
 module.exports.config = {
-    name: "slap",
+    name: "kiss",
     description: "",
     usage: ".",
     accessableby: "Members",

@@ -14,7 +14,7 @@
         const member = message.mentions.members.first();
     
         const axios = require('axios')
-        axios.get(`https://www.nekos.life/api/v2/img/Random_hentai_gif`)
+        axios.get(`https://www.nekos.life/api/v2/img/boobs`)
         .then((res) => {
          const embed = new Discord.MessageEmbed()
           .setImage(res.data.url) 
@@ -26,7 +26,7 @@
         
         
         module.exports.config = {
-            name: "hentai",
+            name: "hb",
             description: "Says hi",
             usage: "-hi",
             accessableby: "Members",
