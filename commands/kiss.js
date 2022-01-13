@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
         return message.reply('You must mention the user you want to slap!')
     }
         const axios = require('axios')
-        axios.get(`https://www.nekos.life/api/v2/img/les`)
+        axios.get(`https://www.nekos.life/api/v2/img/kiss`)
         .then((res) => {
          const embed = new Discord.MessageEmbed()
          .addField(`You gave a kiss!`, `<@${user.id}> kisses ${member}!` )
